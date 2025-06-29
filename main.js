@@ -7,62 +7,6 @@ const map = new mapboxgl.Map({
   zoom: 14
 });
 
-document.getElementById('styleSwitcher').addEventListener('change', function () {
-    const selectedStyle = this.value;
-    map.setStyle(selectedStyle);
-  
-    // Harita stili değişince kaynaklar ve katmanlar yeniden eklenmeli
-    map.once('styledata', () => {
-      // Kaynak ve katmanları tekrar ekleyin
-      map.addSource('parcels', { type: 'geojson', data: { type: 'FeatureCollection', features: parcels } });
-      map.addLayer({
-        id: 'parcels-polygons',
-        type: 'fill',
-        source: 'parcels',
-        paint: {
-          'fill-color': '#f5021b',
-          'fill-opacity': 0.3
-        }
-      });
-  
-      map.addSource('centroids', { type: 'geojson', data: { type: 'FeatureCollection', features: parcelCentroids } });
-      map.addLayer({
-        id: 'centroids-points',
-        type: 'circle',
-        source: 'centroids',
-        paint: {
-          'circle-radius': 5,
-          'circle-color': '#E91E63'
-        }
-      });
-  
-      map.addSource('amenities', { type: 'geojson', data: { type: 'FeatureCollection', features: amenities } });
-      map.addLayer({
-        id: 'amenities-points',
-        type: 'circle',
-        source: 'amenities',
-        paint: {
-          'circle-radius': 5,
-          'circle-color': [
-            'match',
-            ['get', 'Kategori'],
-            'Okullar', '#2196F3',
-            'Parklar', '#4CAF50',
-            'Raylı Sistem Durakları', '#FF9800',
-            'Su Kaynakları', '#00BCD4',
-            /* default */ '#9E9E9E'
-          ]
-        }
-      });
-  
-      // Aktif merkez koordinatını koruyarak spider'ı güncelle
-      const center = map.getCenter();
-      updateSpider([center.lng, center.lat]);
-    });
-  });
-  
-  
-
 let parcels = [];
 let parcelCentroids = [];
 let amenities = [];
@@ -101,10 +45,22 @@ function updateSpider(center) {
   clearVisuals();
 
   const centerPoint = turf.point(center);
-  const nearest = amenities.map(f => ({
+  const maxDistance = parseFloat(document.getElementById('distanceInput').value || '0') / 1000;
+  let count = document.getElementById('lineCountSelect').value;
+
+  let nearest = amenities.map(f => ({
     feature: f,
     dist: turf.distance(centerPoint, f, { units: 'kilometers' })
-  })).sort((a, b) => a.dist - b.dist).slice(0, 5);
+  }));
+
+  if (!isNaN(maxDistance) && maxDistance > 0) {
+    nearest = nearest.filter(e => e.dist <= maxDistance);
+  }
+
+  nearest.sort((a, b) => a.dist - b.dist);
+  if (count !== 'all') {
+    nearest = nearest.slice(0, parseInt(count));
+  }
 
   nearest.forEach((entry, i) => {
     const coords = [center, entry.feature.geometry.coordinates];
@@ -216,14 +172,63 @@ map.on('load', () => {
       }
     });
 
-
     const startCenter = parcelCentroids[proximityOrder[currentIndex]].geometry.coordinates;
     map.flyTo({ center: startCenter });
     updateSpider(startCenter);
   });
 });
 
-// Klavye ile gezinme (A/D tuşları)
+document.getElementById('styleSwitcher').addEventListener('change', function () {
+  const selectedStyle = this.value;
+  map.setStyle(selectedStyle);
+
+  map.once('styledata', () => {
+    map.addSource('parcels', { type: 'geojson', data: { type: 'FeatureCollection', features: parcels } });
+    map.addLayer({
+      id: 'parcels-polygons',
+      type: 'fill',
+      source: 'parcels',
+      paint: {
+        'fill-color': '#f5021b',
+        'fill-opacity': 0.3
+      }
+    });
+
+    map.addSource('centroids', { type: 'geojson', data: { type: 'FeatureCollection', features: parcelCentroids } });
+    map.addLayer({
+      id: 'centroids-points',
+      type: 'circle',
+      source: 'centroids',
+      paint: {
+        'circle-radius': 5,
+        'circle-color': '#E91E63'
+      }
+    });
+
+    map.addSource('amenities', { type: 'geojson', data: { type: 'FeatureCollection', features: amenities } });
+    map.addLayer({
+      id: 'amenities-points',
+      type: 'circle',
+      source: 'amenities',
+      paint: {
+        'circle-radius': 5,
+        'circle-color': [
+          'match',
+          ['get', 'Kategori'],
+          'Okullar', '#2196F3',
+          'Parklar', '#4CAF50',
+          'Raylı Sistem Durakları', '#FF9800',
+          'Su Kaynakları', '#00BCD4',
+          /* default */ '#9E9E9E'
+        ]
+      }
+    });
+
+    const center = map.getCenter();
+    updateSpider([center.lng, center.lat]);
+  });
+});
+
 window.addEventListener('keydown', e => {
   if (e.key === 'd' || e.key === 'D') {
     currentIndex = (currentIndex + 1) % proximityOrder.length;
@@ -232,13 +237,11 @@ window.addEventListener('keydown', e => {
   } else if (!['ArrowUp','ArrowDown','ArrowLeft','ArrowRight'].includes(e.key)) {
     return;
   }
-
   const newCenter = parcelCentroids[proximityOrder[currentIndex]].geometry.coordinates;
   map.flyTo({ center: newCenter });
   updateSpider(newCenter);
 });
 
-// Hover ve pan ile spider güncelleme
 function getNearestCentroidIndex(lngLat) {
   let minDist = Infinity;
   let nearest = 0;
@@ -266,27 +269,25 @@ map.on('move', () => {
   updateSpider(nearestCenter);
 });
 
-// Sağ tıkla özellik popup'ı
 map.on('contextmenu', (e) => {
-    const features = map.queryRenderedFeatures(e.point, {
-      layers: ['centroids-points', 'amenities-points']
-    });
-  
-    if (features.length > 0) {
-      const props = features[0].properties;
-      const content = Object.entries(props)
-        .map(([k, v]) => `<b>${k}</b>: ${v}`)
-        .join('<br>');
-      
-      new mapboxgl.Popup()
-        .setLngLat(e.lngLat)
-        .setHTML(content)
-        .addTo(map);
-    } else {
-      new mapboxgl.Popup()
-        .setLngLat(e.lngLat)
-        .setHTML('Yakında veri bulunamadı.')
-        .addTo(map);
-    }
+  const features = map.queryRenderedFeatures(e.point, {
+    layers: ['centroids-points', 'amenities-points']
   });
-  
+
+  if (features.length > 0) {
+    const props = features[0].properties;
+    const content = Object.entries(props)
+      .map(([k, v]) => `<b>${k}</b>: ${v}`)
+      .join('<br>');
+
+    new mapboxgl.Popup()
+      .setLngLat(e.lngLat)
+      .setHTML(content)
+      .addTo(map);
+  } else {
+    new mapboxgl.Popup()
+      .setLngLat(e.lngLat)
+      .setHTML('Yakında veri bulunamadı.')
+      .addTo(map);
+  }
+});
