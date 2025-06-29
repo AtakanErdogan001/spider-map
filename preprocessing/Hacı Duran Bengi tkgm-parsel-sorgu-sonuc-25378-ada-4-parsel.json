@@ -1,0 +1,3 @@
+{"type":"FeatureCollection", "features": [
+{"type":"Feature","geometry":{"type":"Polygon","coordinates":[[[27.18028,38.45643],[27.18053,38.45641],[27.1808,38.45639],[27.18081,38.45643],[27.18073,38.45662],[27.18034,38.45664],[27.18031,38.45665],[27.18028,38.45643]]]},"properties":{"name":"Salhane Mahallesi 25378-ada-4-parsel","İl":"İzmir","İlçe":"Bayraklı","Mahalle":"Salhane","Ada":"25378","ParselNo":"4","Alan":"1.052,00","Pafta":"25N3c","Nitelik":"Arsa","Mevkii":""}}
+]}

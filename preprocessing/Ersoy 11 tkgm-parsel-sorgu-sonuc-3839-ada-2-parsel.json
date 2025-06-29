@@ -1,0 +1,3 @@
+{"type":"FeatureCollection", "features": [
+{"type":"Feature","geometry":{"type":"Polygon","coordinates":[[[27.19874,38.46584],[27.19931,38.46581],[27.1993,38.46607],[27.19868,38.4661],[27.19874,38.46584]]]},"properties":{"name":"Manavkuyu Mahallesi 3839-ada-2-parsel","İl":"İzmir","İlçe":"Bayraklı","Mahalle":"Manavkuyu","Ada":"3839","ParselNo":"2","Alan":"1.500,00","Pafta":"18","Nitelik":"Arsa","Mevkii":""}}
+]}

@@ -1,0 +1,3 @@
+{"type":"FeatureCollection", "features": [
+{"type":"Feature","geometry":{"type":"Polygon","coordinates":[[[27.19081,38.45455],[27.19094,38.45421],[27.19141,38.45433],[27.19122,38.45468],[27.19081,38.45455]]]},"properties":{"name":"Mansuroğlu Mahallesi 70-ada-398-parsel","İl":"İzmir","İlçe":"Bayraklı","Mahalle":"Mansuroğlu","Ada":"70","ParselNo":"398","Alan":"1.650,00","Pafta":"11","Nitelik":"Arsa","Mevkii":""}}
+]}

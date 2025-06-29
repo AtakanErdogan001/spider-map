@@ -1,0 +1,64 @@
+/* Sayfa genel ayarları */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f8f8;
+  }
+  
+  /* Harita görünümünü kaplayan tam ekran */
+  #map {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+  }
+  
+  /* Style Switcher Dropdown */
+  #styleSwitcher {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 10;
+    padding: 6px 10px;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Hover efekti */
+  #styleSwitcher:hover {
+    border-color: #888;
+  }
+  
+  /* Başlık eklemek istersen */
+  #title {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 10;
+    background-color: rgba(255, 255, 255, 0.85);
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 16px;
+  }
+  
+  /* Mobil uyumluluk */
+  @media (max-width: 600px) {
+    #styleSwitcher {
+      top: auto;
+      bottom: 10px;
+      left: 10px;
+    }
+  
+    #title {
+      top: auto;
+      bottom: 10px;
+      right: 10px;
+      font-size: 14px;
+    }
+  }
+  

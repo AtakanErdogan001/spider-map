@@ -1,0 +1,599 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              27.19874,
+              38.46584
+            ],
+            [
+              27.19931,
+              38.46581
+            ],
+            [
+              27.1993,
+              38.46607
+            ],
+            [
+              27.19868,
+              38.4661
+            ],
+            [
+              27.19874,
+              38.46584
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "Manavkuyu Mahallesi 3839-ada-2-parsel",
+        "İl": "İzmir",
+        "İlçe": "Bayraklı",
+        "Mahalle": "Manavkuyu",
+        "Ada": "3839",
+        "ParselNo": "2",
+        "Alan": "1.500,00",
+        "Pafta": "18",
+        "Nitelik": "Arsa",
+        "Mevkii": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              27.1911,
+              38.45505
+            ],
+            [
+              27.19129,
+              38.45511
+            ],
+            [
+              27.19115,
+              38.45535
+            ],
+            [
+              27.19078,
+              38.45519
+            ],
+            [
+              27.19088,
+              38.45494
+            ],
+            [
+              27.1911,
+              38.45505
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "Mansuroğlu Mahallesi 70-ada-34-parsel",
+        "İl": "İzmir",
+        "İlçe": "Bayraklı",
+        "Mahalle": "Mansuroğlu",
+        "Ada": "70",
+        "ParselNo": "34",
+        "Alan": "1.078,00",
+        "Pafta": "11",
+        "Nitelik": "Arsa",
+        "Mevkii": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              27.18028,
+              38.45643
+            ],
+            [
+              27.18053,
+              38.45641
+            ],
+            [
+              27.1808,
+              38.45639
+            ],
+            [
+              27.18081,
+              38.45643
+            ],
+            [
+              27.18073,
+              38.45662
+            ],
+            [
+              27.18034,
+              38.45664
+            ],
+            [
+              27.18031,
+              38.45665
+            ],
+            [
+              27.18028,
+              38.45643
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "Salhane Mahallesi 25378-ada-4-parsel",
+        "İl": "İzmir",
+        "İlçe": "Bayraklı",
+        "Mahalle": "Salhane",
+        "Ada": "25378",
+        "ParselNo": "4",
+        "Alan": "1.052,00",
+        "Pafta": "25N3c",
+        "Nitelik": "Arsa",
+        "Mevkii": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              27.19198,
+              38.4671
+            ],
+            [
+              27.19262,
+              38.46724
+            ],
+            [
+              27.19251,
+              38.46762
+            ],
+            [
+              27.19195,
+              38.46762
+            ],
+            [
+              27.1919,
+              38.46761
+            ],
+            [
+              27.19198,
+              38.4671
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "Osmangazi Mahallesi 255-ada-5-parsel",
+        "İl": "İzmir",
+        "İlçe": "Bayraklı",
+        "Mahalle": "Osmangazi",
+        "Ada": "255",
+        "ParselNo": "5",
+        "Alan": "2.816,00",
+        "Pafta": "31 J Iı C",
+        "Nitelik": "Arsa",
+        "Mevkii": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              27.18877,
+              38.45732
+            ],
+            [
+              27.18887,
+              38.45696
+            ],
+            [
+              27.18928,
+              38.45703
+            ],
+            [
+              27.18918,
+              38.45739
+            ],
+            [
+              27.18877,
+              38.45732
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "Mansuroğlu Mahallesi 3959-ada-3-parsel",
+        "İl": "İzmir",
+        "İlçe": "Bayraklı",
+        "Mahalle": "Mansuroğlu",
+        "Ada": "3959",
+        "ParselNo": "3",
+        "Alan": "1.500,00",
+        "Pafta": "11/3",
+        "Nitelik": "Arsa",
+        "Mevkii": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              27.19669,
+              38.46615
+            ],
+            [
+              27.19675,
+              38.46579
+            ],
+            [
+              27.19681,
+              38.46578
+            ],
+            [
+              27.19693,
+              38.46579
+            ],
+            [
+              27.19696,
+              38.46583
+            ],
+            [
+              27.19701,
+              38.46588
+            ],
+            [
+              27.19712,
+              38.466
+            ],
+            [
+              27.19721,
+              38.46612
+            ],
+            [
+              27.19728,
+              38.46618
+            ],
+            [
+              27.19669,
+              38.46615
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "Manavkuyu Mahallesi 3838-ada-2-parsel",
+        "İl": "İzmir",
+        "İlçe": "Bayraklı",
+        "Mahalle": "Manavkuyu",
+        "Ada": "3838",
+        "ParselNo": "2",
+        "Alan": "1.379,00",
+        "Pafta": "",
+        "Nitelik": "Arsa",
+        "Mevkii": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              27.18526,
+              38.45372
+            ],
+            [
+              27.18526,
+              38.4536
+            ],
+            [
+              27.1853,
+              38.4534
+            ],
+            [
+              27.18612,
+              38.45352
+            ],
+            [
+              27.18604,
+              38.45383
+            ],
+            [
+              27.18597,
+              38.45382
+            ],
+            [
+              27.18586,
+              38.4538
+            ],
+            [
+              27.18574,
+              38.45378
+            ],
+            [
+              27.18563,
+              38.45377
+            ],
+            [
+              27.18552,
+              38.45375
+            ],
+            [
+              27.1854,
+              38.45374
+            ],
+            [
+              27.18526,
+              38.45372
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "Mansuroğlu Mahallesi 8016-ada-1-parsel",
+        "İl": "İzmir",
+        "İlçe": "Bayraklı",
+        "Mahalle": "Mansuroğlu",
+        "Ada": "8016",
+        "ParselNo": "1",
+        "Alan": "2.529,24",
+        "Pafta": "24 N Iı B",
+        "Nitelik": "Arsa",
+        "Mevkii": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              27.18566,
+              38.45819
+            ],
+            [
+              27.18612,
+              38.45775
+            ],
+            [
+              27.18663,
+              38.45798
+            ],
+            [
+              27.1866,
+              38.45813
+            ],
+            [
+              27.18652,
+              38.45851
+            ],
+            [
+              27.1865,
+              38.4585
+            ],
+            [
+              27.18646,
+              38.45848
+            ],
+            [
+              27.18586,
+              38.45829
+            ],
+            [
+              27.18566,
+              38.45819
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "Manavkuyu Mahallesi 3798-ada-1-parsel",
+        "İl": "İzmir",
+        "İlçe": "Bayraklı",
+        "Mahalle": "Manavkuyu",
+        "Ada": "3798",
+        "ParselNo": "1",
+        "Alan": "4.087,00",
+        "Pafta": "25N Iııc",
+        "Nitelik": "Arsa",
+        "Mevkii": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              27.19081,
+              38.45455
+            ],
+            [
+              27.19094,
+              38.45421
+            ],
+            [
+              27.19141,
+              38.45433
+            ],
+            [
+              27.19122,
+              38.45468
+            ],
+            [
+              27.19081,
+              38.45455
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "Mansuroğlu Mahallesi 70-ada-398-parsel",
+        "İl": "İzmir",
+        "İlçe": "Bayraklı",
+        "Mahalle": "Mansuroğlu",
+        "Ada": "70",
+        "ParselNo": "398",
+        "Alan": "1.650,00",
+        "Pafta": "11",
+        "Nitelik": "Arsa",
+        "Mevkii": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              27.1934,
+              38.46786
+            ],
+            [
+              27.19329,
+              38.46751
+            ],
+            [
+              27.19389,
+              38.46739
+            ],
+            [
+              27.19401,
+              38.46773
+            ],
+            [
+              27.1934,
+              38.46786
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "Osmangazi Mahallesi 256-ada-82-parsel",
+        "İl": "İzmir",
+        "İlçe": "Bayraklı",
+        "Mahalle": "Osmangazi",
+        "Ada": "256",
+        "ParselNo": "82",
+        "Alan": "2.141,00",
+        "Pafta": "31",
+        "Nitelik": "Arsa",
+        "Mevkii": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              27.19078,
+              38.4641
+            ],
+            [
+              27.19059,
+              38.46399
+            ],
+            [
+              27.19053,
+              38.46396
+            ],
+            [
+              27.19049,
+              38.46392
+            ],
+            [
+              27.19064,
+              38.46379
+            ],
+            [
+              27.1907,
+              38.46373
+            ],
+            [
+              27.19082,
+              38.46355
+            ],
+            [
+              27.19086,
+              38.46344
+            ],
+            [
+              27.19088,
+              38.46333
+            ],
+            [
+              27.19084,
+              38.46325
+            ],
+            [
+              27.19081,
+              38.46319
+            ],
+            [
+              27.19075,
+              38.46318
+            ],
+            [
+              27.19077,
+              38.46316
+            ],
+            [
+              27.19079,
+              38.46315
+            ],
+            [
+              27.19092,
+              38.46305
+            ],
+            [
+              27.19138,
+              38.46324
+            ],
+            [
+              27.19078,
+              38.4641
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "Manavkuyu Mahallesi 67-ada-29-parsel",
+        "İl": "İzmir",
+        "İlçe": "Bayraklı",
+        "Mahalle": "Manavkuyu",
+        "Ada": "67",
+        "ParselNo": "29",
+        "Alan": "3.515,00",
+        "Pafta": "15/3",
+        "Nitelik": "Arsa",
+        "Mevkii": ""
+      }
+    }
+  ]
+}

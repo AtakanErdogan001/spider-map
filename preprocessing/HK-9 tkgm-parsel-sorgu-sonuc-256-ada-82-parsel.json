@@ -1,0 +1,3 @@
+{"type":"FeatureCollection", "features": [
+{"type":"Feature","geometry":{"type":"Polygon","coordinates":[[[27.1934,38.46786],[27.19329,38.46751],[27.19389,38.46739],[27.19401,38.46773],[27.1934,38.46786]]]},"properties":{"name":"Osmangazi Mahallesi 256-ada-82-parsel","İl":"İzmir","İlçe":"Bayraklı","Mahalle":"Osmangazi","Ada":"256","ParselNo":"82","Alan":"2.141,00","Pafta":"31","Nitelik":"Arsa","Mevkii":""}}
+]}

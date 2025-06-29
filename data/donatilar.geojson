@@ -1,0 +1,3252 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.1856258,
+          38.4650875
+        ]
+      },
+      "properties": {
+        "YKN": 224411,
+        "Kategori": "Belediye Binaları",
+        "Ad": "BAYRAKLI Belediyesi",
+        "Uzaklık (m)": "793.18",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.1811334,
+          38.4553854
+        ]
+      },
+      "properties": {
+        "YKN": 224411,
+        "Kategori": "Kültürel Miras (Köşk, Çeşme vb.)",
+        "Ad": "Ghandi Büstü",
+        "Uzaklık (m)": "416.36",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.184022,
+          38.4562715
+        ]
+      },
+      "properties": {
+        "YKN": 224411,
+        "Kategori": "Kültürel Miras (Köşk, Çeşme vb.)",
+        "Ad": "Şehit Hakan Ünal Parkı",
+        "Uzaklık (m)": "432.5",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.184026976711305,
+          38.45614338651237
+        ]
+      },
+      "properties": {
+        "YKN": 224411,
+        "Kategori": "Kültürel Miras (Köşk, Çeşme vb.)",
+        "Ad": "Şehit Hakan Ünal Parkı",
+        "Uzaklık (m)": "443.28",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.1819923,
+          38.4543929
+        ]
+      },
+      "properties": {
+        "YKN": 224411,
+        "Kategori": "Kültürel Miras (Köşk, Çeşme vb.)",
+        "Ad": "Zeki Müren Parkı",
+        "Uzaklık (m)": "537.47",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.1885627,
+          38.4538876
+        ]
+      },
+      "properties": {
+        "YKN": 224411,
+        "Kategori": "Kültürel Miras (Köşk, Çeşme vb.)",
+        "Ad": "Fethi Sekin Monument",
+        "Uzaklık (m)": "903.1",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.171828196759662,
+          38.4635568554463
+        ]
+      },
+      "properties": {
+        "YKN": 224411,
+        "Kategori": "Kültürel Miras (Köşk, Çeşme vb.)",
+        "Ad": "Bayraklı Höyüğü",
+        "Uzaklık (m)": "913.19",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.18451095,
+          38.45760195
+        ]
+      },
+      "properties": {
+        "YKN": 224411,
+        "Kategori": "Okullar",
+        "Ad": "Attaroğlu İlköğretim Okulu",
+        "Uzaklık (m)": "377.71",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.1807943,
+          38.4544267
+        ]
+      },
+      "properties": {
+        "YKN": 224411,
+        "Kategori": "Okullar",
+        "Ad": "İsimsiz",
+        "Uzaklık (m)": "520.69",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.1801553,
+          38.4646028
+        ]
+      },
+      "properties": {
+        "YKN": 224411,
+        "Kategori": "Okullar",
+        "Ad": "Fatma Hikmet Kaşerci Ortaokulu",
+        "Uzaklık (m)": "610.53",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.180316652909823,
+          38.464649762219665
+        ]
+      },
+      "properties": {
+        "YKN": 224411,
+        "Kategori": "Okullar",
+        "Ad": "Mehmet Akif Ersoy Anadolu Lisesi",
+        "Uzaklık (m)": "614.93",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.17585339745989,
+          38.465398668104314
+        ]
+      },
+      "properties": {
+        "YKN": 224411,
+        "Kategori": "Okullar",
+        "Ad": "İsimsiz",
+        "Uzaklık (m)": "812.78",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.18598234533358,
+          38.453031144329266
+        ]
+      },
+      "properties": {
+        "YKN": 224411,
+        "Kategori": "Okullar",
+        "Ad": "İsimsiz",
+        "Uzaklık (m)": "820.98",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.184416805445203,
+          38.45132804401546
+        ]
+      },
+      "properties": {
+        "YKN": 224411,
+        "Kategori": "Okullar",
+        "Ad": "Halide Edip Adıvar Anadolu Lisesi",
+        "Uzaklık (m)": "925.34",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.183930929303532,
+          38.467608756063285
+        ]
+      },
+      "properties": {
+        "YKN": 224411,
+        "Kategori": "Okullar",
+        "Ad": "Ertuğrul Gazi İmam Hatip Ortaokulu",
+        "Uzaklık (m)": "985.67",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.18457095836205,
+          38.46753189411514
+        ]
+      },
+      "properties": {
+        "YKN": 224411,
+        "Kategori": "Okullar",
+        "Ad": "Osman Çınar Ortaokulu",
+        "Uzaklık (m)": "995.38",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.181957391042,
+          38.4585153217045
+        ]
+      },
+      "properties": {
+        "YKN": 224411,
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "Uzaklık (m)": "133.25",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.18105786671122,
+          38.46096170892779
+        ]
+      },
+      "properties": {
+        "YKN": 224411,
+        "Kategori": "Parklar",
+        "Ad": "Şehit Bülent Kıyanç Parkı",
+        "Uzaklık (m)": "208.2",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.18350399003055,
+          38.459868925516346
+        ]
+      },
+      "properties": {
+        "YKN": 224411,
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "Uzaklık (m)": "263.96",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.177596237230418,
+          38.45972730767037
+        ]
+      },
+      "properties": {
+        "YKN": 224411,
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "Uzaklık (m)": "273.81",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.177496603085842,
+          38.460058275639966
+        ]
+      },
+      "properties": {
+        "YKN": 224411,
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "Uzaklık (m)": "293.26",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.17675533068902,
+          38.45973768903882
+        ]
+      },
+      "properties": {
+        "YKN": 224411,
+        "Kategori": "Parklar",
+        "Ad": "Egzersiz Alanı",
+        "Uzaklık (m)": "345.63",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.184693221166402,
+          38.45873610076873
+        ]
+      },
+      "properties": {
+        "YKN": 224411,
+        "Kategori": "Parklar",
+        "Ad": "Barış Manço Parkı",
+        "Uzaklık (m)": "356.67",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.18445816187122,
+          38.46049586421086
+        ]
+      },
+      "properties": {
+        "YKN": 224411,
+        "Kategori": "Parklar",
+        "Ad": "Şht. Piyade. Atğm. Bilal Çakırcalı Parkı",
+        "Uzaklık (m)": "367.14",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.183282841482786,
+          38.45593142461254
+        ]
+      },
+      "properties": {
+        "YKN": 224411,
+        "Kategori": "Parklar",
+        "Ad": "Hakan Ünal Parkı",
+        "Uzaklık (m)": "422.31",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.184098182062215,
+          38.45608690885394
+        ]
+      },
+      "properties": {
+        "YKN": 224411,
+        "Kategori": "Parklar",
+        "Ad": "Şehit Hakan Ünal Parkı",
+        "Uzaklık (m)": "452.1",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.175961732710526,
+          38.46110609410037
+        ]
+      },
+      "properties": {
+        "YKN": 224411,
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "Uzaklık (m)": "463.91",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.18565669018249,
+          38.45742201073952
+        ]
+      },
+      "properties": {
+        "YKN": 224411,
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "Uzaklık (m)": "476.9",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.18617026666666,
+          38.46008363333333
+        ]
+      },
+      "properties": {
+        "YKN": 224411,
+        "Kategori": "Parklar",
+        "Ad": "Dinlenme Alanı",
+        "Uzaklık (m)": "494.89",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.17496157697367,
+          38.46040225985846
+        ]
+      },
+      "properties": {
+        "YKN": 224411,
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "Uzaklık (m)": "515.4",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.182405741730253,
+          38.454648613383036
+        ]
+      },
+      "properties": {
+        "YKN": 224411,
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "Uzaklık (m)": "519.39",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.179730102485347,
+          38.46379172906129
+        ]
+      },
+      "properties": {
+        "YKN": 224411,
+        "Kategori": "Parklar",
+        "Ad": "Çocuk Parkı",
+        "Uzaklık (m)": "525.04",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.186705671807722,
+          38.458814163101
+        ]
+      },
+      "properties": {
+        "YKN": 224411,
+        "Kategori": "Parklar",
+        "Ad": "Şehit Piyade Kom. Tgm. M. Aslantürk Parkı",
+        "Uzaklık (m)": "530.88",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.18562847457558,
+          38.46197463912306
+        ]
+      },
+      "properties": {
+        "YKN": 224411,
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "Uzaklık (m)": "539.1",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.184539472943985,
+          38.46309368462791
+        ]
+      },
+      "properties": {
+        "YKN": 224411,
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "Uzaklık (m)": "557.76",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.186546634864442,
+          38.456715279629016
+        ]
+      },
+      "properties": {
+        "YKN": 224411,
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "Uzaklık (m)": "580.7",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.181903728205025,
+          38.453976226319895
+        ]
+      },
+      "properties": {
+        "YKN": 224411,
+        "Kategori": "Parklar",
+        "Ad": "Zeki Müren Parkı",
+        "Uzaklık (m)": "581.16",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.17487702231939,
+          38.461770603313084
+        ]
+      },
+      "properties": {
+        "YKN": 224411,
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "Uzaklık (m)": "582.62",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.17448780155754,
+          38.461276028122406
+        ]
+      },
+      "properties": {
+        "YKN": 224411,
+        "Kategori": "Parklar",
+        "Ad": "Çocuk Parkı",
+        "Uzaklık (m)": "587.72",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.178996522020864,
+          38.464315589760425
+        ]
+      },
+      "properties": {
+        "YKN": 224411,
+        "Kategori": "Parklar",
+        "Ad": "Çocuk Parkı",
+        "Uzaklık (m)": "594.67",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.186812928911937,
+          38.4568407152905
+        ]
+      },
+      "properties": {
+        "YKN": 224411,
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "Uzaklık (m)": "595.41",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.174328552901443,
+          38.461431794737386
+        ]
+      },
+      "properties": {
+        "YKN": 224411,
+        "Kategori": "Parklar",
+        "Ad": "Çocuk Parkı",
+        "Uzaklık (m)": "607.55",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.180920889213038,
+          38.46480975027017
+        ]
+      },
+      "properties": {
+        "YKN": 224411,
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "Uzaklık (m)": "632.55",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.174055767913494,
+          38.461845736827
+        ]
+      },
+      "properties": {
+        "YKN": 224411,
+        "Kategori": "Parklar",
+        "Ad": "Yeşil Alan",
+        "Uzaklık (m)": "649.33",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.184511385979885,
+          38.46427457001531
+        ]
+      },
+      "properties": {
+        "YKN": 224411,
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "Uzaklık (m)": "665.11",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.187981144985038,
+          38.46121395047404
+        ]
+      },
+      "properties": {
+        "YKN": 224411,
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "Uzaklık (m)": "682.14",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.188638681737505,
+          38.459257549675584
+        ]
+      },
+      "properties": {
+        "YKN": 224411,
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "Uzaklık (m)": "698.72",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.177329950000004,
+          38.465000950000004
+        ]
+      },
+      "properties": {
+        "YKN": 224411,
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "Uzaklık (m)": "714.15",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.18648768895989,
+          38.46377048547192
+        ]
+      },
+      "properties": {
+        "YKN": 224411,
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "Uzaklık (m)": "726.55",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.18546604144869,
+          38.45365974190718
+        ]
+      },
+      "properties": {
+        "YKN": 224411,
+        "Kategori": "Parklar",
+        "Ad": "Sakarya Caddesi Parkı",
+        "Uzaklık (m)": "737.96",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.18768700482036,
+          38.45537134266142
+        ]
+      },
+      "properties": {
+        "YKN": 224411,
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "Uzaklık (m)": "742.69",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.18932274966258,
+          38.45970431472175
+        ]
+      },
+      "properties": {
+        "YKN": 224411,
+        "Kategori": "Parklar",
+        "Ad": "Muammer Aksoy Parkı",
+        "Uzaklık (m)": "761.05",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.18649507227592,
+          38.46437178218745
+        ]
+      },
+      "properties": {
+        "YKN": 224411,
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "Uzaklık (m)": "775.86",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.172255187648457,
+          38.461904891963336
+        ]
+      },
+      "properties": {
+        "YKN": 224411,
+        "Kategori": "Parklar",
+        "Ad": "Yeşil Alan",
+        "Uzaklık (m)": "794.26",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.188492474764534,
+          38.462804030721756
+        ]
+      },
+      "properties": {
+        "YKN": 224411,
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "Uzaklık (m)": "798.68",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.188884516767597,
+          38.46230289998231
+        ]
+      },
+      "properties": {
+        "YKN": 224411,
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "Uzaklık (m)": "802.21",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.17738579500647,
+          38.46627402709274
+        ]
+      },
+      "properties": {
+        "YKN": 224411,
+        "Kategori": "Parklar",
+        "Ad": "Çocuk Parkı",
+        "Uzaklık (m)": "843.71",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.18419086742604,
+          38.46624451261685
+        ]
+      },
+      "properties": {
+        "YKN": 224411,
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "Uzaklık (m)": "850",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.181076381298276,
+          38.4667794941377
+        ]
+      },
+      "properties": {
+        "YKN": 224411,
+        "Kategori": "Parklar",
+        "Ad": "Çocuk Parkı",
+        "Uzaklık (m)": "851.59",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.178889828183827,
+          38.46666489567596
+        ]
+      },
+      "properties": {
+        "YKN": 224411,
+        "Kategori": "Parklar",
+        "Ad": "Yeşil Alan",
+        "Uzaklık (m)": "851.73",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.18952653333333,
+          38.4558233
+        ]
+      },
+      "properties": {
+        "YKN": 224411,
+        "Kategori": "Parklar",
+        "Ad": "75.Yıl Parkı",
+        "Uzaklık (m)": "857.81",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.17688238537335,
+          38.4663728945367
+        ]
+      },
+      "properties": {
+        "YKN": 224411,
+        "Kategori": "Parklar",
+        "Ad": "Çocuk Parkı",
+        "Uzaklık (m)": "869.63",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.182766366666666,
+          38.466780299999996
+        ]
+      },
+      "properties": {
+        "YKN": 224411,
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "Uzaklık (m)": "870.9",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.188732262364482,
+          38.46414618222174
+        ]
+      },
+      "properties": {
+        "YKN": 224411,
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "Uzaklık (m)": "900.68",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.177991180342563,
+          38.46704979816104
+        ]
+      },
+      "properties": {
+        "YKN": 224411,
+        "Kategori": "Parklar",
+        "Ad": "Çocuk Parkı",
+        "Uzaklık (m)": "910.46",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.18828602180992,
+          38.46501031975482
+        ]
+      },
+      "properties": {
+        "YKN": 224411,
+        "Kategori": "Parklar",
+        "Ad": "Bayraklı Skate Park",
+        "Uzaklık (m)": "934.89",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.18540897337978,
+          38.46703986758253
+        ]
+      },
+      "properties": {
+        "YKN": 224411,
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "Uzaklık (m)": "973.29",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.188782374328415,
+          38.45309192963447
+        ]
+      },
+      "properties": {
+        "YKN": 224411,
+        "Kategori": "Parklar",
+        "Ad": "Şehit Fethi Sekin Parkı",
+        "Uzaklık (m)": "976.12",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.18632685076534,
+          38.46729071559552
+        ]
+      },
+      "properties": {
+        "YKN": 224411,
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "Uzaklık (m)": "1034.52",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.176860166666668,
+          38.46797386666666
+        ]
+      },
+      "properties": {
+        "YKN": 224411,
+        "Kategori": "Parklar",
+        "Ad": "Dinlenme ve Çocuk Parkı",
+        "Uzaklık (m)": "1037.03",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.186151895803167,
+          38.46797368910366
+        ]
+      },
+      "properties": {
+        "YKN": 224411,
+        "Kategori": "Parklar",
+        "Ad": "Ahmet Taner Kışlalı Parkı",
+        "Uzaklık (m)": "1094.82",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.1888862,
+          38.4681158
+        ]
+      },
+      "properties": {
+        "YKN": 224411,
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "Uzaklık (m)": "1231.52",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.1821729,
+          38.4562718
+        ]
+      },
+      "properties": {
+        "YKN": 224411,
+        "Kategori": "Sağlık Kurumları",
+        "Ad": "Bornova Ceren Eczanesi",
+        "Uzaklık (m)": "343.03",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.177122,
+          38.4575445
+        ]
+      },
+      "properties": {
+        "YKN": 224411,
+        "Kategori": "Sağlık Kurumları",
+        "Ad": "Yeni Atalay Eczanesi",
+        "Uzaklık (m)": "352.79",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.1839265,
+          38.4566432
+        ]
+      },
+      "properties": {
+        "YKN": 224411,
+        "Kategori": "Sağlık Kurumları",
+        "Ad": "İsimsiz",
+        "Uzaklık (m)": "397.3",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.175793,
+          38.4586628
+        ]
+      },
+      "properties": {
+        "YKN": 224411,
+        "Kategori": "Sağlık Kurumları",
+        "Ad": "Tan Eczanesi",
+        "Uzaklık (m)": "425.64",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.1787688,
+          38.4552688
+        ]
+      },
+      "properties": {
+        "YKN": 224411,
+        "Kategori": "Sağlık Kurumları",
+        "Ad": "Atalay Eczanesi",
+        "Uzaklık (m)": "457.06",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.1825366,
+          38.4537135
+        ]
+      },
+      "properties": {
+        "YKN": 224411,
+        "Kategori": "Sağlık Kurumları",
+        "Ad": "Şirin Eczanesi",
+        "Uzaklık (m)": "622.21",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.187198402124423,
+          38.461362339198885
+        ]
+      },
+      "properties": {
+        "YKN": 224411,
+        "Kategori": "Sağlık Kurumları",
+        "Ad": "Türk Kızılayı",
+        "Uzaklık (m)": "624.75",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.1826154,
+          38.4535847
+        ]
+      },
+      "properties": {
+        "YKN": 224411,
+        "Kategori": "Sağlık Kurumları",
+        "Ad": "Çakıroğlu Eczanesi",
+        "Uzaklık (m)": "637.84",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.1826731,
+          38.4534462
+        ]
+      },
+      "properties": {
+        "YKN": 224411,
+        "Kategori": "Sağlık Kurumları",
+        "Ad": "Taç Eczanesi",
+        "Uzaklık (m)": "654",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.1881035,
+          38.4531069
+        ]
+      },
+      "properties": {
+        "YKN": 224411,
+        "Kategori": "Sağlık Kurumları",
+        "Ad": "Özel Kent Bayraklı Tıp Merkezi",
+        "Uzaklık (m)": "932.64",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.177349833333334,
+          38.468091566666665
+        ]
+      },
+      "properties": {
+        "YKN": 224411,
+        "Kategori": "Sağlık Kurumları",
+        "Ad": "Bayraklı 1 No'lu Sağlık Ocağı",
+        "Uzaklık (m)": "1036.81",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.177277671554243,
+          38.460198835599584
+        ]
+      },
+      "properties": {
+        "YKN": 224411,
+        "Kategori": "Su Kaynakları",
+        "Ad": "İsimsiz",
+        "Uzaklık (m)": "316.77",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.18678556734327,
+          38.45682294657106
+        ]
+      },
+      "properties": {
+        "YKN": 224411,
+        "Kategori": "Su Kaynakları",
+        "Ad": "Havuz",
+        "Uzaklık (m)": "594.09",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.187044859915265,
+          38.45680458451252
+        ]
+      },
+      "properties": {
+        "YKN": 224411,
+        "Kategori": "Su Kaynakları",
+        "Ad": "Havuz",
+        "Uzaklık (m)": "615.46",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.178325331462496,
+          38.457954650089306
+        ]
+      },
+      "properties": {
+        "YKN": 224411,
+        "Kategori": "İbadet Alanları",
+        "Ad": "Altınyol Serhat Camii",
+        "Uzaklık (m)": "239.31",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.184004485958226,
+          38.457144257462645
+        ]
+      },
+      "properties": {
+        "YKN": 224411,
+        "Kategori": "İbadet Alanları",
+        "Ad": "İsimsiz",
+        "Uzaklık (m)": "366.56",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.17682476511809,
+          38.46179025579822
+        ]
+      },
+      "properties": {
+        "YKN": 224411,
+        "Kategori": "İbadet Alanları",
+        "Ad": "İsimsiz",
+        "Uzaklık (m)": "445.82",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.1840167475425,
+          38.46309761702617
+        ]
+      },
+      "properties": {
+        "YKN": 224411,
+        "Kategori": "İbadet Alanları",
+        "Ad": "İsimsiz",
+        "Uzaklık (m)": "531.48",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.177736382952016,
+          38.45420004521779
+        ]
+      },
+      "properties": {
+        "YKN": 224411,
+        "Kategori": "İbadet Alanları",
+        "Ad": "Gündoğdu Camii",
+        "Uzaklık (m)": "601.49",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.173694771926186,
+          38.46162262079595
+        ]
+      },
+      "properties": {
+        "YKN": 224411,
+        "Kategori": "İbadet Alanları",
+        "Ad": "Fadıl Sumak Camii",
+        "Uzaklık (m)": "666.64",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.188179033925348,
+          38.461502743938325
+        ]
+      },
+      "properties": {
+        "YKN": 224411,
+        "Kategori": "İbadet Alanları",
+        "Ad": "İsimsiz",
+        "Uzaklık (m)": "709.73",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.173116668968614,
+          38.46765815341382
+        ]
+      },
+      "properties": {
+        "YKN": 224411,
+        "Kategori": "İbadet Alanları",
+        "Ad": "İsimsiz",
+        "Uzaklık (m)": "1153.17",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.191570564301188,
+          38.46361581713692
+        ]
+      },
+      "properties": {
+        "YKN": 229683,
+        "Kategori": "Belediye Binaları",
+        "Ad": "Bayraklı İlçe MEM",
+        "Uzaklık (m)": "592.9",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.18591184884712,
+          38.46947381700708
+        ]
+      },
+      "properties": {
+        "YKN": 229683,
+        "Kategori": "Belediye Binaları",
+        "Ad": "Osmangazi Muhtarlığı",
+        "Uzaklık (m)": "613.87",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.1862061,
+          38.4715169
+        ]
+      },
+      "properties": {
+        "YKN": 229683,
+        "Kategori": "Belediye Binaları",
+        "Ad": "BAYRAKLI HALK EĞİTİM MÜDÜRLÜĞÜ",
+        "Uzaklık (m)": "654.85",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.1856258,
+          38.4650875
+        ]
+      },
+      "properties": {
+        "YKN": 229683,
+        "Kategori": "Belediye Binaları",
+        "Ad": "BAYRAKLI Belediyesi",
+        "Uzaklık (m)": "760.24",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.1848477,
+          38.4725706
+        ]
+      },
+      "properties": {
+        "YKN": 229683,
+        "Kategori": "Belediye Binaları",
+        "Ad": "SOSYAL HİZMETLER",
+        "Uzaklık (m)": "815.02",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.1928201,
+          38.4611215
+        ]
+      },
+      "properties": {
+        "YKN": 229683,
+        "Kategori": "Kültürel Miras (Köşk, Çeşme vb.)",
+        "Ad": "Mustafa Kemal Atatürk Büstü",
+        "Uzaklık (m)": "858.32",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.1989364,
+          38.4625551
+        ]
+      },
+      "properties": {
+        "YKN": 229683,
+        "Kategori": "Kültürel Miras (Köşk, Çeşme vb.)",
+        "Ad": "Mustafa Kemal Atatürk",
+        "Uzaklık (m)": "875.34",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.1905079,
+          38.459965
+        ]
+      },
+      "properties": {
+        "YKN": 229683,
+        "Kategori": "Kültürel Miras (Köşk, Çeşme vb.)",
+        "Ad": "Muammer Aksoy Büstü",
+        "Uzaklık (m)": "1008.55",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.192909349690865,
+          38.46803296004456
+        ]
+      },
+      "properties": {
+        "YKN": 229683,
+        "Kategori": "Okullar",
+        "Ad": "Muzaffer Taşdemir İlköğretim Okulu",
+        "Uzaklık (m)": "91.09",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.19067846652323,
+          38.47170448212797
+        ]
+      },
+      "properties": {
+        "YKN": 229683,
+        "Kategori": "Okullar",
+        "Ad": "Bayraklı Hisar Anadolu İmam Hatip Lisesi",
+        "Uzaklık (m)": "371.21",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.19203265274266,
+          38.46353232202553
+        ]
+      },
+      "properties": {
+        "YKN": 229683,
+        "Kategori": "Okullar",
+        "Ad": "Ömer Özkan İlkokulu",
+        "Uzaklık (m)": "595.53",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.18663066128839,
+          38.47098891422064
+        ]
+      },
+      "properties": {
+        "YKN": 229683,
+        "Kategori": "Okullar",
+        "Ad": "Şehit Uzman Çavuş Ali Akdoğan İlkokulu",
+        "Uzaklık (m)": "596.39",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.186676796774993,
+          38.47173012050415
+        ]
+      },
+      "properties": {
+        "YKN": 229683,
+        "Kategori": "Okullar",
+        "Ad": "Mustafa Çukur Ortaokulu",
+        "Uzaklık (m)": "630.13",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.18636851496919,
+          38.47130876098265
+        ]
+      },
+      "properties": {
+        "YKN": 229683,
+        "Kategori": "Okullar",
+        "Ad": "Osmangazi İlkokulu",
+        "Uzaklık (m)": "631.93",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.197779151293346,
+          38.47336921169247
+        ]
+      },
+      "properties": {
+        "YKN": 229683,
+        "Kategori": "Okullar",
+        "Ad": "İsmet Sezgin Ortaokulu",
+        "Uzaklık (m)": "657.61",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.195632940211098,
+          38.46291859760381
+        ]
+      },
+      "properties": {
+        "YKN": 229683,
+        "Kategori": "Okullar",
+        "Ad": "Fethi Sekin İlkokulu",
+        "Uzaklık (m)": "700.61",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.190414232636716,
+          38.46248882110633
+        ]
+      },
+      "properties": {
+        "YKN": 229683,
+        "Kategori": "Okullar",
+        "Ad": "Çamkıran Ortaokulu",
+        "Uzaklık (m)": "739.11",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.18457095836205,
+          38.46753189411514
+        ]
+      },
+      "properties": {
+        "YKN": 229683,
+        "Kategori": "Okullar",
+        "Ad": "Osman Çınar Ortaokulu",
+        "Uzaklık (m)": "741.68",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.19929983486936,
+          38.47359896141878
+        ]
+      },
+      "properties": {
+        "YKN": 229683,
+        "Kategori": "Okullar",
+        "Ad": "Atatürk Şehit Pilot Yüzbaşı Mehmet İlker KaramanMesleki ve Teknik Anadolu Lisesi",
+        "Uzaklık (m)": "767.62",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.184021908480137,
+          38.46760542241379
+        ]
+      },
+      "properties": {
+        "YKN": 229683,
+        "Kategori": "Okullar",
+        "Ad": "Ertuğrul Gazi İmam Hatip Ortaokulu",
+        "Uzaklık (m)": "787.23",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.19942160190348,
+          38.47413882526157
+        ]
+      },
+      "properties": {
+        "YKN": 229683,
+        "Kategori": "Okullar",
+        "Ad": "Batı Anadolu Çimento İlkokulu",
+        "Uzaklık (m)": "817.28",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.195008661633707,
+          38.461359362054566
+        ]
+      },
+      "properties": {
+        "YKN": 229683,
+        "Kategori": "Okullar",
+        "Ad": "Mustafa Kemal Anadolu Lisesi",
+        "Uzaklık (m)": "851.97",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.1926150944148,
+          38.461125932573296
+        ]
+      },
+      "properties": {
+        "YKN": 229683,
+        "Kategori": "Okullar",
+        "Ad": "Nedret İlhan Keten Ortaokulu",
+        "Uzaklık (m)": "858.17",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.194687814036318,
+          38.461143154074946
+        ]
+      },
+      "properties": {
+        "YKN": 229683,
+        "Kategori": "Okullar",
+        "Ad": "Mustafa Kemal Lisesi",
+        "Uzaklık (m)": "869.97",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.18525543333334,
+          38.47782483333334
+        ]
+      },
+      "properties": {
+        "YKN": 229683,
+        "Kategori": "Okullar",
+        "Ad": "Şehit Eren Bülbül Anadolu İmam Hatip Lisesi",
+        "Uzaklık (m)": "1198.73",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.193448585293883,
+          38.46718794027372
+        ]
+      },
+      "properties": {
+        "YKN": 229683,
+        "Kategori": "Parklar",
+        "Ad": "Dinlenme ve Çocuk Parkı",
+        "Uzaklık (m)": "190.95",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.19596452503792,
+          38.46902003490708
+        ]
+      },
+      "properties": {
+        "YKN": 229683,
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "Uzaklık (m)": "267.94",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.194378713789657,
+          38.46626759830516
+        ]
+      },
+      "properties": {
+        "YKN": 229683,
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "Uzaklık (m)": "314.67",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.18902426280104,
+          38.46839985603433
+        ]
+      },
+      "properties": {
+        "YKN": 229683,
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "Uzaklık (m)": "342.11",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.19552994071081,
+          38.46593850124216
+        ]
+      },
+      "properties": {
+        "YKN": 229683,
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "Uzaklık (m)": "396.64",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.196875106568907,
+          38.46663864022448
+        ]
+      },
+      "properties": {
+        "YKN": 229683,
+        "Kategori": "Parklar",
+        "Ad": "Bornova Çayı Parkı",
+        "Uzaklık (m)": "425.09",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.197821469522424,
+          38.46772142070507
+        ]
+      },
+      "properties": {
+        "YKN": 229683,
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "Uzaklık (m)": "447.37",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.19404511551268,
+          38.464834698024305
+        ]
+      },
+      "properties": {
+        "YKN": 229683,
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "Uzaklık (m)": "457.14",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.192579205504874,
+          38.464146062764264
+        ]
+      },
+      "properties": {
+        "YKN": 229683,
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "Uzaklık (m)": "523.31",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.19786662494896,
+          38.46587354163738
+        ]
+      },
+      "properties": {
+        "YKN": 229683,
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "Uzaklık (m)": "545.14",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.18838871595646,
+          38.46504154933471
+        ]
+      },
+      "properties": {
+        "YKN": 229683,
+        "Kategori": "Parklar",
+        "Ad": "Bayraklı Skate Park",
+        "Uzaklık (m)": "578.08",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.18632685076534,
+          38.46729071559552
+        ]
+      },
+      "properties": {
+        "YKN": 229683,
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "Uzaklık (m)": "599.44",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.186025524383602,
+          38.46854307320045
+        ]
+      },
+      "properties": {
+        "YKN": 229683,
+        "Kategori": "Parklar",
+        "Ad": "Ahmet Taner Kışlalı Parkı",
+        "Uzaklık (m)": "601.07",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.189230459332943,
+          38.46427046180544
+        ]
+      },
+      "properties": {
+        "YKN": 229683,
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "Uzaklık (m)": "601.23",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.198025879496537,
+          38.464957275659884
+        ]
+      },
+      "properties": {
+        "YKN": 229683,
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "Uzaklık (m)": "622.14",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.18540897337978,
+          38.46703986758253
+        ]
+      },
+      "properties": {
+        "YKN": 229683,
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "Uzaklık (m)": "684.19",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.19191593743483,
+          38.46270601542329
+        ]
+      },
+      "properties": {
+        "YKN": 229683,
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "Uzaklık (m)": "687.81",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.198845045048625,
+          38.46443996521851
+        ]
+      },
+      "properties": {
+        "YKN": 229683,
+        "Kategori": "Parklar",
+        "Ad": "Basri Kurtuluş Parkı",
+        "Uzaklık (m)": "713.5",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.18649507227592,
+          38.46437178218745
+        ]
+      },
+      "properties": {
+        "YKN": 229683,
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "Uzaklık (m)": "748.41",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.188492474764534,
+          38.462804030721756
+        ]
+      },
+      "properties": {
+        "YKN": 229683,
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "Uzaklık (m)": "773.96",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.191972677165776,
+          38.46176574659808
+        ]
+      },
+      "properties": {
+        "YKN": 229683,
+        "Kategori": "Parklar",
+        "Ad": "Sevgi Parkı",
+        "Uzaklık (m)": "790.95",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.18648768895989,
+          38.46377048547192
+        ]
+      },
+      "properties": {
+        "YKN": 229683,
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "Uzaklık (m)": "794.8",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.200433103377375,
+          38.46465338153476
+        ]
+      },
+      "properties": {
+        "YKN": 229683,
+        "Kategori": "Parklar",
+        "Ad": "Vedat Saatçiler Parkı",
+        "Uzaklık (m)": "805.86",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.188884516767597,
+          38.46230289998231
+        ]
+      },
+      "properties": {
+        "YKN": 229683,
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "Uzaklık (m)": "807.26",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.18419086742604,
+          38.46624451261685
+        ]
+      },
+      "properties": {
+        "YKN": 229683,
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "Uzaklık (m)": "813.5",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.200284334085723,
+          38.47354406676366
+        ]
+      },
+      "properties": {
+        "YKN": 229683,
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "Uzaklık (m)": "828.36",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.201708012596296,
+          38.47171086194163
+        ]
+      },
+      "properties": {
+        "YKN": 229683,
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "Uzaklık (m)": "831.4",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.20040802321223,
+          38.46366388374977
+        ]
+      },
+      "properties": {
+        "YKN": 229683,
+        "Kategori": "Parklar",
+        "Ad": "Şehitler Parkı",
+        "Uzaklık (m)": "872.37",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.184610310040586,
+          38.46427148491331
+        ]
+      },
+      "properties": {
+        "YKN": 229683,
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "Uzaklık (m)": "884.49",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.19822142202758,
+          38.46152515951987
+        ]
+      },
+      "properties": {
+        "YKN": 229683,
+        "Kategori": "Parklar",
+        "Ad": "Yunus Emre Parkı",
+        "Uzaklık (m)": "936.65",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.191891790370708,
+          38.460364389004305
+        ]
+      },
+      "properties": {
+        "YKN": 229683,
+        "Kategori": "Parklar",
+        "Ad": "UNESCO Gençlik Parkı",
+        "Uzaklık (m)": "946.45",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.187981144985038,
+          38.46121395047404
+        ]
+      },
+      "properties": {
+        "YKN": 229683,
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "Uzaklık (m)": "950.56",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.201378799999997,
+          38.4632212
+        ]
+      },
+      "properties": {
+        "YKN": 229683,
+        "Kategori": "Parklar",
+        "Ad": "Taşkent 2 Parkı",
+        "Uzaklık (m)": "968.63",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.184539472943985,
+          38.46309368462791
+        ]
+      },
+      "properties": {
+        "YKN": 229683,
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "Uzaklık (m)": "970.26",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.18562847457558,
+          38.46197463912306
+        ]
+      },
+      "properties": {
+        "YKN": 229683,
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "Uzaklık (m)": "992.97",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.20102545,
+          38.462571249999996
+        ]
+      },
+      "properties": {
+        "YKN": 229683,
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "Uzaklık (m)": "994.48",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.190647332946863,
+          38.45999038121907
+        ]
+      },
+      "properties": {
+        "YKN": 229683,
+        "Kategori": "Parklar",
+        "Ad": "Muammer Aksoy Parkı",
+        "Uzaklık (m)": "1003.33",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.184139041484,
+          38.47485831192464
+        ]
+      },
+      "properties": {
+        "YKN": 229683,
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "Uzaklık (m)": "1014.42",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.184997799999998,
+          38.47562826666666
+        ]
+      },
+      "properties": {
+        "YKN": 229683,
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "Uzaklık (m)": "1020.44",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.185423445754612,
+          38.475965029088584
+        ]
+      },
+      "properties": {
+        "YKN": 229683,
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "Uzaklık (m)": "1024.23",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.184087638234104,
+          38.475242503960764
+        ]
+      },
+      "properties": {
+        "YKN": 229683,
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "Uzaklık (m)": "1046.23",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.188665275476776,
+          38.45987162185864
+        ]
+      },
+      "properties": {
+        "YKN": 229683,
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "Uzaklık (m)": "1063.38",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.201807236157904,
+          38.47559964057491
+        ]
+      },
+      "properties": {
+        "YKN": 229683,
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "Uzaklık (m)": "1079.24",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.1861754677153,
+          38.46009511218145
+        ]
+      },
+      "properties": {
+        "YKN": 229683,
+        "Kategori": "Parklar",
+        "Ad": "Dinlenme Alanı",
+        "Uzaklık (m)": "1135.71",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.184592718989848,
+          38.46052063883305
+        ]
+      },
+      "properties": {
+        "YKN": 229683,
+        "Kategori": "Parklar",
+        "Ad": "Şht. Piyade. Atğm. Bilal Çakırcalı Parkı",
+        "Uzaklık (m)": "1175.36",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.194437829980888,
+          38.463773948841336
+        ]
+      },
+      "properties": {
+        "YKN": 229683,
+        "Kategori": "Sağlık Kurumları",
+        "Ad": "Özel Tınaztepe Galen Hastanesi",
+        "Uzaklık (m)": "579.58",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.187198402124423,
+          38.461362339198885
+        ]
+      },
+      "properties": {
+        "YKN": 229683,
+        "Kategori": "Sağlık Kurumları",
+        "Ad": "Türk Kızılayı",
+        "Uzaklık (m)": "969.15",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.191893233928152,
+          38.465777571515545
+        ]
+      },
+      "properties": {
+        "YKN": 229683,
+        "Kategori": "Su Kaynakları",
+        "Ad": "İsimsiz",
+        "Uzaklık (m)": "352.61",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.20024045,
+          38.46658865
+        ]
+      },
+      "properties": {
+        "YKN": 229683,
+        "Kategori": "Su Kaynakları",
+        "Ad": "İsimsiz",
+        "Uzaklık (m)": "688.05",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.200980607233063,
+          38.46657891531571
+        ]
+      },
+      "properties": {
+        "YKN": 229683,
+        "Kategori": "Su Kaynakları",
+        "Ad": "İsimsiz",
+        "Uzaklık (m)": "748.91",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.191984694477718,
+          38.46174977210147
+        ]
+      },
+      "properties": {
+        "YKN": 229683,
+        "Kategori": "Su Kaynakları",
+        "Ad": "Sevgi Havuzu",
+        "Uzaklık (m)": "792.6",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.201757864389347,
+          38.46662471115171
+        ]
+      },
+      "properties": {
+        "YKN": 229683,
+        "Kategori": "Su Kaynakları",
+        "Ad": "İsimsiz",
+        "Uzaklık (m)": "811.53",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.184944750585526,
+          38.475127173870874
+        ]
+      },
+      "properties": {
+        "YKN": 229683,
+        "Kategori": "Su Kaynakları",
+        "Ad": "İsimsiz",
+        "Uzaklık (m)": "983.43",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.190367193920395,
+          38.459874207726415
+        ]
+      },
+      "properties": {
+        "YKN": 229683,
+        "Kategori": "Su Kaynakları",
+        "Ad": "Berin Pond",
+        "Uzaklık (m)": "1021",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.186835614460193,
+          38.47687247290371
+        ]
+      },
+      "properties": {
+        "YKN": 229683,
+        "Kategori": "Su Kaynakları",
+        "Ad": "İsimsiz",
+        "Uzaklık (m)": "1035.65",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.193168630812202,
+          38.47245624232904
+        ]
+      },
+      "properties": {
+        "YKN": 229683,
+        "Kategori": "İbadet Alanları",
+        "Ad": "Çukurbahçe Camii",
+        "Uzaklık (m)": "400.6",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.196435706154563,
+          38.46409796535579
+        ]
+      },
+      "properties": {
+        "YKN": 229683,
+        "Kategori": "İbadet Alanları",
+        "Ad": "İsimsiz",
+        "Uzaklık (m)": "611.39",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.188840858496615,
+          38.47361155247075
+        ]
+      },
+      "properties": {
+        "YKN": 229683,
+        "Kategori": "İbadet Alanları",
+        "Ad": "Çarşı Cami",
+        "Uzaklık (m)": "636.04",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.19167170200716,
+          38.47558933277834
+        ]
+      },
+      "properties": {
+        "YKN": 229683,
+        "Kategori": "İbadet Alanları",
+        "Ad": "İsimsiz",
+        "Uzaklık (m)": "755.38",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.188179033925348,
+          38.461502743938325
+        ]
+      },
+      "properties": {
+        "YKN": 229683,
+        "Kategori": "İbadet Alanları",
+        "Ad": "İsimsiz",
+        "Uzaklık (m)": "914.16",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.1840206961893,
+          38.46309710795231
+        ]
+      },
+      "properties": {
+        "YKN": 229683,
+        "Kategori": "İbadet Alanları",
+        "Ad": "İsimsiz",
+        "Uzaklık (m)": "1004.51",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.197250656031763,
+          38.477522208006626
+        ]
+      },
+      "properties": {
+        "YKN": 229683,
+        "Kategori": "İbadet Alanları",
+        "Ad": "İsimsiz",
+        "Uzaklık (m)": "1034.41",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.191192790687012,
+          38.46697943178383
+        ]
+      },
+      "properties": {
+        "YKN": 229683,
+        "Kategori": "İdari Sınırlar İlçe/Mahalle",
+        "Ad": "Bayraklı",
+        "Uzaklık (m)": "255.97",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.18948400923558,
+          38.47030740804927
+        ]
+      },
+      "properties": {
+        "YKN": 229683,
+        "Kategori": "İdari Sınırlar İlçe/Mahalle",
+        "Ad": "Osmangazi Mahallesi",
+        "Uzaklık (m)": "339.12",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.191930273000796,
+          38.4658250798363
+        ]
+      },
+      "properties": {
+        "YKN": 229683,
+        "Kategori": "İdari Sınırlar İlçe/Mahalle",
+        "Ad": "İsimsiz",
+        "Uzaklık (m)": "346.7",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.193874395123345,
+          38.472180546574535
+        ]
+      },
+      "properties": {
+        "YKN": 229683,
+        "Kategori": "İdari Sınırlar İlçe/Mahalle",
+        "Ad": "Bornova - Bayraklı ilçe sınırı",
+        "Uzaklık (m)": "378.95",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.196926494118017,
+          38.47326764152111
+        ]
+      },
+      "properties": {
+        "YKN": 229683,
+        "Kategori": "İdari Sınırlar İlçe/Mahalle",
+        "Ad": "Bornova",
+        "Uzaklık (m)": "602.88",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.193236058132175,
+          38.46300001969708
+        ]
+      },
+      "properties": {
+        "YKN": 229683,
+        "Kategori": "İdari Sınırlar İlçe/Mahalle",
+        "Ad": "Manavkuyu Mahallesi",
+        "Uzaklık (m)": "650.42",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.19670903314125,
+          38.47389179927975
+        ]
+      },
+      "properties": {
+        "YKN": 229683,
+        "Kategori": "İdari Sınırlar İlçe/Mahalle",
+        "Ad": "Atatürk Mahallesi",
+        "Uzaklık (m)": "650.53",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.200971192022703,
+          38.4661665965098
+        ]
+      },
+      "properties": {
+        "YKN": 229683,
+        "Kategori": "İdari Sınırlar İlçe/Mahalle",
+        "Ad": "Bornova - Bayraklı ilçe sınırı",
+        "Uzaklık (m)": "764.8",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.20085637275775,
+          38.461904583848884
+        ]
+      },
+      "properties": {
+        "YKN": 229683,
+        "Kategori": "İdari Sınırlar İlçe/Mahalle",
+        "Ad": "Bornova - Bayraklı ilçe sınırı",
+        "Uzaklık (m)": "1037.78",
+        "Zaman": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.201032828908076,
+          38.46148161555511
+        ]
+      },
+      "properties": {
+        "YKN": 229683,
+        "Kategori": "İdari Sınırlar İlçe/Mahalle",
+        "Ad": "Kazımdirik Mahallesi",
+        "Uzaklık (m)": "1083.17",
+        "Zaman": ""
+      }
+    }
+  ]
+}

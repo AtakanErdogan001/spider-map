@@ -1,0 +1,3 @@
+{"type":"FeatureCollection", "features": [
+{"type":"Feature","geometry":{"type":"Polygon","coordinates":[[[27.1911,38.45505],[27.19129,38.45511],[27.19115,38.45535],[27.19078,38.45519],[27.19088,38.45494],[27.1911,38.45505]]]},"properties":{"name":"Mansuroğlu Mahallesi 70-ada-34-parsel","İl":"İzmir","İlçe":"Bayraklı","Mahalle":"Mansuroğlu","Ada":"70","ParselNo":"34","Alan":"1.078,00","Pafta":"11","Nitelik":"Arsa","Mevkii":""}}
+]}
