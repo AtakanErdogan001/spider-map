@@ -1,16 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>Dünya Bankası İzmir Harita</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link href="https://api.mapbox.com/mapbox-gl-js/v2.13.0/mapbox-gl.css" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <div id="map"></div>
-  <div style="position: absolute; top: 10px; left: 10px; z-index: 1; background: white; padding: 10px; border-radius: 5px;">
-  <label>Mesafe (metre): <input type="number" id="distanceInput" value="500" min="0"></label><br>
+<!-- 🎯 Mesafe ve Bağlantı Sayısı Kontrol Paneli -->
+<div style="position: absolute; top: 10px; left: 10px; z-index: 2; background: white; padding: 10px; border-radius: 5px;">
+  <label>Mesafe (metre): 
+    <input type="number" id="distanceInput" value="500" min="0" style="width: 80px;">
+  </label><br>
   <label>Bağlantı Sayısı: 
     <select id="lineCountSelect">
       <option value="5">5</option>
@@ -22,17 +14,10 @@
   </label>
 </div>
 
-  <!-- 🔽 STİL SEÇİCİ DROPDOWN -->
-  <select id="styleSwitcher" style="position:absolute; top:10px; left:10px; z-index:1; background:white; padding:4px;">
-    <option value="mapbox://styles/mapbox/light-v10">Light</option>
-    <option value="mapbox://styles/mapbox/dark-v10">Dark</option>
-    <option value="mapbox://styles/mapbox/satellite-v9">Satellite</option>
-    <option value="mapbox://styles/mapbox/satellite-streets-v11">Satellite Streets</option>
-  </select>
-
-  <!-- JS dosyaları -->
-  <script src="https://api.mapbox.com/mapbox-gl-js/v2.13.0/mapbox-gl.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@turf/turf@6/turf.min.js"></script>
-  <script src="main.js"></script>
-</body>
-</html>
+<!-- 🎨 Stil Seçici Dropdown (farklı konuma alındı) -->
+<select id="styleSwitcher" style="position:absolute; top:10px; left:220px; z-index:2; background:white; padding:4px;">
+  <option value="mapbox://styles/mapbox/light-v10">Light</option>
+  <option value="mapbox://styles/mapbox/dark-v10">Dark</option>
+  <option value="mapbox://styles/mapbox/satellite-v9">Satellite</option>
+  <option value="mapbox://styles/mapbox/satellite-streets-v11">Satellite Streets</option>
+</select>
