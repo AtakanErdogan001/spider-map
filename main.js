@@ -204,9 +204,18 @@ map.on('load', () => {
       source: 'amenities',
       paint: {
         'circle-radius': 5,
-        'circle-color': '#4CAF50'
+        'circle-color': [
+          'match',
+          ['get', 'Kategori'],
+          'Okullar', '#2196F3',
+          'Parklar', '#4CAF50',
+          'Raylı Sistem Durakları', '#FF9800',
+          'Su Kaynakları', '#00BCD4',
+          /* default */ '#9E9E9E'
+        ]
       }
     });
+
 
     const startCenter = parcelCentroids[proximityOrder[currentIndex]].geometry.coordinates;
     map.flyTo({ center: startCenter });
