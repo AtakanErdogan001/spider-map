@@ -108,6 +108,12 @@ function updateSpider(center) {
     });
     currentLabels.push(labelId);
   });
+
+  // exportExcelCheckbox varsa ve işaretliyse Excel çıktısı al
+  const nearestCopy = nearest.map(n => ({ ...n })); // Deep copy
+  if (document.getElementById('exportExcelCheckbox')?.checked) {
+    exportSpiderDataToExcel(nearestCopy);
+  }
 }
 
 function getProximityOrder(centroids) {
@@ -150,6 +156,25 @@ map.on('load', () => {
       paint: {
         'circle-radius': 5,
         'circle-color': '#E91E63'
+      }
+    });
+
+    // ✅ 2. Parsel noktaları üzerine 'name' etiketi eklemek için:
+    map.addLayer({
+      id: 'centroids-labels',
+      type: 'symbol',
+      source: 'centroids',
+      layout: {
+        'text-field': ['get', 'name'],
+        'text-font': ['Open Sans Bold'],
+        'text-size': 11,
+        'text-anchor': 'top',
+        'text-offset': [0, 0.5]
+      },
+      paint: {
+        'text-color': '#333333',
+        'text-halo-color': '#ffffff',
+        'text-halo-width': 1
       }
     });
 
@@ -291,3 +316,16 @@ map.on('contextmenu', (e) => {
       .addTo(map);
   }
 });
+
+function exportSpiderDataToExcel(nearestEntries) {
+  const data = nearestEntries.map(entry => ({
+    'Kategori': entry.feature.properties.Kategori || 'Donatı',
+    'Mesafe (m)': (entry.dist * 1000).toFixed(2),
+    'Koordinat': `${entry.feature.geometry.coordinates[1]}, ${entry.feature.geometry.coordinates[0]}`
+  }));
+
+  const worksheet = XLSX.utils.json_to_sheet(data);
+  const workbook = XLSX.utils.book_new();
+  XLSX.utils.book_append_sheet(workbook, worksheet, "Mesafe Çıktısı");
+  XLSX.writeFile(workbook, "mesafe_baglantilari.xlsx");
+}
