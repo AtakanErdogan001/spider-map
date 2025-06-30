@@ -60,12 +60,15 @@
 
 
     <div style="margin-top: 10px;">
-      <button id="clearFiltersBtn" style="width: 100%; padding: 6px; background-color: #e53935; color: white; border: none; border-radius: 4px; cursor: pointer;">
-        Filtreleri Temizle
-      </button>
+                <input type="text" id="parcelSearchInput" placeholder="Mahalle veya parsel ara..." />
+<ul id="searchResults" style="position:absolute; background:white; z-index:999; list-style:none; padding:5px; max-height:150px; overflow-y:auto; width:250px; border:1px solid #ccc;"></ul>
+
+
     </div>
 
+
   </div>
+  
 
   <!-- 🗺️ Harita Alanı -->
   <div id="map"></div>
