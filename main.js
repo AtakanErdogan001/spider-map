@@ -320,6 +320,7 @@ map.on('contextmenu', (e) => {
 function exportSpiderDataToExcel(nearestEntries) {
   const data = nearestEntries.map(entry => ({
     'Kategori': entry.feature.properties.Kategori || 'Donatı',
+    'Ad': entry.feature.properties.Ad || 'Bilinmiyor',
     'Mesafe (m)': (entry.dist * 1000).toFixed(2),
     'Koordinat': `${entry.feature.geometry.coordinates[1]}, ${entry.feature.geometry.coordinates[0]}`
   }));
