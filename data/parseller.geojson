@@ -1,8 +1,32 @@
 {
   "type": "FeatureCollection",
   "features": [
-    {"type":"Feature","geometry":{"type":"Polygon","coordinates":[[[27.19214,38.45593],[27.19239,38.45561],[27.19331,38.45605],[27.19305,38.45637],[27.19214,38.45593]]]},"properties":{"name":"Mansuroğlu Mahallesi 3954-ada-1-parsel","İl":"İzmir","İlçe":"Bayraklı","Mahalle":"Mansuroğlu","Ada":"3954","ParselNo":"1","Alan":"3.943,00","Pafta":"31Jıııc","Nitelik":"(A1-A3-A4) Dokuz Katlı, (B) Blok 8 Katlı Ve (A2) Blok Zemin Dahil 8 Katlı Kargir Apartman","Mevkii":""}}
-              ]
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [27.19214, 38.45593],
+            [27.19239, 38.45561],
+            [27.19331, 38.45605],
+            [27.19305, 38.45637],
+            [27.19214, 38.45593]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "Mansuroğlu Mahallesi 3954-ada-1-parsel",
+        "İl": "İzmir",
+        "İlçe": "Bayraklı",
+        "Mahalle": "Mansuroğlu",
+        "Ada": "3954",
+        "ParselNo": "1",
+        "Alan": "3943.00",
+        "Pafta": "31Jıııc",
+        "Nitelik": "(A1-A3-A4) Dokuz Katlı, (B) Blok 8 Katlı Ve (A2) Blok Zemin Dahil 8 Katlı Kargir Apartman",
+        "Mevkii": ""
+      }
     },
     {
       "type": "Feature",
