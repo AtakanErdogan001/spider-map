@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <!-- Mapbox CSS -->
   <link href="https://api.mapbox.com/mapbox-gl-js/v2.13.0/mapbox-gl.css" rel="stylesheet" />
-  <!-- Kendi stil dosyan varsa ekleyebilirsin -->
+  <!-- Stil -->
   <style>
     body {
       margin: 0;
@@ -23,7 +23,7 @@
 </head>
 <body>
 
-  <!-- 🔽 Seçim Paneli -->
+  <!-- 🔽 Kontrol Paneli -->
   <div style="position: absolute; top: 10px; left: 10px; z-index: 2; background: white; padding: 12px 16px; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.2); font-family: sans-serif; font-size: 14px;">
 
     <div style="margin-bottom: 10px;">
@@ -42,7 +42,7 @@
       </select>
     </div>
 
-    <div>
+    <div style="margin-bottom: 10px;">
       <label for="styleSwitcher"><strong>Harita Stili:</strong></label><br>
       <select id="styleSwitcher" style="width: 100%; padding: 4px; margin-top: 4px;">
         <option value="mapbox://styles/mapbox/light-v10">Light</option>
@@ -51,14 +51,27 @@
         <option value="mapbox://styles/mapbox/satellite-streets-v11">Satellite Streets</option>
       </select>
     </div>
+
+    <div style="margin-top: 10px;">
+      <input type="checkbox" id="exportExcelCheckbox">
+      <label for="exportExcelCheckbox">Excel çıktısı al</label>
+    </div>
+
+    <div style="margin-top: 10px;">
+      <button id="clearFiltersBtn" style="width: 100%; padding: 6px; background-color: #e53935; color: white; border: none; border-radius: 4px; cursor: pointer;">
+        Filtreleri Temizle
+      </button>
+    </div>
+
   </div>
 
   <!-- 🗺️ Harita Alanı -->
   <div id="map"></div>
 
-  <!-- Mapbox ve Turf.js -->
+  <!-- JS Kütüphaneleri -->
   <script src="https://api.mapbox.com/mapbox-gl-js/v2.13.0/mapbox-gl.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@turf/turf@6/turf.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
 
   <!-- Ana JS -->
   <script src="main.js"></script>
