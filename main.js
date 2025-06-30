@@ -212,6 +212,7 @@ map.on('load', () => {
 
     const start = parcelCentroids[proximityOrder[currentIndex]].geometry.coordinates;
     map.flyTo({ center: start });
+    setupParcelSearch(); // 📌 Arama kutusu aktifleşsin
     updateSpider(start);
   });
 });
@@ -242,6 +243,36 @@ function getNearestCentroidIndex(lngLat) {
   });
   return nearest;
 }
+
+function setupParcelSearch() {
+  const input = document.getElementById('parcelSearchInput');
+  const resultsList = document.getElementById('searchResults');
+
+  input.addEventListener('input', () => {
+    const query = input.value.toLowerCase().trim();
+    resultsList.innerHTML = '';
+
+    if (!query) return;
+
+    const matches = parcels.filter(f => (f.properties.name || '').toLowerCase().includes(query));
+    
+    matches.forEach(f => {
+      const li = document.createElement('li');
+      li.textContent = f.properties.name;
+      li.style.cursor = 'pointer';
+      li.style.padding = '3px 6px';
+      li.addEventListener('click', () => {
+        const centroid = turf.centroid(f).geometry.coordinates;
+        map.flyTo({ center: centroid, zoom: 17 });
+        updateSpider(centroid);
+        resultsList.innerHTML = '';
+        input.value = '';
+      });
+      resultsList.appendChild(li);
+    });
+  });
+}
+
 
 let lastMove = 0;
 map.on('move', () => {
