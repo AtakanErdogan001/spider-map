@@ -1,4 +1,4 @@
-mapboxgl.accessToken = 'pk.eyJ1IjoiYXRha2FuZSIsImEiOiJjbWNoZDR5d3UwbGJmMm9xdnF3d2Y5cXdwIn0.I3QIz42RMN2zGZHqsH4ueA';
+mapboxgl.accessToken = 'pk.eyJ1IjoiYXRha2FuZSIsImEiOiJjbWNoNGUyNWkwcjFqMmxxdmVnb2tnMWJ4In0.xgo3tCNuq6kVXFYQpoS8PQ'; // pk.eyJ1IjoiYXRha2FuZSIsImEiOiJjbWNoZDR5d3UwbGJmMm9xdnF3d2Y5cXdwIn0.I3QIz42RMN2zGZHqsH4ueA
 
 const map = new mapboxgl.Map({
   container: 'map',
@@ -216,6 +216,89 @@ map.on('load', () => {
     updateSpider(start);
   });
 });
+document.getElementById('styleSwitcher').addEventListener('change', function () {
+  const selectedStyle = this.value;
+  const center = map.getCenter();
+  const zoom = map.getZoom();
+
+  // Tüm katmanları ve kaynakları temizle
+  clearVisuals();
+
+  // Harita stilini değiştir
+  map.setStyle(selectedStyle);
+
+  // Stil yüklendikten sonra tekrar kaynakları ve katmanları ekle
+  map.once('style.load', () => {
+    map.setCenter(center);
+    map.setZoom(zoom);
+
+    map.addSource('parcels', { type: 'geojson', data: { type: 'FeatureCollection', features: parcels } });
+    map.addLayer({
+      id: 'parcels-polygons',
+      type: 'fill',
+      source: 'parcels',
+      paint: {
+        'fill-color': '#FFCDD2',
+        'fill-opacity': 0.3
+      }
+    });
+
+    map.addSource('centroids', {
+      type: 'geojson',
+      data: { type: 'FeatureCollection', features: parcelCentroids }
+    });
+    map.addLayer({
+      id: 'centroids-points',
+      type: 'circle',
+      source: 'centroids',
+      paint: {
+        'circle-radius': 5,
+        'circle-color': '#E91E63'
+      }
+    });
+    map.addLayer({
+      id: 'centroids-labels',
+      type: 'symbol',
+      source: 'centroids',
+      layout: {
+        'text-field': ['get', 'name'],
+        'text-font': ['Open Sans Bold'],
+        'text-size': 11,
+        'text-anchor': 'top',
+        'text-offset': [0, 0.5]
+      },
+      paint: {
+        'text-color': '#333',
+        'text-halo-color': '#fff',
+        'text-halo-width': 1
+      }
+    });
+
+    map.addSource('amenities', { type: 'geojson', data: { type: 'FeatureCollection', features: amenities } });
+    map.addLayer({
+      id: 'amenities-points',
+      type: 'circle',
+      source: 'amenities',
+      paint: {
+        'circle-radius': 5,
+        'circle-color': [
+          'match',
+          ['get', 'Kategori'],
+          'Okullar', '#2196F3',
+          'Parklar', '#4CAF50',
+          'Raylı Sistem Durakları', '#FF9800',
+          'Su Kaynakları', '#00BCD4',
+          '#9E9E9E'
+        ]
+      }
+    });
+
+    // En yakın centroid'e spider oluştur
+    const newCenter = parcelCentroids[proximityOrder[currentIndex]].geometry.coordinates;
+    updateSpider(newCenter);
+  });
+});
+
 
 map.on('contextmenu', e => {
   const features = map.queryRenderedFeatures(e.point, {
