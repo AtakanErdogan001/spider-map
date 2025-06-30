@@ -7,6 +7,29 @@
         "type": "Polygon",
         "coordinates": [
           [
+            [27.19785,38.46334],[27.1974,38.46331],[27.19744,38.46297],[27.1979,38.463],[27.19785,38.46334]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "Barış Sitesi",
+        "İl": "İzmir",
+        "İlçe": "Bayraklı",
+        "Mahalle": "Manavkuyu",
+        "Ada": "3861",
+        "ParselNo": "1",
+        "Alan": "1504.00",
+        "Pafta": "-",
+        "Nitelik": "Arsa",
+        "Mevkii": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
             [27.19214, 38.45593],
             [27.19239, 38.45561],
             [27.19331, 38.45605],
