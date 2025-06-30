@@ -7,14 +7,10 @@ const map = new mapboxgl.Map({
   zoom: 14
 });
 
-let parcels = [];
-let parcelCentroids = [];
-let amenities = [];
-let proximityOrder = [];
-let currentIndex = 0;
-let currentLines = [];
-let currentLabels = [];
-let lastSpiderCoord = null;
+let parcels = [], parcelCentroids = [], amenities = [];
+let proximityOrder = [], currentIndex = 0;
+let currentLines = [], currentLabels = [], lastSpiderCoord = null;
+let lastSpiderData = [];
 
 function getCentroids(features) {
   return features.map(f => {
@@ -62,10 +58,11 @@ function updateSpider(center) {
     nearest = nearest.slice(0, parseInt(count));
   }
 
+  lastSpiderData = nearest;
+
   nearest.forEach((entry, i) => {
     const coords = [center, entry.feature.geometry.coordinates];
-    const lineId = `line-${i}`;
-    const labelId = `label-${i}`;
+    const lineId = `line-${i}`, labelId = `label-${i}`;
 
     map.addSource(lineId, { type: 'geojson', data: turf.lineString(coords) });
     map.addLayer({
@@ -101,33 +98,51 @@ function updateSpider(center) {
         'text-anchor': 'top'
       },
       paint: {
-        'text-color': '#000000',
-        'text-halo-color': '#ffffff',
+        'text-color': '#000',
+        'text-halo-color': '#fff',
         'text-halo-width': 1
       }
     });
     currentLabels.push(labelId);
   });
-
-  // exportExcelCheckbox varsa ve işaretliyse Excel çıktısı al
-  const nearestCopy = nearest.map(n => ({ ...n })); // Deep copy
-  if (document.getElementById('exportExcelCheckbox')?.checked) {
-    exportSpiderDataToExcel(nearestCopy);
-  }
 }
+
+function exportSpiderDataToExcel(nearestEntries) {
+  const data = nearestEntries.map(entry => {
+    const props = entry.feature.properties || {};
+    return {
+      'Kategori': props.Kategori || 'Donatı',
+      'Ad': props.Ad || 'Bilinmiyor',
+      'Mesafe (m)': (entry.dist * 1000).toFixed(2),
+      'Koordinat': `${entry.feature.geometry.coordinates[1]}, ${entry.feature.geometry.coordinates[0]}`
+    };
+  });
+
+  const worksheet = XLSX.utils.json_to_sheet(data);
+  const workbook = XLSX.utils.book_new();
+  XLSX.utils.book_append_sheet(workbook, worksheet, "Mesafe Çıktısı");
+  XLSX.writeFile(workbook, "mesafe_baglantilari.xlsx");
+}
+
+document.getElementById('exportExcelButton')?.addEventListener('click', () => {
+  if (lastSpiderData.length > 0) {
+    exportSpiderDataToExcel(lastSpiderData);
+  } else {
+    alert("Henüz gösterilecek bağlantı verisi yok.");
+  }
+});
 
 function getProximityOrder(centroids) {
   const base = centroids[0];
-  return centroids
-    .map((c, i) => ({ index: i, dist: turf.distance(base, c) }))
-    .sort((a, b) => a.dist - b.dist)
-    .map(e => e.index);
+  return centroids.map((c, i) => ({ index: i, dist: turf.distance(base, c) }))
+                  .sort((a, b) => a.dist - b.dist)
+                  .map(e => e.index);
 }
 
 map.on('load', () => {
   Promise.all([
-    fetch('./data/parseller.geojson').then(res => res.json()),
-    fetch('./data/donatilar.geojson').then(res => res.json())
+    fetch('./data/parseller.geojson').then(r => r.json()),
+    fetch('./data/donatilar.geojson').then(r => r.json())
   ]).then(([parcelData, amenityData]) => {
     parcels = parcelData.features;
     parcelCentroids = getCentroids(parcels);
@@ -158,8 +173,6 @@ map.on('load', () => {
         'circle-color': '#E91E63'
       }
     });
-
-    // ✅ 2. Parsel noktaları üzerine 'name' etiketi eklemek için:
     map.addLayer({
       id: 'centroids-labels',
       type: 'symbol',
@@ -172,8 +185,8 @@ map.on('load', () => {
         'text-offset': [0, 0.5]
       },
       paint: {
-        'text-color': '#333333',
-        'text-halo-color': '#ffffff',
+        'text-color': '#333',
+        'text-halo-color': '#fff',
         'text-halo-width': 1
       }
     });
@@ -192,88 +205,38 @@ map.on('load', () => {
           'Parklar', '#4CAF50',
           'Raylı Sistem Durakları', '#FF9800',
           'Su Kaynakları', '#00BCD4',
-          /* default */ '#9E9E9E'
+          '#9E9E9E'
         ]
       }
     });
 
-    const startCenter = parcelCentroids[proximityOrder[currentIndex]].geometry.coordinates;
-    map.flyTo({ center: startCenter });
-    updateSpider(startCenter);
+    const start = parcelCentroids[proximityOrder[currentIndex]].geometry.coordinates;
+    map.flyTo({ center: start });
+    updateSpider(start);
   });
 });
 
-document.getElementById('styleSwitcher').addEventListener('change', function () {
-  const selectedStyle = this.value;
-  map.setStyle(selectedStyle);
-
-  map.once('styledata', () => {
-    map.addSource('parcels', { type: 'geojson', data: { type: 'FeatureCollection', features: parcels } });
-    map.addLayer({
-      id: 'parcels-polygons',
-      type: 'fill',
-      source: 'parcels',
-      paint: {
-        'fill-color': '#f5021b',
-        'fill-opacity': 0.3
-      }
-    });
-
-    map.addSource('centroids', { type: 'geojson', data: { type: 'FeatureCollection', features: parcelCentroids } });
-    map.addLayer({
-      id: 'centroids-points',
-      type: 'circle',
-      source: 'centroids',
-      paint: {
-        'circle-radius': 5,
-        'circle-color': '#E91E63'
-      }
-    });
-
-    map.addSource('amenities', { type: 'geojson', data: { type: 'FeatureCollection', features: amenities } });
-    map.addLayer({
-      id: 'amenities-points',
-      type: 'circle',
-      source: 'amenities',
-      paint: {
-        'circle-radius': 5,
-        'circle-color': [
-          'match',
-          ['get', 'Kategori'],
-          'Okullar', '#2196F3',
-          'Parklar', '#4CAF50',
-          'Raylı Sistem Durakları', '#FF9800',
-          'Su Kaynakları', '#00BCD4',
-          /* default */ '#9E9E9E'
-        ]
-      }
-    });
-
-    const center = map.getCenter();
-    updateSpider([center.lng, center.lat]);
+map.on('contextmenu', e => {
+  const features = map.queryRenderedFeatures(e.point, {
+    layers: ['centroids-points', 'amenities-points']
   });
-});
 
-window.addEventListener('keydown', e => {
-  if (e.key === 'd' || e.key === 'D') {
-    currentIndex = (currentIndex + 1) % proximityOrder.length;
-  } else if (e.key === 'a' || e.key === 'A') {
-    currentIndex = (currentIndex - 1 + proximityOrder.length) % proximityOrder.length;
-  } else if (!['ArrowUp','ArrowDown','ArrowLeft','ArrowRight'].includes(e.key)) {
-    return;
-  }
-  const newCenter = parcelCentroids[proximityOrder[currentIndex]].geometry.coordinates;
-  map.flyTo({ center: newCenter });
-  updateSpider(newCenter);
+  const content = features.length
+    ? Object.entries(features[0].properties).map(([k, v]) => `<b>${k}</b>: ${v}`).join('<br>')
+    : 'Yakında veri bulunamadı.';
+
+  new mapboxgl.Popup()
+    .setLngLat(e.lngLat)
+    .setHTML(content)
+    .addTo(map);
 });
 
 function getNearestCentroidIndex(lngLat) {
-  let minDist = Infinity;
-  let nearest = 0;
+  let min = Infinity, nearest = 0;
   parcelCentroids.forEach((f, i) => {
-    const dist = turf.distance(turf.point(lngLat), f);
-    if (dist < minDist) {
-      minDist = dist;
+    const d = turf.distance(turf.point(lngLat), f);
+    if (d < min) {
+      min = d;
       nearest = i;
     }
   });
@@ -289,44 +252,18 @@ map.on('move', () => {
   const center = map.getCenter();
   const lngLat = [center.lng, center.lat];
   const nearest = getNearestCentroidIndex(lngLat);
-  const nearestCenter = parcelCentroids[nearest].geometry.coordinates;
-
-  updateSpider(nearestCenter);
+  updateSpider(parcelCentroids[nearest].geometry.coordinates);
 });
 
-map.on('contextmenu', (e) => {
-  const features = map.queryRenderedFeatures(e.point, {
-    layers: ['centroids-points', 'amenities-points']
-  });
-
-  if (features.length > 0) {
-    const props = features[0].properties;
-    const content = Object.entries(props)
-      .map(([k, v]) => `<b>${k}</b>: ${v}`)
-      .join('<br>');
-
-    new mapboxgl.Popup()
-      .setLngLat(e.lngLat)
-      .setHTML(content)
-      .addTo(map);
+window.addEventListener('keydown', e => {
+  if (e.key === 'd' || e.key === 'D') {
+    currentIndex = (currentIndex + 1) % proximityOrder.length;
+  } else if (e.key === 'a' || e.key === 'A') {
+    currentIndex = (currentIndex - 1 + proximityOrder.length) % proximityOrder.length;
   } else {
-    new mapboxgl.Popup()
-      .setLngLat(e.lngLat)
-      .setHTML('Yakında veri bulunamadı.')
-      .addTo(map);
+    return;
   }
+  const newCenter = parcelCentroids[proximityOrder[currentIndex]].geometry.coordinates;
+  map.flyTo({ center: newCenter });
+  updateSpider(newCenter);
 });
-
-function exportSpiderDataToExcel(nearestEntries) {
-  const data = nearestEntries.map(entry => ({
-    'Kategori': entry.feature.properties.Kategori || 'Donatı',
-    'Ad': entry.feature.properties.Ad || 'Bilinmiyor',
-    'Mesafe (m)': (entry.dist * 1000).toFixed(2),
-    'Koordinat': `${entry.feature.geometry.coordinates[1]}, ${entry.feature.geometry.coordinates[0]}`
-  }));
-
-  const worksheet = XLSX.utils.json_to_sheet(data);
-  const workbook = XLSX.utils.book_new();
-  XLSX.utils.book_append_sheet(workbook, worksheet, "Mesafe Çıktısı");
-  XLSX.writeFile(workbook, "mesafe_baglantilari.xlsx");
-}
