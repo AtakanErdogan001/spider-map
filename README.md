@@ -14,12 +14,8 @@ Spider Map, özellikle kentsel dönüşüm ve sosyal altyapı planlaması gibi �
 
 ## 🌐 Uygulamayı Deneyin
 
-🔗 Canlı demo:  
+🔗 Canlı harita:  
 👉 [https://atakanerdogan001.github.io/spider-map/](https://atakanerdogan001.github.io/spider-map/)
-
-🔗 Dünya Bankası Proje Sitesi:  
-👉 [https://sites.google.com/view/muaddunyabankasi/projeler](https://sites.google.com/view/muaddunyabankasi/projeler)  
-➡️ *“Yakın Çevre” başlığı altından ulaşabilirsiniz.*
 
 ## 📁 Dosya Yapısı
 
