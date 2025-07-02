@@ -19,13 +19,13 @@ Spider Map, özellikle kentsel dönüşüm ve sosyal altyapı planlaması gibi �
 
 ## 📁 Dosya Yapısı
 
-├── data/
-│ ├── donatilar.geojson # Sosyal donatı noktaları
-│ └── parseller.geojson # Parsel çokgenleri
-├── main.js # Tüm interaktif harita fonksiyonları
-├── index.html # Arayüz ve layout
-├── style.css # Temel stil dosyası
-└── README.md # Bu dokümantasyon
+data/
+  donatilar.geojson # Sosyal donatı noktaları
+  parseller.geojson # Parsel çokgenleri
+main.js # Tüm interaktif harita fonksiyonları
+index.html # Arayüz ve layout
+style.css # Temel stil dosyası
+README.md # Bu dokümantasyon
 
 
 ## 🛠️ Kullanılan Teknolojiler
