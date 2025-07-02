@@ -381,3 +381,173 @@ window.addEventListener('keydown', e => {
   map.flyTo({ center: newCenter });
   updateSpider(newCenter);
 });
+
+function exportSpiderDataToExcel(nearestEntries) {
+  const data = nearestEntries.map(entry => {
+    const props = entry.feature.properties || {};
+    return {
+      'Kategori': props.Kategori || 'Donatı',
+      'Ad': props.Ad || 'Bilinmiyor',
+      'Mesafe (m)': (entry.dist * 1000).toFixed(2),
+      'Koordinat': `${entry.feature.geometry.coordinates[1]}, ${entry.feature.geometry.coordinates[0]}`
+    };
+  });
+
+  const worksheet = XLSX.utils.json_to_sheet(data);
+  const workbook = XLSX.utils.book_new();
+  XLSX.utils.book_append_sheet(workbook, worksheet, "Mesafe Çıktısı");
+  XLSX.writeFile(workbook, "mesafe_baglantilari.xlsx");
+}
+
+document.getElementById('exportExcelButton')?.addEventListener('click', () => {
+  if (lastSpiderData.length > 0) exportSpiderDataToExcel(lastSpiderData);
+  else alert("Henüz gösterilecek bağlantı verisi yok.");
+});
+
+function drawCategoryChart() {
+  const categoryCounts = {};
+  lastSpiderData.forEach(entry => {
+    const kategori = entry.feature.properties.Kategori || "Bilinmiyor";
+    categoryCounts[kategori] = (categoryCounts[kategori] || 0) + 1;
+  });
+
+  const chartContainer = document.getElementById("categoryChartContainer");
+  chartContainer.innerHTML = '<canvas id="categoryChart"></canvas>';
+  const ctx = document.getElementById("categoryChart").getContext("2d");
+
+  new Chart(ctx, {
+  type: "pie",
+  data: {
+    labels: Object.keys(categoryCounts),
+    datasets: [{
+      data: Object.values(categoryCounts),
+      backgroundColor: ["#4CAF50", "#2196F3", "#FF9800", "#E91E63", "#9C27B0", "#009688", "#795548", "#607D8B", "#FFC107"]
+    }]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: {
+      legend: { position: 'bottom' },
+      title: {
+        display: true,
+        text: 'Kategorisel Yoğunluk Dağılımı'
+      },
+      datalabels: {
+        color: '#fff',
+        formatter: (value, ctx) => {
+          const total = ctx.chart.data.datasets[0].data.reduce((a, b) => a + b, 0);
+          const percentage = (value / total * 100).toFixed(1);
+          return `${value} (${percentage}%)`;
+        },
+        font: {
+          weight: 'bold'
+        }
+      }
+    }
+  },
+  plugins: [ChartDataLabels]
+});
+
+}
+
+function drawWeightedCategoryChart() {
+  const weightedCounts = {};
+  lastSpiderData.forEach(entry => {
+    const kategori = entry.feature.properties.Kategori || "Bilinmiyor";
+    const distance = entry.dist * 1000;
+    const etkilesim = 1 / Math.max(distance, 1);
+    weightedCounts[kategori] = (weightedCounts[kategori] || 0) + etkilesim;
+  });
+
+  const chartContainer = document.getElementById("weightedChartContainer");
+  chartContainer.innerHTML = '<canvas id="weightedCategoryChart"></canvas>';
+  const ctx = document.getElementById("weightedCategoryChart").getContext("2d");
+
+  new Chart(ctx, {
+  type: "pie",
+  data: {
+    labels: Object.keys(weightedCounts),
+    datasets: [{
+      data: Object.values(weightedCounts),
+      backgroundColor: ["#FFCDD2", "#C5E1A5", "#B3E5FC", "#F8BBD0", "#D1C4E9", "#80CBC4", "#FFE082", "#CFD8DC", "#A1887F"]
+    }]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: {
+      legend: { position: 'bottom' },
+      title: {
+        display: true,
+        text: 'Mesafe Ağırlıklı Kategorisel Dağılım'
+      },
+      datalabels: {
+        color: '#fff',
+        formatter: (value, ctx) => {
+          const total = ctx.chart.data.datasets[0].data.reduce((a, b) => a + b, 0);
+          const percentage = (value / total * 100).toFixed(1);
+          return `${value.toFixed(2)} (${percentage}%)`;
+        },
+        font: {
+          weight: 'bold'
+        }
+      }
+    }
+  },
+  plugins: [ChartDataLabels]
+});
+}
+
+const chartButton = document.createElement("button");
+chartButton.textContent = "Kategorisel Grafik Göster";
+chartButton.style.marginLeft = "10px";
+chartButton.onclick = () => {
+  if (lastSpiderData.length > 0) drawCategoryChart();
+  else alert("Henüz analiz edilen veri yok.");
+};
+document.getElementById("exportExcelButton")?.after(chartButton);
+
+const weightedChartButton = document.createElement("button");
+weightedChartButton.textContent = "Mesafeli Grafik Göster";
+weightedChartButton.style.marginLeft = "10px";
+weightedChartButton.onclick = () => {
+  if (lastSpiderData.length > 0) drawWeightedCategoryChart();
+  else alert("Henüz analiz edilen veri yok.");
+};
+chartButton.after(weightedChartButton);
+
+const detailToggleBtn = document.createElement("button");
+detailToggleBtn.textContent = "Teknik Detayı Göster";
+detailToggleBtn.style.marginLeft = "10px";
+let detailVisible = false;
+const detailBox = document.createElement("div");
+detailBox.id = "technicalDetail";
+detailBox.style.display = "none";
+detailBox.style.marginTop = "10px";
+detailBox.style.padding = "10px";
+detailBox.style.border = "1px solid #ccc";
+detailBox.style.background = "#f9f9f9";
+detailBox.innerHTML = `
+  <strong>Teknik Hesaplama:</strong><br>
+  Bu grafik, her donatı noktasının merkez noktaya uzaklığına göre etkisini ağırlıklı olarak hesaplar.<br>
+  Formül: <code>Etki = 1 / Mesafe(m)</code><br>
+  Daha yakın olan noktalar, daha yüksek etkide bulunur.
+`;
+
+weightedChartButton.after(detailToggleBtn);
+detailToggleBtn.after(detailBox);
+
+detailToggleBtn.onclick = () => {
+  detailVisible = !detailVisible;
+  detailBox.style.display = detailVisible ? "block" : "none";
+  detailToggleBtn.textContent = detailVisible ? "Teknik Detayı Gizle" : "Teknik Detayı Göster";
+};
+
+function downloadChartImage(canvasId, filename) {
+  const canvas = document.getElementById(canvasId);
+  const link = document.createElement('a');
+  link.download = filename;
+  link.href = canvas.toDataURL('image/png');
+  link.click();
+}
