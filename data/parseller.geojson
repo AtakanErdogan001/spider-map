@@ -7,7 +7,37 @@
         "type": "Polygon",
         "coordinates": [
           [
-            [27.1951,38.46856],[27.19444,38.46849],[27.19477,38.46764],[27.19524,38.46773],[27.1951,38.46856]
+            [27.18262,38.46301],[27.18346,38.46326],[27.18339,38.46339],[27.18262,38.46338],[27.18262,38.46301]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "Ziya Dağlıer Apartmanı",
+        "İl": "İzmir",
+        "İlçe": "Bayraklı",
+        "Mahalle": "Manavkuyu",
+        "Ada": "8328",
+        "ParselNo": "1",
+        "Alan": "1978.00",
+        "Pafta": "",
+        "Nitelik": "Zemin Dahil Oniki Katlı 1 Adet Betonarme Apartman Ve Arsası",
+        "Mevkii": ""
+      }
+    },
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [27.19214, 38.45593],
+            [27.19239, 38.45561],
+            [27.19331, 38.45605],
+            [27.19305, 38.45637],
+            [27.19214, 38.45593]
           ]
         ]
       },
