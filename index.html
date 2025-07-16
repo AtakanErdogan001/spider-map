@@ -2,11 +2,11 @@
 <html lang="tr">
 <head>
   <meta charset="UTF-8" />
-  <title>Dünya Bankası İzmir Harita</title>
+  <title>İzmir Harita</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <!-- Mapbox CSS -->
   <link href="https://api.mapbox.com/mapbox-gl-js/v2.13.0/mapbox-gl.css" rel="stylesheet" />
-  <!-- Kendi stil dosyan varsa ekleyebilirsin -->
+  <!-- Stil -->
   <style>
     body {
       margin: 0;
@@ -23,42 +23,80 @@
 </head>
 <body>
 
-  <!-- 🔽 Seçim Paneli -->
+  <!-- 🔽 Kontrol Paneli -->
   <div style="position: absolute; top: 10px; left: 10px; z-index: 2; background: white; padding: 12px 16px; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.2); font-family: sans-serif; font-size: 14px;">
 
     <div style="margin-bottom: 10px;">
-      <label for="distanceInput"><strong>Mesafe (metre):</strong></label><br>
+      <label for="distanceInput"><strong>distance (m):</strong></label><br>
       <input type="number" id="distanceInput" value="500" min="0" style="width: 100%; padding: 4px; margin-top: 4px;">
     </div>
 
     <div style="margin-bottom: 10px;">
-      <label for="lineCountSelect"><strong>Bağlantı Sayısı:</strong></label><br>
+      <label for="lineCountSelect"><strong>Connection Count:</strong></label><br>
       <select id="lineCountSelect" style="width: 100%; padding: 4px; margin-top: 4px;">
         <option value="5">5</option>
         <option value="10" selected>10</option>
         <option value="20">20</option>
         <option value="50">50</option>
-        <option value="all">Tümü</option>
+        <option value="all">All</option>
       </select>
     </div>
 
-    <div>
+    <div style="margin-bottom: 10px;">
       <label for="styleSwitcher"><strong>Harita Stili:</strong></label><br>
       <select id="styleSwitcher" style="width: 100%; padding: 4px; margin-top: 4px;">
         <option value="mapbox://styles/mapbox/light-v10">Light</option>
         <option value="mapbox://styles/mapbox/dark-v10">Dark</option>
         <option value="mapbox://styles/mapbox/satellite-v9">Satellite</option>
         <option value="mapbox://styles/mapbox/satellite-streets-v11">Satellite Streets</option>
+        <option value="mapbox://styles/atakane/cmcj4owsl054801smawlp978f">Style 1</option>
+        <option value="mapbox://styles/atakane/cmcj5zr15001e01sk26rxb60r">Style 2</option>
+
+        
       </select>
     </div>
+
+    <div style="margin-top: 10px;">
+      <button id="exportExcelButton" style="padding: 6px 12px; background-color: #4CAF50; color: white; border: none; border-radius: 4px; cursor: pointer;">
+        Excel Çıktısı Al
+      </button>
+    </div>
+
+
+    <div style="margin-top: 10px;">
+                <input type="text" id="parcelSearchInput" placeholder="Mahalle veya parsel ara..." />
+<ul id="searchResults" style="position:absolute; background:white; z-index:999; list-style:none; padding:5px; max-height:150px; overflow-y:auto; width:250px; border:1px solid #ccc;"></ul>
+
+
+    </div>
+    <div id="categoryChartContainer" style="margin-top:15px;"></div>
+    <div style="text-align:right; margin-bottom:15px;">
+      <button onclick="downloadChartImage('categoryChart', 'kategorisel_grafik.png')">Kategorisel Grafiği İndir</button>
+    </div>
+
+    <div id="weightedChartContainer" style="margin-top:15px;"></div>
+    <div style="text-align:right; margin-bottom:15px;">
+      <button onclick="downloadChartImage('weightedCategoryChart', 'mesafeli_grafik.png')">Mesafeli Grafiği İndir</button>
+    </div>
+
+
+
+
+
   </div>
+  
 
   <!-- 🗺️ Harita Alanı -->
   <div id="map"></div>
 
-  <!-- Mapbox ve Turf.js -->
+  <!-- JS Kütüphaneleri -->
   <script src="https://api.mapbox.com/mapbox-gl-js/v2.13.0/mapbox-gl.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@turf/turf@6/turf.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"></script>
+
+
 
   <!-- Ana JS -->
   <script src="main.js"></script>

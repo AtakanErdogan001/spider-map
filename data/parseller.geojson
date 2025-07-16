@@ -42,7 +42,53 @@
         ]
       },
       "properties": {
-        "name": "Mansuroğlu Mahallesi 3954-ada-1-parsel",
+        "name": "Halk Konut 20",
+        "İl": "İzmir",
+        "İlçe": "Bayraklı",
+        "Mahalle": "Osmangazi",
+        "Ada": "3990",
+        "ParselNo": "2",
+        "Alan": "4712",
+        "Pafta": "-",
+        "Nitelik": "Arsa",
+        "Mevkii": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [27.19785,38.46334],[27.1974,38.46331],[27.19744,38.46297],[27.1979,38.463],[27.19785,38.46334]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "Barış Sitesi",
+        "İl": "İzmir",
+        "İlçe": "Bayraklı",
+        "Mahalle": "Manavkuyu",
+        "Ada": "3861",
+        "ParselNo": "1",
+        "Alan": "1504.00",
+        "Pafta": "-",
+        "Nitelik": "Arsa",
+        "Mevkii": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [27.1951,38.46856],[27.19444,38.46849],[27.19477,38.46764],[27.19524,38.46773],[27.1951,38.46856]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "DENEME",
         "İl": "İzmir",
         "İlçe": "Bayraklı",
         "Mahalle": "Mansuroğlu",
