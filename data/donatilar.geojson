@@ -8,7 +8,7 @@
 { "type": "Feature", "properties": { "Kategori": "Sağlık Kurumları", "Ad": "Nefes Rehabilitasyon Merkezi", "name": "Mahallesi" }, "geometry": { "type": "Point", "coordinates": [ 27.191222, 38.469865 ] } },
 { "type": "Feature", "properties": { "Kategori": "Okullar", "Ad": "Balkabağı Anaokulu", "name": "Mahallesi" }, "geometry": { "type": "Point", "coordinates": [ 27.193953, 38.470642 ] } },
 { "type": "Feature", "properties": { "Kategori": "Okullar", "Ad": "Özel Şirince Anaokulu", "name": "Mahallesi" }, "geometry": { "type": "Point", "coordinates": [  27.198543, 38.464667 ] } },
-{ "type": "Feature", "properties": { "Kategori": "Okullar", "Ad": "24 nolu dumlupınar aile sağlığı merkezi", "name": "Mahallesi" }, "geometry": { "type": "Point", "coordinates": [  27.198543, 38.464667 ] } },
+{ "type": "Feature", "properties": { "Kategori": "Sağlık Kurumları", "Ad": "24 nolu dumlupınar aile sağlığı merkezi", "name": "Mahallesi" }, "geometry": { "type": "Point", "coordinates": [  27.198543, 38.464667 ] } },
 { "type": "Feature", "properties": { "Kategori": "Okullar", "Ad": "Şehit Üsteğmen Murat Yıldız Çok Programlı Anadolu Lisesi", "name": "Beyazevler Mahallesi" }, "geometry": { "type": "Point", "coordinates": [ 27.143568112076444, 38.339911680720888 ] } },
 { "type": "Feature", "properties": { "Kategori": "Okullar", "Ad": "Mevlüt Aysun Özer İlkokulu", "name": "Beyazevler Mahallesi" }, "geometry": { "type": "Point", "coordinates": [ 27.142970326824695, 38.339823940676709 ] } },
 { "type": "Feature", "properties": { "Kategori": "Parklar", "Ad": "İsimsiz", "name": "Beyazevler Mahallesi" }, "geometry": { "type": "Point", "coordinates": [ 27.146466165156884, 38.344284727356587 ] } },
