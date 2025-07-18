@@ -3,7 +3,7 @@
 "name": "donatılar_mah",
 "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
 "features": [
-{ "type": "Feature", "properties": { "Kategori": "Okullar", "Ad": "İsabet Okulları Bayraklı", "name": "Manavkuyu Mahallesi" }, "geometry": { "type": "Point", "coordinates": [ 27.187458, 38.472097 ] } },
+{ "type": "Feature", "properties": { "Kategori": "Okullar", "Ad": "İsabet Okulları Bayraklı", "name": "Manavkuyu Mahallesi" }, "geometry": { "type": "Point", "coordinates": [ 27.199780, 38.458684 ] } },
 { "type": "Feature", "properties": { "Kategori": "Sağlık Kurumları", "Ad": "Seher Şükrü Ergil Aile Sağlığı Merkezi", "name": "Mahallesi" }, "geometry": { "type": "Point", "coordinates": [ 27.187458, 38.472097 ] } },
 { "type": "Feature", "properties": { "Kategori": "Sağlık Kurumları", "Ad": "Nefes Rehabilitasyon Merkezi", "name": "Mahallesi" }, "geometry": { "type": "Point", "coordinates": [ 27.191222, 38.469865 ] } },
 { "type": "Feature", "properties": { "Kategori": "Okullar", "Ad": "Balkabağı Anaokulu", "name": "Mahallesi" }, "geometry": { "type": "Point", "coordinates": [ 27.193953, 38.470642 ] } },
