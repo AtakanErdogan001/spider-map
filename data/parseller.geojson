@@ -7,6 +7,36 @@
         "type": "Polygon",
         "coordinates": [
           [
+            [27.20661,38.47466],
+            [27.20667,38.47455],
+            [27.20670,38.47456],
+            [27.20682,38.47461],
+            [27.20685,38.47464],
+            [27.20686,38.47466],
+            [27.20683,38.47473],
+            [27.20661,38.47466]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "Cemil Tokatlı ve Hissedarları",
+        "İl": "İzmir",
+        "İlçe": "Bornova",
+        "Mahalle": "Ergene",
+        "Ada": "3065",
+        "ParselNo": "39",
+        "Alan": "270.00",
+        "Pafta": "29.Ş.Iıı",
+        "Nitelik": "Arsa",
+        "Mevkii": "Döşemealtı"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
             [27.19843,38.46292],
             [27.19848,38.46240],
             [27.19874,38.46243],
