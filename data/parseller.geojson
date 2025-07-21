@@ -1,6 +1,36 @@
 {
   "type": "FeatureCollection",
   "features": [
+{
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [27.19034,38.46397],
+            [27.19048,38.46407],
+            [27.19079,38.46425],
+            [27.19047,38.46466],
+            [27.19017,38.46455],
+            [27.19004,38.46448],
+            [27.19022,38.46418],
+            [27.19034,38.46397]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "Civan ve Arzum Apartmanları",
+        "İl": "İzmir",
+        "İlçe": "Bayraklı",
+        "Mahalle": "Manavkuyu",
+        "Ada": "3801",
+        "ParselNo": "3",
+        "Alan": "2667.00",
+        "Pafta": "",
+        "Nitelik": "Arsa",
+        "Mevkii": ""
+      }
+    },
     {
       "type": "Feature",
       "geometry": {
