@@ -1,7 +1,37 @@
 {
   "type": "FeatureCollection",
   "features": [
-{
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [27.20853,38.46382],
+            [27.20903,38.46280],
+            [27.20947,38.46291],
+            [27.20911,38.46363],
+            [27.20952,38.46375],
+            [27.20987,38.46386],
+            [27.20981,38.46422],
+            [27.20853,38.46382]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "Defne Apartmanı",
+        "İl": "İzmir",
+        "İlçe": "Bornova",
+        "Mahalle": "Ergene",
+        "Ada": "56",
+        "ParselNo": "21",
+        "Alan": "7965.00",
+        "Pafta": "29",
+        "Nitelik": "Arsa",
+        "Mevkii": ""
+      }
+    },
+    {
       "type": "Feature",
       "geometry": {
         "type": "Polygon",
