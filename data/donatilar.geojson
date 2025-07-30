@@ -1581,7 +1581,7 @@
 { "type": "Feature", "properties": { "Kategori": "Su Kaynakları", "Ad": "İsimsiz", "name": "Manavkuyu Mahallesi" }, "geometry": { "type": "Point", "coordinates": [ 27.20024045, 38.46658865 ] } },
 { "type": "Feature", "properties": { "Kategori": "Su Kaynakları", "Ad": "Sevgi Havuzu", "name": "Manavkuyu Mahallesi" }, "geometry": { "type": "Point", "coordinates": [ 27.191984694477718, 38.46174977210147 ] } },
 { "type": "Feature", "properties": { "Kategori": "Su Kaynakları", "Ad": "Berin Pond", "name": "Manavkuyu Mahallesi" }, "geometry": { "type": "Point", "coordinates": [ 27.190367194618069, 38.459870474640098 ] } },
-{ "type": "Feature", "properties": { "Kategori": "İbadet Alanları", "Ad": "İsimsiz", "name": "Manavkuyu Mahallesi" }, "geometry": { "type": "Point", "coordinates": [ 27.196435706154563, 38.464097965355791 ] } },
+{ "type": "Feature", "properties": { "Kategori": "İbadet Alanları", "Ad": "Taşkent Camii", "name": "Manavkuyu Mahallesi" }, "geometry": { "type": "Point", "coordinates": [ 27.196435706154563, 38.464097965355791 ] } },
 { "type": "Feature", "properties": { "Kategori": "İbadet Alanları", "Ad": "İsimsiz", "name": "Manavkuyu Mahallesi" }, "geometry": { "type": "Point", "coordinates": [ 27.188179033925348, 38.461502743938325 ] } },
 { "type": "Feature", "properties": { "Kategori": "İbadet Alanları", "Ad": "İsimsiz", "name": "Manavkuyu Mahallesi" }, "geometry": { "type": "Point", "coordinates": [ 27.184016747542501, 38.463097617026172 ] } },
 { "type": "Feature", "properties": { "Kategori": "İbadet Alanları", "Ad": "İsimsiz", "name": "Manavkuyu Mahallesi" }, "geometry": { "type": "Point", "coordinates": [ 27.184004485958226, 38.457144257462645 ] } },
