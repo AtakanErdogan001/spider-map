@@ -32,6 +32,35 @@
       }
     },
     {
+      "type":"Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [27.19683,38.46257],
+            [27.19687,38.46227],
+            [27.19707,38.46228],
+            [27.19733,38.46239],
+            [27.19732,38.46261],
+            [27.19706,38.46259],
+            [27.19683,38.46257]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "Başarı 12",
+        "İl": "İzmir",
+        "İlçe": "Bayraklı",
+        "Mahalle": "Manavkuyu",
+        "Ada": "3863",
+        "ParselNo": "6",
+        "Alan": "1.318,00",
+        "Pafta": "31J Iıı B",
+        "Nitelik": "Arsa",
+        "Mevkii": ""
+      }
+    },
+    {
       "type": "Feature",
       "geometry": {
         "type": "Polygon",
