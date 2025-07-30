@@ -1553,7 +1553,7 @@
 { "type": "Feature", "properties": { "Kategori": "Parklar", "Ad": "İsimsiz", "name": "Manavkuyu Mahallesi" }, "geometry": { "type": "Point", "coordinates": [ 27.197866624948961, 38.465873541637379 ] } },
 { "type": "Feature", "properties": { "Kategori": "Parklar", "Ad": "Bayraklı Skate Park", "name": "Manavkuyu Mahallesi" }, "geometry": { "type": "Point", "coordinates": [ 27.18838871595646, 38.465041549334707 ] } },
 { "type": "Feature", "properties": { "Kategori": "Parklar", "Ad": "İsimsiz", "name": "Manavkuyu Mahallesi" }, "geometry": { "type": "Point", "coordinates": [ 27.189234372202353, 38.464271543675238 ] } },
-{ "type": "Feature", "properties": { "Kategori": "Parklar", "Ad": "İsimsiz", "name": "Manavkuyu Mahallesi" }, "geometry": { "type": "Point", "coordinates": [ 27.198025879496537, 38.464957275659884 ] } },
+{ "type": "Feature", "properties": { "Kategori": "Parklar", "Ad": "Gündüz Ökçün Parkı", "name": "Manavkuyu Mahallesi" }, "geometry": { "type": "Point", "coordinates": [ 27.198025879496537, 38.464957275659884 ] } },
 { "type": "Feature", "properties": { "Kategori": "Parklar", "Ad": "İsimsiz", "name": "Manavkuyu Mahallesi" }, "geometry": { "type": "Point", "coordinates": [ 27.191915937434828, 38.462706015423286 ] } },
 { "type": "Feature", "properties": { "Kategori": "Parklar", "Ad": "Basri Kurtuluş Parkı", "name": "Manavkuyu Mahallesi" }, "geometry": { "type": "Point", "coordinates": [ 27.198845045048625, 38.46443996521851 ] } },
 { "type": "Feature", "properties": { "Kategori": "Parklar", "Ad": "İsimsiz", "name": "Manavkuyu Mahallesi" }, "geometry": { "type": "Point", "coordinates": [ 27.186495072275921, 38.464371782187449 ] } },
