@@ -1578,7 +1578,7 @@
 { "type": "Feature", "properties": { "Kategori": "Parklar", "Ad": "İsimsiz", "name": "Manavkuyu Mahallesi" }, "geometry": { "type": "Point", "coordinates": [ 27.185656690182491, 38.457422010739521 ] } },
 { "type": "Feature", "properties": { "Kategori": "Sağlık Kurumları", "Ad": "Tınaztepe Galen Hastanesi", "name": "Manavkuyu Mahallesi" }, "geometry": { "type": "Point", "coordinates": [ 27.194437829980888, 38.463773948841336 ] } },
 { "type": "Feature", "properties": { "Kategori": "Su Kaynakları", "Ad": "İsimsiz", "name": "Manavkuyu Mahallesi" }, "geometry": { "type": "Point", "coordinates": [ 27.19142057364224, 38.465666637134227 ] } },
-{ "type": "Feature", "properties": { "Kategori": "Su Kaynakları", "Ad": "İsimsiz", "name": "Manavkuyu Mahallesi" }, "geometry": { "type": "Point", "coordinates": [ 27.20024045, 38.46658865 ] } },
+{ "type": "Feature", "properties": { "Kategori": "Su Kaynakları", "Ad": "Bornova Deresi", "name": "Manavkuyu Mahallesi" }, "geometry": { "type": "Point", "coordinates": [ 27.20024045, 38.46658865 ] } },
 { "type": "Feature", "properties": { "Kategori": "Su Kaynakları", "Ad": "Sevgi Havuzu", "name": "Manavkuyu Mahallesi" }, "geometry": { "type": "Point", "coordinates": [ 27.191984694477718, 38.46174977210147 ] } },
 { "type": "Feature", "properties": { "Kategori": "Su Kaynakları", "Ad": "Berin Pond", "name": "Manavkuyu Mahallesi" }, "geometry": { "type": "Point", "coordinates": [ 27.190367194618069, 38.459870474640098 ] } },
 { "type": "Feature", "properties": { "Kategori": "İbadet Alanları", "Ad": "İsimsiz", "name": "Manavkuyu Mahallesi" }, "geometry": { "type": "Point", "coordinates": [ 27.196435706154563, 38.464097965355791 ] } },
