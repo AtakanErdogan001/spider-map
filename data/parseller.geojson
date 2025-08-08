@@ -61,6 +61,34 @@
       }
     },
     {
+      "type":"Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [27.10861,38.45736],
+            [27.10876,38.45733],
+            [27.10886,38.45731],
+            [27.10895,38.45757],
+            [27.10871,38.45763],
+            [27.10861,38.45736]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "Tonak Apartmanı",
+        "İl": "İzmir",
+        "İlçe": "Karşıyaka",
+        "Mahalle": "Aksoy",
+        "Ada": "9281",
+        "ParselNo": "2",
+        "Alan": "672,00",
+        "Pafta": "37",
+        "Nitelik": "",
+        "Mevkii": ""
+      }
+    },
+    {
       "type": "Feature",
       "geometry": {
         "type": "Polygon",
@@ -848,3 +876,4 @@
     }
   ]
 }
+
