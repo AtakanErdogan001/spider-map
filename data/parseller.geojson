@@ -66,6 +66,33 @@
         "type": "Polygon",
         "coordinates": [
           [
+            [27.22503,38.44524],
+            [27.22505,38.44514],
+            [27.22521,38.44516],
+            [27.22519,38.44525],
+            [27.22503,38.44524]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "Onur Özkan Evi",
+        "İl": "İzmir",
+        "İlçe": "Bornova",
+        "Mahalle": "Erzene",
+        "Ada": "12016",
+        "ParselNo": "8",
+        "Alan": "151,00",
+        "Pafta": ""24 Ö I D",
+        "Nitelik": "Arsa",
+        "Mevkii": ""
+      }
+    },
+    {
+      "type":"Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
             [27.10747,38.45452],
             [27.10747,38.45451],
             [27.10749,38.45442],
@@ -935,6 +962,7 @@
     }
   ]
 }
+
 
 
 
