@@ -1,7 +1,3 @@
-// ===========================
-// main.js (tam sürüm)
-// ===========================
-
 mapboxgl.accessToken = 'pk.eyJ1IjoiYXRha2FuZSIsImEiOiJjbWNoNGUyNWkwcjFqMmxxdmVnb2tnMWJ4In0.xgo3tCNuq6kVXFYQpoS8PQ';
 
 const map = new mapboxgl.Map({
@@ -24,6 +20,9 @@ const HOVER_OUTLINE = 'hover-circle-outline';
 const IN_CIRCLE_SRC = 'amenities-in-circle-src';
 const IN_CIRCLE_LAYER = 'amenities-in-circle-layer';
 let lastMouseLngLat = null;
+
+// Özellik toggle durumu (varsayılan KAPALI)
+let hoverEnabled = false;
 
 // ===========================
 // Helpers
@@ -196,7 +195,24 @@ function ensureHoverCircleLayers() {
   }
 }
 
+function setHoverVisibility(visible) {
+  // katman görünürlüğü
+  [HOVER_FILL, HOVER_OUTLINE, IN_CIRCLE_LAYER].forEach(id => {
+    if (map.getLayer(id)) {
+      map.setLayoutProperty(id, 'visibility', visible ? 'visible' : 'none');
+    }
+  });
+  // panel görünürlüğü
+  const panel = document.getElementById('categorySummary');
+  if (panel) panel.style.display = visible ? 'block' : 'none';
+  // panel içeriğini sıfırla
+  const body = document.getElementById('categorySummaryBody');
+  if (!visible && body) body.innerHTML = 'İmleci harita üzerinde gezdirin…';
+}
+
 function updateHoverCircleAt(lngLat) {
+  if (!hoverEnabled) return;
+
   lastMouseLngLat = lngLat;
 
   const radiusMeters = parseFloat(document.getElementById('distanceInput')?.value || '500');
@@ -251,9 +267,10 @@ function updateHoverCircleAt(lngLat) {
   `;
 }
 
-// mousemove (raf-throttle)
+// mousemove (raf-throttle) — sadece hoverEnabled iken çalışır
 let hoverTicking = false;
 map.on('mousemove', (e) => {
+  if (!hoverEnabled) return;
   if (hoverTicking) return;
   hoverTicking = true;
   requestAnimationFrame(() => {
@@ -262,9 +279,38 @@ map.on('mousemove', (e) => {
   });
 });
 
-// yarıçap değiştiğinde daireyi aynı pozisyonda güncelle
+// yarıçap değiştiğinde (özellik açıksa) daireyi aynı pozisyonda güncelle
 document.getElementById('distanceInput')?.addEventListener('change', () => {
-  if (lastMouseLngLat) updateHoverCircleAt(lastMouseLngLat);
+  if (hoverEnabled && lastMouseLngLat) updateHoverCircleAt(lastMouseLngLat);
+});
+
+// Toggle butonu (sağ alttaki) — metni günceller ve görünürlüğü yönetir
+function refreshHoverToggleUI() {
+  const btn = document.getElementById('hoverToggleBtn');
+  if (btn) {
+    btn.textContent = hoverEnabled ? 'Yakın Çevre Analizi: AÇIK' : 'Yakın Çevre Analizi: KAPALI';
+    btn.setAttribute('aria-pressed', hoverEnabled ? 'true' : 'false');
+  }
+  setHoverVisibility(hoverEnabled);
+  if (hoverEnabled) {
+    // açıkken son konum veya harita merkezi ile güncelle
+    const center = lastMouseLngLat || [map.getCenter().lng, map.getCenter().lat];
+    updateHoverCircleAt(center);
+  }
+}
+
+function enableHover() {
+  hoverEnabled = true;
+  ensureHoverCircleLayers();
+  refreshHoverToggleUI();
+}
+function disableHover() {
+  hoverEnabled = false;
+  refreshHoverToggleUI();
+}
+
+document.getElementById('hoverToggleBtn')?.addEventListener('click', () => {
+  hoverEnabled ? disableHover() : enableHover();
 });
 
 // ===========================
@@ -333,15 +379,14 @@ map.on('load', () => {
       }
     });
 
-    // Hover circle katmanlarını hazırla
-    ensureHoverCircleLayers();
-
-    // Başlangıç: en yakın centroid’e uç ve spider + hover güncelle
+    // Başlangıç: en yakın centroid’e uç ve spider
     const start = parcelCentroids[proximityOrder[currentIndex]].geometry.coordinates;
     map.flyTo({ center: start });
     setupParcelSearch();
     updateSpider(start);
-    updateHoverCircleAt(start);
+
+    // Hover özelliği varsayılan kapalı — paneli ve katmanları gizli tut
+    setHoverVisibility(false);
   });
 });
 
@@ -413,9 +458,9 @@ document.getElementById('styleSwitcher')?.addEventListener('change', function ()
       }
     });
 
-    // Hover circle katmanlarını yeniden kur ve güncelle
+    // Hover katmanları, sadece özellik açıksa yeniden kur/ göster
     ensureHoverCircleLayers();
-    if (lastMouseLngLat) updateHoverCircleAt(lastMouseLngLat);
+    refreshHoverToggleUI();
 
     // Spider’ı da mevcut sıradaki centroid’e yeniden kur
     const newCenter = parcelCentroids[proximityOrder[currentIndex]].geometry.coordinates;
@@ -467,7 +512,7 @@ function setupParcelSearch() {
         const centroid = turf.centroid(f).geometry.coordinates;
         map.flyTo({ center: centroid, zoom: 17 });
         updateSpider(centroid);
-        updateHoverCircleAt(centroid);
+        if (hoverEnabled) updateHoverCircleAt(centroid);
         resultsList.innerHTML = '';
         input.value = '';
       });
@@ -489,7 +534,7 @@ map.on('move', () => {
   if (!target) return;
 
   updateSpider(target);
-  updateHoverCircleAt(target);
+  if (hoverEnabled) updateHoverCircleAt(target);
 });
 
 window.addEventListener('keydown', e => {
@@ -503,7 +548,7 @@ window.addEventListener('keydown', e => {
   const newCenter = parcelCentroids[proximityOrder[currentIndex]].geometry.coordinates;
   map.flyTo({ center: newCenter });
   updateSpider(newCenter);
-  updateHoverCircleAt(newCenter);
+  if (hoverEnabled) updateHoverCircleAt(newCenter);
 });
 
 // ===========================
