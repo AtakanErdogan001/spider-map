@@ -1,5 +1,5 @@
 // ===========================
-// main.js (fast circle query + legend filter + shortcuts)
+// main.js (stabil hover + T kısayolu + turf fallback)
 // ===========================
 
 mapboxgl.accessToken = 'pk.eyJ1IjoiYXRha2FuZSIsImEiOiJjbWNoNGUyNWkwcjFqMmxxdmVnb2tnMWJ4In0.xgo3tCNuq6kVXFYQpoS8PQ';
@@ -25,14 +25,14 @@ const IN_CIRCLE_SRC = 'amenities-in-circle-src';
 const IN_CIRCLE_LAYER = 'amenities-in-circle-layer';
 let lastMouseLngLat = null;
 
-// Özellik toggle durumu (varsayılan KAPALI)
+// Toggle (varsayılan kapalı)
 let hoverEnabled = false;
 
-// ---- Fast circle query index
+// Fast circle query (opsiyonel)
 let amenIdx = null;               // KDBush index
-let amenPoints = [];              // [{lng,lat,idx}]  (idx -> amenities dizini)
-let allCategories = [];           // tüm kategori isimleri
-let selectedCategories = new Set(); // seçili kategoriler (legend’dan yönetilir)
+let amenPoints = [];              // [{lng,lat,idx}]
+let allCategories = [];
+let selectedCategories = new Set();
 
 // ===========================
 // Helpers
@@ -67,7 +67,7 @@ function getProximityOrder(centroids) {
 }
 
 // ===========================
-// Spider (merkezden yakın donatılara çizgiler)
+// Spider
 // ===========================
 function updateSpider(center) {
   const roundedCenter = center.map(n => Number(n.toFixed(6)));
@@ -94,9 +94,7 @@ function updateSpider(center) {
   }
 
   nearest.sort((a, b) => a.dist - b.dist);
-  if (count !== 'all') {
-    nearest = nearest.slice(0, parseInt(count));
-  }
+  if (count !== 'all') nearest = nearest.slice(0, parseInt(count));
 
   lastSpiderData = nearest;
 
@@ -105,40 +103,19 @@ function updateSpider(center) {
     const lineId = `line-${i}`, labelId = `label-${i}`;
 
     map.addSource(lineId, { type: 'geojson', data: turf.lineString(coords) });
-    map.addLayer({
-      id: lineId,
-      type: 'line',
-      source: lineId,
-      paint: { 'line-width': 1.5, 'line-color': '#3F51B5' }
-    });
+    map.addLayer({ id: lineId, type: 'line', source: lineId, paint: { 'line-width': 1.5, 'line-color': '#3F51B5' } });
     currentLines.push(lineId);
 
     const mid = turf.midpoint(turf.point(coords[0]), turf.point(coords[1]));
     const labelFeature = {
-      type: 'Feature',
-      geometry: mid.geometry,
-      properties: {
-        label: `${entry.feature.properties?.Kategori || 'Donatı'}\n${(entry.dist * 1000).toFixed(0)} m`
-      }
+      type: 'Feature', geometry: mid.geometry,
+      properties: { label: `${entry.feature.properties?.Kategori || 'Donatı'}\n${(entry.dist * 1000).toFixed(0)} m` }
     };
-
     map.addSource(labelId, { type: 'geojson', data: labelFeature });
     map.addLayer({
-      id: labelId,
-      type: 'symbol',
-      source: labelId,
-      layout: {
-        'text-field': ['get', 'label'],
-        'text-font': ['Open Sans Bold'],
-        'text-size': 12,
-        'text-offset': [0, -1],
-        'text-anchor': 'top'
-      },
-      paint: {
-        'text-color': '#000',
-        'text-halo-color': '#fff',
-        'text-halo-width': 1
-      }
+      id: labelId, type: 'symbol', source: labelId,
+      layout: { 'text-field': ['get', 'label'], 'text-font': ['Open Sans Bold'], 'text-size': 12, 'text-offset': [0, -1], 'text-anchor': 'top' },
+      paint: { 'text-color': '#000', 'text-halo-color': '#fff', 'text-halo-width': 1 }
     });
     currentLabels.push(labelId);
   });
@@ -154,56 +131,33 @@ function exportSpiderDataToExcel(nearestEntries) {
       'Koordinat': `${entry.feature.geometry.coordinates[1]}, ${entry.feature.geometry.coordinates[0]}`
     };
   });
-
-  const worksheet = XLSX.utils.json_to_sheet(data);
-  const workbook = XLSX.utils.book_new();
-  XLSX.utils.book_append_sheet(workbook, worksheet, 'Mesafe Çıktısı');
-  XLSX.writeFile(workbook, 'mesafe_baglantilari.xlsx');
+  const ws = XLSX.utils.json_to_sheet(data);
+  const wb = XLSX.utils.book_new();
+  XLSX.utils.book_append_sheet(wb, ws, 'Mesafe Çıktısı');
+  XLSX.writeFile(wb, 'mesafe_baglantilari.xlsx');
 }
-
 document.getElementById('exportExcelButton')?.addEventListener('click', () => {
   if (lastSpiderData.length > 0) exportSpiderDataToExcel(lastSpiderData);
   else alert('Henüz gösterilecek bağlantı verisi yok.');
 });
 
 // ===========================
-// Hover circle (imleci takip eden daire + kategori sayacı)
+// Hover circle + panel
 // ===========================
 function ensureHoverCircleLayers() {
-  if (!map.getSource(HOVER_SRC)) {
-    map.addSource(HOVER_SRC, { type: 'geojson', data: turf.featureCollection([]) });
-  }
+  if (!map.getSource(HOVER_SRC)) map.addSource(HOVER_SRC, { type: 'geojson', data: turf.featureCollection([]) });
   if (!map.getLayer(HOVER_FILL)) {
-    map.addLayer({
-      id: HOVER_FILL,
-      type: 'fill',
-      source: HOVER_SRC,
-      paint: { 'fill-color': '#3F51B5', 'fill-opacity': 0.10 }
-    });
+    map.addLayer({ id: HOVER_FILL, type: 'fill', source: HOVER_SRC,
+      paint: { 'fill-color': '#3F51B5', 'fill-opacity': 0.10 } });
   }
   if (!map.getLayer(HOVER_OUTLINE)) {
-    map.addLayer({
-      id: HOVER_OUTLINE,
-      type: 'line',
-      source: HOVER_SRC,
-      paint: { 'line-color': '#3F51B5', 'line-width': 2 }
-    });
+    map.addLayer({ id: HOVER_OUTLINE, type: 'line', source: HOVER_SRC,
+      paint: { 'line-color': '#3F51B5', 'line-width': 2 } });
   }
-  if (!map.getSource(IN_CIRCLE_SRC)) {
-    map.addSource(IN_CIRCLE_SRC, { type: 'geojson', data: turf.featureCollection([]) });
-  }
+  if (!map.getSource(IN_CIRCLE_SRC)) map.addSource(IN_CIRCLE_SRC, { type: 'geojson', data: turf.featureCollection([]) });
   if (!map.getLayer(IN_CIRCLE_LAYER)) {
-    map.addLayer({
-      id: IN_CIRCLE_LAYER,
-      type: 'circle',
-      source: IN_CIRCLE_SRC,
-      paint: {
-        'circle-radius': 7,
-        'circle-color': '#FFFFFF',
-        'circle-stroke-color': '#3F51B5',
-        'circle-stroke-width': 2
-      }
-    });
+    map.addLayer({ id: IN_CIRCLE_LAYER, type: 'circle', source: IN_CIRCLE_SRC,
+      paint: { 'circle-radius': 7, 'circle-color': '#FFFFFF', 'circle-stroke-color': '#3F51B5', 'circle-stroke-width': 2 } });
   }
 }
 
@@ -217,22 +171,32 @@ function setHoverVisibility(visible) {
   if (!visible && body) body.innerHTML = 'İmleci harita üzerinde gezdirin…';
 }
 
+// hızlı veya fallback sorgu
 function queryAmenitiesInRadius(centerLng, centerLat, radiusMeters) {
-  if (!amenIdx) return [];
   const radiusKm = Math.max(0, radiusMeters) / 1000;
-  // geokdbush.around(index, lng, lat, maxResults?, maxDistanceKm?)
-  const hits = geokdbush.around(amenIdx, centerLng, centerLat, Infinity, radiusKm);
-  // hits -> amenPoints nesneleri (lng,lat, idx, distance)
-  // seçili kategori filtresi uygula
-  const filtered = hits.filter(h => {
-    const f = amenities[h.idx];
-    const k = f?.properties?.Kategori || 'Bilinmiyor';
+
+  // KDBush varsa:
+  if (amenIdx && typeof geokdbush !== 'undefined') {
+    const hits = geokdbush.around(amenIdx, centerLng, centerLat, Infinity, radiusKm);
+    return hits
+      .map(h => ({ feature: amenities[h.idx], distKm: h.distance }))
+      .filter(h => {
+        const k = h.feature?.properties?.Kategori || 'Bilinmiyor';
+        return selectedCategories.size === 0 || selectedCategories.has(k);
+      });
+  }
+
+  // Fallback: turf (daha yavaş ama güvenilir)
+  const circlePoly = turf.circle([centerLng, centerLat], radiusKm, { steps: 64, units: 'kilometers' });
+  const inside = turf.pointsWithinPolygon({ type: 'FeatureCollection', features: amenities }, circlePoly);
+  const filtered = inside.features.filter(f => {
+    const k = f.properties?.Kategori || 'Bilinmiyor';
     return selectedCategories.size === 0 || selectedCategories.has(k);
   });
-  return filtered.map(h => {
-    const f = amenities[h.idx];
-    return { feature: f, distKm: h.distance }; // distance km
-  });
+  return filtered.map(f => ({
+    feature: f,
+    distKm: turf.distance([centerLng, centerLat], f, { units: 'kilometers' })
+  }));
 }
 
 function updateHoverCircleAt(lngLat) {
@@ -241,23 +205,17 @@ function updateHoverCircleAt(lngLat) {
   lastMouseLngLat = lngLat;
 
   const radiusMeters = parseFloat(document.getElementById('distanceInput')?.value || '500');
-  const radiusKm = Math.max(0, (isNaN(radiusMeters) ? 500 : radiusMeters)) / 1000;
+  const rM = (isNaN(radiusMeters) ? 500 : radiusMeters);
+  const radiusKm = Math.max(0, rM) / 1000;
 
-  const circle = turf.circle(lngLat, radiusKm, { steps: 64, units: 'kilometers' });
   ensureHoverCircleLayers();
+  const circle = turf.circle(lngLat, radiusKm, { steps: 64, units: 'kilometers' });
   map.getSource(HOVER_SRC).setData(circle);
 
-  // hızlı daire içi sorgu
-  const around = queryAmenitiesInRadius(lngLat[0], lngLat[1], radiusMeters);
+  const around = queryAmenitiesInRadius(lngLat[0], lngLat[1], rM);
 
-  // GeoJSON olarak vurgula
-  const insideFC = {
-    type: 'FeatureCollection',
-    features: around.map(a => a.feature)
-  };
-  map.getSource(IN_CIRCLE_SRC).setData(insideFC);
+  map.getSource(IN_CIRCLE_SRC).setData({ type: 'FeatureCollection', features: around.map(a => a.feature) });
 
-  // kategori sayımı
   const counts = {};
   around.forEach(a => {
     const k = a.feature.properties?.Kategori || 'Bilinmiyor';
@@ -269,19 +227,16 @@ function updateHoverCircleAt(lngLat) {
   if (!body) return;
 
   if (total === 0) {
-    body.innerHTML = `Yarıçap: <strong>${Math.round(radiusMeters)}</strong> m<br>Bu alanda donatı yok.`;
+    body.innerHTML = `Yarıçap: <strong>${Math.round(rM)}</strong> m<br>Bu alanda donatı yok.`;
     return;
   }
 
-  const rows = Object.entries(counts)
-    .sort((a, b) => b[1] - a[1])
-    .map(([k, v]) =>
-      `<div style="display:flex;justify-content:space-between;gap:12px;">
-         <span>${k}</span><strong>${v}</strong>
-       </div>`).join('');
+  const rows = Object.entries(counts).sort((a, b) => b[1] - a[1])
+    .map(([k, v]) => `<div style="display:flex;justify-content:space-between;gap:12px;">
+      <span>${k}</span><strong>${v}</strong></div>`).join('');
 
   body.innerHTML = `
-    <div style="margin-bottom:6px;">Yarıçap: <strong>${Math.round(radiusMeters)}</strong> m</div>
+    <div style="margin-bottom:6px;">Yarıçap: <strong>${Math.round(rM)}</strong> m</div>
     <div style="border-top:1px solid #eee; padding-top:6px; margin-top:6px;">
       ${rows}
       <div style="margin-top:6px; border-top:1px dashed #e3e3e3; padding-top:6px; display:flex;justify-content:space-between;">
@@ -291,7 +246,7 @@ function updateHoverCircleAt(lngLat) {
   `;
 }
 
-// mousemove (raf-throttle) — sadece hoverEnabled iken çalışır
+// mousemove – sadece AÇIKKEN
 let hoverTicking = false;
 map.on('mousemove', (e) => {
   if (!hoverEnabled) return;
@@ -303,12 +258,14 @@ map.on('mousemove', (e) => {
   });
 });
 
-// yarıçap değiştiğinde (özellik açıksa) daireyi aynı pozisyonda güncelle
-document.getElementById('distanceInput')?.addEventListener('change', () => {
-  if (hoverEnabled && lastMouseLngLat) updateHoverCircleAt(lastMouseLngLat);
-});
+// yarıçap değişince anlık güncelle
+['input','change'].forEach(evt =>
+  document.getElementById('distanceInput')?.addEventListener(evt, () => {
+    if (hoverEnabled && lastMouseLngLat) updateHoverCircleAt(lastMouseLngLat);
+  })
+);
 
-// Toggle butonu (sağ alttaki) — metni günceller ve görünürlüğü yönetir
+// Toggle UI
 function refreshHoverToggleUI() {
   const btn = document.getElementById('hoverToggleBtn');
   if (btn) {
@@ -318,19 +275,11 @@ function refreshHoverToggleUI() {
   setHoverVisibility(hoverEnabled);
   if (hoverEnabled) {
     const center = lastMouseLngLat || [map.getCenter().lng, map.getCenter().lat];
-    updateHoverCircleAt(center);
+    updateHoverCircleAt(center); // AÇILIR AÇILMAZ BİR KEZ HESAPLA (kritik)
   }
 }
-
-function enableHover() {
-  hoverEnabled = true;
-  ensureHoverCircleLayers();
-  refreshHoverToggleUI();
-}
-function disableHover() {
-  hoverEnabled = false;
-  refreshHoverToggleUI();
-}
+function enableHover() { hoverEnabled = true; ensureHoverCircleLayers(); refreshHoverToggleUI(); }
+function disableHover() { hoverEnabled = false; refreshHoverToggleUI(); }
 
 document.getElementById('hoverToggleBtn')?.addEventListener('click', () => {
   hoverEnabled ? disableHover() : enableHover();
@@ -340,71 +289,48 @@ document.getElementById('hoverToggleBtn')?.addEventListener('click', () => {
 // Legend / kategori filtresi
 // ===========================
 function buildLegend(categories) {
-  // Var olan panel varsa temizle
   let legend = document.getElementById('categoryLegend');
   if (!legend) {
     legend = document.createElement('div');
     legend.id = 'categoryLegend';
-    legend.style.position = 'absolute';
-    legend.style.right = '12px';
-    legend.style.bottom = '140px';
-    legend.style.zIndex = '3';
-    legend.style.background = 'rgba(255,255,255,0.95)';
-    legend.style.border = '1px solid #ddd';
-    legend.style.borderRadius = '8px';
-    legend.style.padding = '10px 12px';
-    legend.style.fontSize = '13px';
-    legend.style.minWidth = '220px';
-    legend.style.boxShadow = '0 2px 6px rgba(0,0,0,0.15)';
-    legend.style.lineHeight = '1.35';
+    Object.assign(legend.style, {
+      position: 'absolute', right: '12px', bottom: '140px', zIndex: '3',
+      background: 'rgba(255,255,255,0.95)', border: '1px solid #ddd', borderRadius: '8px',
+      padding: '10px 12px', fontSize: '13px', minWidth: '220px', boxShadow: '0 2px 6px rgba(0,0,0,0.15)', lineHeight: '1.35'
+    });
     legend.innerHTML = `<div style="font-weight:600; margin-bottom:6px;">Kategoriler</div>`;
     document.body.appendChild(legend);
   } else {
     legend.innerHTML = `<div style="font-weight:600; margin-bottom:6px;">Kategoriler</div>`;
   }
 
-  // Hepsi seçili başlasın
   selectedCategories = new Set(categories);
 
   categories.forEach(cat => {
     const id = `cat_${cat.replace(/\s+/g, '_')}`;
     const wrap = document.createElement('label');
-    wrap.style.display = 'flex';
-    wrap.style.alignItems = 'center';
-    wrap.style.gap = '8px';
-    wrap.style.margin = '4px 0';
+    Object.assign(wrap.style, { display: 'flex', alignItems: 'center', gap: '8px', margin: '4px 0' });
 
     const cb = document.createElement('input');
-    cb.type = 'checkbox';
-    cb.id = id;
-    cb.checked = true;
+    cb.type = 'checkbox'; cb.id = id; cb.checked = true;
     cb.addEventListener('change', () => {
       if (cb.checked) selectedCategories.add(cat);
       else selectedCategories.delete(cat);
       applyAmenityFilter();
       if (hoverEnabled && lastMouseLngLat) updateHoverCircleAt(lastMouseLngLat);
-      // Spider da seçili kategoriye göre filtrelensin
-      const center = [map.getCenter().lng, map.getCenter().lat];
-      updateSpider(center);
+      updateSpider([map.getCenter().lng, map.getCenter().lat]);
     });
 
-    const nameSpan = document.createElement('span');
-    nameSpan.textContent = cat;
-
-    wrap.appendChild(cb);
-    wrap.appendChild(nameSpan);
+    const nameSpan = document.createElement('span'); nameSpan.textContent = cat;
+    wrap.appendChild(cb); wrap.appendChild(nameSpan);
     legend.appendChild(wrap);
   });
 
-  // Bir "Tümünü Seç / Kaldır" kontrolü:
   const ctrlRow = document.createElement('div');
-  ctrlRow.style.display = 'flex';
-  ctrlRow.style.justifyContent = 'space-between';
-  ctrlRow.style.marginTop = '8px';
+  Object.assign(ctrlRow.style, { display: 'flex', justifyContent: 'space-between', marginTop: '8px' });
 
   const selectAllBtn = document.createElement('button');
-  selectAllBtn.textContent = 'Tümünü Seç';
-  selectAllBtn.style.fontSize = '12px';
+  selectAllBtn.textContent = 'Tümünü Seç'; selectAllBtn.style.fontSize = '12px';
   selectAllBtn.onclick = () => {
     selectedCategories = new Set(categories);
     legend.querySelectorAll('input[type="checkbox"]').forEach(cb => cb.checked = true);
@@ -414,8 +340,7 @@ function buildLegend(categories) {
   };
 
   const clearBtn = document.createElement('button');
-  clearBtn.textContent = 'Temizle';
-  clearBtn.style.fontSize = '12px';
+  clearBtn.textContent = 'Temizle'; clearBtn.style.fontSize = '12px';
   clearBtn.onclick = () => {
     selectedCategories.clear();
     legend.querySelectorAll('input[type="checkbox"]').forEach(cb => cb.checked = false);
@@ -424,27 +349,21 @@ function buildLegend(categories) {
     updateSpider([map.getCenter().lng, map.getCenter().lat]);
   };
 
-  ctrlRow.appendChild(selectAllBtn);
-  ctrlRow.appendChild(clearBtn);
+  ctrlRow.appendChild(selectAllBtn); ctrlRow.appendChild(clearBtn);
   legend.appendChild(ctrlRow);
 }
 
 function applyAmenityFilter() {
   if (!map.getLayer('amenities-points')) return;
   if (selectedCategories.size === 0) {
-    // hiçbir kategori seçili değilse hiçbir şey gösterme
     map.setFilter('amenities-points', ['in', ['get', 'Kategori'], ['literal', []]]);
   } else {
-    map.setFilter('amenities-points', [
-      'in',
-      ['get', 'Kategori'],
-      ['literal', Array.from(selectedCategories)]
-    ]);
+    map.setFilter('amenities-points', ['in', ['get', 'Kategori'], ['literal', Array.from(selectedCategories)]]);
   }
 }
 
 // ===========================
-// Load: verileri çek, katmanları kur
+// Load
 // ===========================
 map.on('load', () => {
   Promise.all([
@@ -456,63 +375,35 @@ map.on('load', () => {
     amenities = amenityData.features;
     proximityOrder = getProximityOrder(parcelCentroids);
 
-    // Fast index kur
-    amenPoints = amenities.map((f, idx) => ({
-      lng: f.geometry.coordinates[0],
-      lat: f.geometry.coordinates[1],
-      idx
-    }));
-    // KDBush global olup olmadığını kontrol et (script ekli değilse uyarı çıkar)
+    // Fast index (varsa)
+    amenPoints = amenities.map((f, idx) => ({ lng: f.geometry.coordinates[0], lat: f.geometry.coordinates[1], idx }));
     if (typeof KDBush !== 'undefined') {
       amenIdx = new KDBush(amenPoints, p => p.lng, p => p.lat);
     } else {
-      console.warn('KDBush bulunamadı. Lütfen HTML’e kdbush ve geokdbush scriptlerini ekleyin.');
+      console.warn('KDBush yok – turf fallback kullanılacak (daha yavaş).');
     }
 
-    // Kategori listesi ve legend
+    // Legend
     allCategories = Array.from(new Set(amenities.map(f => f.properties?.Kategori || 'Bilinmiyor'))).sort();
     buildLegend(allCategories);
 
     // Parcels
     map.addSource('parcels', { type: 'geojson', data: parcelData });
-    map.addLayer({
-      id: 'parcels-polygons',
-      type: 'fill',
-      source: 'parcels',
-      paint: { 'fill-color': '#FFCDD2', 'fill-opacity': 0.3 }
-    });
+    map.addLayer({ id: 'parcels-polygons', type: 'fill', source: 'parcels', paint: { 'fill-color': '#FFCDD2', 'fill-opacity': 0.3 } });
 
     // Centroids
-    map.addSource('centroids', {
-      type: 'geojson',
-      data: { type: 'FeatureCollection', features: parcelCentroids }
-    });
+    map.addSource('centroids', { type: 'geojson', data: { type: 'FeatureCollection', features: parcelCentroids } });
+    map.addLayer({ id: 'centroids-points', type: 'circle', source: 'centroids', paint: { 'circle-radius': 5, 'circle-color': '#E91E63' } });
     map.addLayer({
-      id: 'centroids-points',
-      type: 'circle',
-      source: 'centroids',
-      paint: { 'circle-radius': 5, 'circle-color': '#E91E63' }
-    });
-    map.addLayer({
-      id: 'centroids-labels',
-      type: 'symbol',
-      source: 'centroids',
-      layout: {
-        'text-field': ['get', 'name'],
-        'text-font': ['Open Sans Bold'],
-        'text-size': 11,
-        'text-anchor': 'top',
-        'text-offset': [0, 0.5]
-      },
+      id: 'centroids-labels', type: 'symbol', source: 'centroids',
+      layout: { 'text-field': ['get', 'name'], 'text-font': ['Open Sans Bold'], 'text-size': 11, 'text-anchor': 'top', 'text-offset': [0, 0.5] },
       paint: { 'text-color': '#333', 'text-halo-color': '#fff', 'text-halo-width': 1 }
     });
 
-    // Amenities (renkler kategoriye göre)
+    // Amenities
     map.addSource('amenities', { type: 'geojson', data: amenityData });
     map.addLayer({
-      id: 'amenities-points',
-      type: 'circle',
-      source: 'amenities',
+      id: 'amenities-points', type: 'circle', source: 'amenities',
       paint: {
         'circle-radius': 5,
         'circle-color': [
@@ -525,15 +416,15 @@ map.on('load', () => {
         ]
       }
     });
-    applyAmenityFilter(); // başlangıçta hepsi seçili
+    applyAmenityFilter();
 
-    // Başlangıç: en yakın centroid’e uç ve spider
+    // Başlangıç
     const start = parcelCentroids[proximityOrder[currentIndex]].geometry.coordinates;
     map.flyTo({ center: start });
     setupParcelSearch();
     updateSpider(start);
 
-    // Hover özelliği varsayılan kapalı — paneli ve katmanları gizle
+    // Hover varsayılan kapalı
     setHoverVisibility(false);
   });
 });
@@ -550,49 +441,22 @@ document.getElementById('styleSwitcher')?.addEventListener('change', function ()
   map.setStyle(selectedStyle);
 
   map.once('style.load', () => {
-    map.setCenter(center);
-    map.setZoom(zoom);
+    map.setCenter(center); map.setZoom(zoom);
 
-    // Parcels
     map.addSource('parcels', { type: 'geojson', data: { type: 'FeatureCollection', features: parcels } });
-    map.addLayer({
-      id: 'parcels-polygons',
-      type: 'fill',
-      source: 'parcels',
-      paint: { 'fill-color': '#FFCDD2', 'fill-opacity': 0.3 }
-    });
+    map.addLayer({ id: 'parcels-polygons', type: 'fill', source: 'parcels', paint: { 'fill-color': '#FFCDD2', 'fill-opacity': 0.3 } });
 
-    // Centroids
-    map.addSource('centroids', {
-      type: 'geojson',
-      data: { type: 'FeatureCollection', features: parcelCentroids }
-    });
+    map.addSource('centroids', { type: 'geojson', data: { type: 'FeatureCollection', features: parcelCentroids } });
+    map.addLayer({ id: 'centroids-points', type: 'circle', source: 'centroids', paint: { 'circle-radius': 5, 'circle-color': '#E91E63' } });
     map.addLayer({
-      id: 'centroids-points',
-      type: 'circle',
-      source: 'centroids',
-      paint: { 'circle-radius': 5, 'circle-color': '#E91E63' }
-    });
-    map.addLayer({
-      id: 'centroids-labels',
-      type: 'symbol',
-      source: 'centroids',
-      layout: {
-        'text-field': ['get', 'name'],
-        'text-font': ['Open Sans Bold'],
-        'text-size': 11,
-        'text-anchor': 'top',
-        'text-offset': [0, 0.5]
-      },
+      id: 'centroids-labels', type: 'symbol', source: 'centroids',
+      layout: { 'text-field': ['get', 'name'], 'text-font': ['Open Sans Bold'], 'text-size': 11, 'text-anchor': 'top', 'text-offset': [0, 0.5] },
       paint: { 'text-color': '#333', 'text-halo-color': '#fff', 'text-halo-width': 1 }
     });
 
-    // Amenities
     map.addSource('amenities', { type: 'geojson', data: { type: 'FeatureCollection', features: amenities } });
     map.addLayer({
-      id: 'amenities-points',
-      type: 'circle',
-      source: 'amenities',
+      id: 'amenities-points', type: 'circle', source: 'amenities',
       paint: {
         'circle-radius': 5,
         'circle-color': [
@@ -605,29 +469,26 @@ document.getElementById('styleSwitcher')?.addEventListener('change', function ()
         ]
       }
     });
-
-    // Legend filtresini tekrar uygula
     applyAmenityFilter();
 
-    // Hover katmanları: sadece açık ise göster
+    // Hover katmanları ve UI
     ensureHoverCircleLayers();
     refreshHoverToggleUI();
 
-    // Spider’ı da mevcut sıradaki centroid’e yeniden kur
+    // Spider yenile
     const newCenter = parcelCentroids[proximityOrder[currentIndex]].geometry.coordinates;
     updateSpider(newCenter);
   });
 });
 
 // ===========================
-// Popup (sağ tık bilgi)
+// Popup
 // ===========================
 map.on('contextmenu', e => {
   const features = map.queryRenderedFeatures(e.point, { layers: ['centroids-points', 'amenities-points'] });
   const content = features.length
     ? Object.entries(features[0].properties).map(([k, v]) => `<b>${k}</b>: ${v}`).join('<br>')
     : 'Yakında veri bulunamadı.';
-
   new mapboxgl.Popup().setLngLat(e.lngLat).setHTML(content).addTo(map);
 });
 
@@ -639,7 +500,7 @@ function getNearestCentroidIndex(lngLat) {
   parcelCentroids.forEach((f, i) => {
     const d = turf.distance(turf.point(lngLat), f);
     if (d < min) { min = d; nearest = i; }
-    });
+  });
   return nearest;
 }
 
@@ -672,9 +533,9 @@ function setupParcelSearch() {
   });
 }
 
+// map move (spider & hover)
 let lastMove = 0;
 function getMoveDelay() {
-  // zoom’a göre hafif dinamik throttle (yakına girdikçe daha sık)
   const z = map.getZoom();
   return Math.max(120, 280 - (z - 10) * 25);
 }
@@ -694,21 +555,22 @@ map.on('move', () => {
   if (hoverEnabled) updateHoverCircleAt(target);
 });
 
+// ===========================
+// Kısayollar: H ve +/-
+// ===========================
 window.addEventListener('keydown', e => {
   const key = e.key;
   if (key === 'd' || key === 'D') {
     currentIndex = (currentIndex + 1) % proximityOrder.length;
   } else if (key === 'a' || key === 'A') {
     currentIndex = (currentIndex - 1 + proximityOrder.length) % proximityOrder.length;
-  } else if (key.toLowerCase() === 'h') {
+  } else if (key.toLowerCase() === 'h') {          // ⇐ H ile toggle
     hoverEnabled ? disableHover() : enableHover();
     return;
-  } else if (key === '+' || key === '=' ) {
-    tweakRadius(+50);
-    return;
+  } else if (key === '+' || key === '=') {
+    tweakRadius(+50); return;
   } else if (key === '-' || key === '_') {
-    tweakRadius(-50);
-    return;
+    tweakRadius(-50); return;
   } else {
     return;
   }
@@ -723,45 +585,33 @@ function tweakRadius(delta){
   if (!el) return;
   const cur = +el.value || 500;
   el.value = Math.max(10, cur + delta);
+  el.dispatchEvent(new Event('input'));
   el.dispatchEvent(new Event('change'));
 }
 
 // ===========================
-// Grafik butonları (mevcut spider verisi üzerinden)
+// Grafikler (aynı)
 // ===========================
 function drawCategoryChart() {
   const categoryCounts = {};
   lastSpiderData.forEach(entry => {
-    const kategori = entry.feature.properties?.Kategori || 'Bilinmiyor';
-    categoryCounts[kategori] = (categoryCounts[kategori] || 0) + 1;
+    const k = entry.feature.properties?.Kategori || 'Bilinmiyor';
+    categoryCounts[k] = (categoryCounts[k] || 0) + 1;
   });
 
-  const el = document.getElementById('categoryChartContainer');
-  if (!el) return;
+  const el = document.getElementById('categoryChartContainer'); if (!el) return;
   el.innerHTML = '<canvas id="categoryChart"></canvas>';
   const ctx = document.getElementById('categoryChart').getContext('2d');
 
   new Chart(ctx, {
     type: 'pie',
-    data: {
-      labels: Object.keys(categoryCounts),
-      datasets: [{ data: Object.values(categoryCounts) }]
-    },
+    data: { labels: Object.keys(categoryCounts), datasets: [{ data: Object.values(categoryCounts) }] },
     options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      plugins: {
-        legend: { position: 'bottom' },
-        title: { display: true, text: 'Kategorisel Yoğunluk Dağılımı' },
-        datalabels: {
-          color: '#fff',
-          formatter: (value, ctx) => {
-            const total = ctx.chart.data.datasets[0].data.reduce((a, b) => a + b, 0);
-            return `${value} (${(value / total * 100).toFixed(1)}%)`;
-          },
-          font: { weight: 'bold' }
-        }
-      }
+      responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { position: 'bottom' }, title: { display: true, text: 'Kategorisel Yoğunluk Dağılımı' },
+        datalabels: { color: '#fff',
+          formatter: (v, c) => { const t = c.chart.data.datasets[0].data.reduce((a,b)=>a+b,0); return `${v} (${(v/t*100).toFixed(1)}%)`; },
+          font: { weight: 'bold' } } }
     },
     plugins: [ChartDataLabels]
   });
@@ -770,38 +620,25 @@ function drawCategoryChart() {
 function drawWeightedCategoryChart() {
   const weightedCounts = {};
   lastSpiderData.forEach(entry => {
-    const kategori = entry.feature.properties?.Kategori || 'Bilinmiyor';
-    const distance = entry.dist * 1000;
-    const etkilesim = 1 / Math.max(distance, 1);
-    weightedCounts[kategori] = (weightedCounts[kategori] || 0) + etkilesim;
+    const k = entry.feature.properties?.Kategori || 'Bilinmiyor';
+    const d = entry.dist * 1000;
+    const w = 1 / Math.max(d, 1);
+    weightedCounts[k] = (weightedCounts[k] || 0) + w;
   });
 
-  const el = document.getElementById('weightedChartContainer');
-  if (!el) return;
+  const el = document.getElementById('weightedChartContainer'); if (!el) return;
   el.innerHTML = '<canvas id="weightedCategoryChart"></canvas>';
   const ctx = document.getElementById('weightedCategoryChart').getContext('2d');
 
   new Chart(ctx, {
     type: 'pie',
-    data: {
-      labels: Object.keys(weightedCounts),
-      datasets: [{ data: Object.values(weightedCounts) }]
-    },
+    data: { labels: Object.keys(weightedCounts), datasets: [{ data: Object.values(weightedCounts) }] },
     options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      plugins: {
-        legend: { position: 'bottom' },
-        title: { display: true, text: 'Mesafe Ağırlıklı Kategorisel Dağılım' },
-        datalabels: {
-          color: '#fff',
-          formatter: (value, ctx) => {
-            const total = ctx.chart.data.datasets[0].data.reduce((a, b) => a + b, 0);
-            return `${value.toFixed(2)} (${(value / total * 100).toFixed(1)}%)`;
-          },
-          font: { weight: 'bold' }
-        }
-      }
+      responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { position: 'bottom' }, title: { display: true, text: 'Mesafe Ağırlıklı Kategorisel Dağılım' },
+        datalabels: { color: '#fff',
+          formatter: (v, c) => { const t = c.chart.data.datasets[0].data.reduce((a,b)=>a+b,0); return `${v.toFixed(2)} (${(v/t*100).toFixed(1)}%)`; },
+          font: { weight: 'bold' } } }
     },
     plugins: [ChartDataLabels]
   });
@@ -845,7 +682,7 @@ detailToggleBtn.onclick = () => {
   detailToggleBtn.textContent = detailVisible ? 'Teknik Detayı Gizle' : 'Teknik Detayı Göster';
 };
 
-// İndir fonksiyonu (index.html’deki butonlar çağırıyor)
+// indir fonksiyonu
 function downloadChartImage(canvasId, filename) {
   const canvas = document.getElementById(canvasId);
   if (!canvas) return;
@@ -854,4 +691,4 @@ function downloadChartImage(canvasId, filename) {
   link.href = canvas.toDataURL('image/png');
   link.click();
 }
-window.downloadChartImage = downloadChartImage; // global erişim
+window.downloadChartImage = downloadChartImage;
