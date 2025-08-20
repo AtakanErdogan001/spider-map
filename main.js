@@ -1,3 +1,7 @@
+// ===========================
+// main.js (fast circle query + legend filter + shortcuts)
+// ===========================
+
 mapboxgl.accessToken = 'pk.eyJ1IjoiYXRha2FuZSIsImEiOiJjbWNoNGUyNWkwcjFqMmxxdmVnb2tnMWJ4In0.xgo3tCNuq6kVXFYQpoS8PQ';
 
 const map = new mapboxgl.Map({
@@ -23,6 +27,12 @@ let lastMouseLngLat = null;
 
 // Özellik toggle durumu (varsayılan KAPALI)
 let hoverEnabled = false;
+
+// ---- Fast circle query index
+let amenIdx = null;               // KDBush index
+let amenPoints = [];              // [{lng,lat,idx}]  (idx -> amenities dizini)
+let allCategories = [];           // tüm kategori isimleri
+let selectedCategories = new Set(); // seçili kategoriler (legend’dan yönetilir)
 
 // ===========================
 // Helpers
@@ -72,10 +82,12 @@ function updateSpider(center) {
   const maxDistance = parseFloat(document.getElementById('distanceInput')?.value || '0') / 1000;
   let count = document.getElementById('lineCountSelect')?.value ?? '10';
 
-  let nearest = amenities.map(f => ({
-    feature: f,
-    dist: turf.distance(centerPoint, f, { units: 'kilometers' })
-  }));
+  let nearest = amenities
+    .filter(f => selectedCategories.size === 0 || selectedCategories.has(f.properties?.Kategori || 'Bilinmiyor'))
+    .map(f => ({
+      feature: f,
+      dist: turf.distance(centerPoint, f, { units: 'kilometers' })
+    }));
 
   if (!isNaN(maxDistance) && maxDistance > 0) {
     nearest = nearest.filter(e => e.dist <= maxDistance);
@@ -196,18 +208,31 @@ function ensureHoverCircleLayers() {
 }
 
 function setHoverVisibility(visible) {
-  // katman görünürlüğü
   [HOVER_FILL, HOVER_OUTLINE, IN_CIRCLE_LAYER].forEach(id => {
-    if (map.getLayer(id)) {
-      map.setLayoutProperty(id, 'visibility', visible ? 'visible' : 'none');
-    }
+    if (map.getLayer(id)) map.setLayoutProperty(id, 'visibility', visible ? 'visible' : 'none');
   });
-  // panel görünürlüğü
   const panel = document.getElementById('categorySummary');
   if (panel) panel.style.display = visible ? 'block' : 'none';
-  // panel içeriğini sıfırla
   const body = document.getElementById('categorySummaryBody');
   if (!visible && body) body.innerHTML = 'İmleci harita üzerinde gezdirin…';
+}
+
+function queryAmenitiesInRadius(centerLng, centerLat, radiusMeters) {
+  if (!amenIdx) return [];
+  const radiusKm = Math.max(0, radiusMeters) / 1000;
+  // geokdbush.around(index, lng, lat, maxResults?, maxDistanceKm?)
+  const hits = geokdbush.around(amenIdx, centerLng, centerLat, Infinity, radiusKm);
+  // hits -> amenPoints nesneleri (lng,lat, idx, distance)
+  // seçili kategori filtresi uygula
+  const filtered = hits.filter(h => {
+    const f = amenities[h.idx];
+    const k = f?.properties?.Kategori || 'Bilinmiyor';
+    return selectedCategories.size === 0 || selectedCategories.has(k);
+  });
+  return filtered.map(h => {
+    const f = amenities[h.idx];
+    return { feature: f, distKm: h.distance }; // distance km
+  });
 }
 
 function updateHoverCircleAt(lngLat) {
@@ -222,25 +247,24 @@ function updateHoverCircleAt(lngLat) {
   ensureHoverCircleLayers();
   map.getSource(HOVER_SRC).setData(circle);
 
-  // daire içindeki noktalar
-  if (!amenities || amenities.length === 0) {
-    const body = document.getElementById('categorySummaryBody');
-    if (body) body.innerHTML = 'Donatı verisi henüz yüklenmedi.';
-    return;
-  }
+  // hızlı daire içi sorgu
+  const around = queryAmenitiesInRadius(lngLat[0], lngLat[1], radiusMeters);
 
-  const inside = turf.pointsWithinPolygon(
-    { type: 'FeatureCollection', features: amenities }, circle
-  );
-  map.getSource(IN_CIRCLE_SRC).setData(inside);
+  // GeoJSON olarak vurgula
+  const insideFC = {
+    type: 'FeatureCollection',
+    features: around.map(a => a.feature)
+  };
+  map.getSource(IN_CIRCLE_SRC).setData(insideFC);
 
+  // kategori sayımı
   const counts = {};
-  inside.features.forEach(f => {
-    const k = f.properties?.Kategori || 'Bilinmiyor';
+  around.forEach(a => {
+    const k = a.feature.properties?.Kategori || 'Bilinmiyor';
     counts[k] = (counts[k] || 0) + 1;
   });
 
-  const total = inside.features.length;
+  const total = around.length;
   const body = document.getElementById('categorySummaryBody');
   if (!body) return;
 
@@ -293,7 +317,6 @@ function refreshHoverToggleUI() {
   }
   setHoverVisibility(hoverEnabled);
   if (hoverEnabled) {
-    // açıkken son konum veya harita merkezi ile güncelle
     const center = lastMouseLngLat || [map.getCenter().lng, map.getCenter().lat];
     updateHoverCircleAt(center);
   }
@@ -314,6 +337,113 @@ document.getElementById('hoverToggleBtn')?.addEventListener('click', () => {
 });
 
 // ===========================
+// Legend / kategori filtresi
+// ===========================
+function buildLegend(categories) {
+  // Var olan panel varsa temizle
+  let legend = document.getElementById('categoryLegend');
+  if (!legend) {
+    legend = document.createElement('div');
+    legend.id = 'categoryLegend';
+    legend.style.position = 'absolute';
+    legend.style.right = '12px';
+    legend.style.bottom = '140px';
+    legend.style.zIndex = '3';
+    legend.style.background = 'rgba(255,255,255,0.95)';
+    legend.style.border = '1px solid #ddd';
+    legend.style.borderRadius = '8px';
+    legend.style.padding = '10px 12px';
+    legend.style.fontSize = '13px';
+    legend.style.minWidth = '220px';
+    legend.style.boxShadow = '0 2px 6px rgba(0,0,0,0.15)';
+    legend.style.lineHeight = '1.35';
+    legend.innerHTML = `<div style="font-weight:600; margin-bottom:6px;">Kategoriler</div>`;
+    document.body.appendChild(legend);
+  } else {
+    legend.innerHTML = `<div style="font-weight:600; margin-bottom:6px;">Kategoriler</div>`;
+  }
+
+  // Hepsi seçili başlasın
+  selectedCategories = new Set(categories);
+
+  categories.forEach(cat => {
+    const id = `cat_${cat.replace(/\s+/g, '_')}`;
+    const wrap = document.createElement('label');
+    wrap.style.display = 'flex';
+    wrap.style.alignItems = 'center';
+    wrap.style.gap = '8px';
+    wrap.style.margin = '4px 0';
+
+    const cb = document.createElement('input');
+    cb.type = 'checkbox';
+    cb.id = id;
+    cb.checked = true;
+    cb.addEventListener('change', () => {
+      if (cb.checked) selectedCategories.add(cat);
+      else selectedCategories.delete(cat);
+      applyAmenityFilter();
+      if (hoverEnabled && lastMouseLngLat) updateHoverCircleAt(lastMouseLngLat);
+      // Spider da seçili kategoriye göre filtrelensin
+      const center = [map.getCenter().lng, map.getCenter().lat];
+      updateSpider(center);
+    });
+
+    const nameSpan = document.createElement('span');
+    nameSpan.textContent = cat;
+
+    wrap.appendChild(cb);
+    wrap.appendChild(nameSpan);
+    legend.appendChild(wrap);
+  });
+
+  // Bir "Tümünü Seç / Kaldır" kontrolü:
+  const ctrlRow = document.createElement('div');
+  ctrlRow.style.display = 'flex';
+  ctrlRow.style.justifyContent = 'space-between';
+  ctrlRow.style.marginTop = '8px';
+
+  const selectAllBtn = document.createElement('button');
+  selectAllBtn.textContent = 'Tümünü Seç';
+  selectAllBtn.style.fontSize = '12px';
+  selectAllBtn.onclick = () => {
+    selectedCategories = new Set(categories);
+    legend.querySelectorAll('input[type="checkbox"]').forEach(cb => cb.checked = true);
+    applyAmenityFilter();
+    if (hoverEnabled && lastMouseLngLat) updateHoverCircleAt(lastMouseLngLat);
+    updateSpider([map.getCenter().lng, map.getCenter().lat]);
+  };
+
+  const clearBtn = document.createElement('button');
+  clearBtn.textContent = 'Temizle';
+  clearBtn.style.fontSize = '12px';
+  clearBtn.onclick = () => {
+    selectedCategories.clear();
+    legend.querySelectorAll('input[type="checkbox"]').forEach(cb => cb.checked = false);
+    applyAmenityFilter();
+    if (hoverEnabled && lastMouseLngLat) updateHoverCircleAt(lastMouseLngLat);
+    updateSpider([map.getCenter().lng, map.getCenter().lat]);
+  };
+
+  ctrlRow.appendChild(selectAllBtn);
+  ctrlRow.appendChild(clearBtn);
+  legend.appendChild(ctrlRow);
+}
+
+function applyAmenityFilter() {
+  if (!map.getLayer('amenities-points')) return;
+  if (selectedCategories.size === 0) {
+    // hiçbir kategori seçili değilse hiçbir şey gösterme
+    map.setFilter('amenities-points', ['in', ['get', 'Kategori'], ['literal', []]]);
+  } else {
+    map.setFilter('amenities-points', [
+      'in',
+      ['get', 'Kategori'],
+      ['literal', Array.from(selectedCategories)]
+    ]);
+  }
+}
+
+// ===========================
 // Load: verileri çek, katmanları kur
 // ===========================
 map.on('load', () => {
@@ -325,6 +455,23 @@ map.on('load', () => {
     parcelCentroids = getCentroids(parcels);
     amenities = amenityData.features;
     proximityOrder = getProximityOrder(parcelCentroids);
+
+    // Fast index kur
+    amenPoints = amenities.map((f, idx) => ({
+      lng: f.geometry.coordinates[0],
+      lat: f.geometry.coordinates[1],
+      idx
+    }));
+    // KDBush global olup olmadığını kontrol et (script ekli değilse uyarı çıkar)
+    if (typeof KDBush !== 'undefined') {
+      amenIdx = new KDBush(amenPoints, p => p.lng, p => p.lat);
+    } else {
+      console.warn('KDBush bulunamadı. Lütfen HTML’e kdbush ve geokdbush scriptlerini ekleyin.');
+    }
+
+    // Kategori listesi ve legend
+    allCategories = Array.from(new Set(amenities.map(f => f.properties?.Kategori || 'Bilinmiyor'))).sort();
+    buildLegend(allCategories);
 
     // Parcels
     map.addSource('parcels', { type: 'geojson', data: parcelData });
@@ -378,6 +525,7 @@ map.on('load', () => {
         ]
       }
     });
+    applyAmenityFilter(); // başlangıçta hepsi seçili
 
     // Başlangıç: en yakın centroid’e uç ve spider
     const start = parcelCentroids[proximityOrder[currentIndex]].geometry.coordinates;
@@ -385,7 +533,7 @@ map.on('load', () => {
     setupParcelSearch();
     updateSpider(start);
 
-    // Hover özelliği varsayılan kapalı — paneli ve katmanları gizli tut
+    // Hover özelliği varsayılan kapalı — paneli ve katmanları gizle
     setHoverVisibility(false);
   });
 });
@@ -458,7 +606,10 @@ document.getElementById('styleSwitcher')?.addEventListener('change', function ()
       }
     });
 
-    // Hover katmanları, sadece özellik açıksa yeniden kur/ göster
+    // Legend filtresini tekrar uygula
+    applyAmenityFilter();
+
+    // Hover katmanları: sadece açık ise göster
     ensureHoverCircleLayers();
     refreshHoverToggleUI();
 
@@ -522,9 +673,15 @@ function setupParcelSearch() {
 }
 
 let lastMove = 0;
+function getMoveDelay() {
+  // zoom’a göre hafif dinamik throttle (yakına girdikçe daha sık)
+  const z = map.getZoom();
+  return Math.max(120, 280 - (z - 10) * 25);
+}
 map.on('move', () => {
   const now = Date.now();
-  if (now - lastMove < 300) return;
+  const delay = getMoveDelay();
+  if (now - lastMove < delay) return;
   lastMove = now;
 
   const center = map.getCenter();
@@ -538,10 +695,20 @@ map.on('move', () => {
 });
 
 window.addEventListener('keydown', e => {
-  if (e.key === 'd' || e.key === 'D') {
+  const key = e.key;
+  if (key === 'd' || key === 'D') {
     currentIndex = (currentIndex + 1) % proximityOrder.length;
-  } else if (e.key === 'a' || e.key === 'A') {
+  } else if (key === 'a' || key === 'A') {
     currentIndex = (currentIndex - 1 + proximityOrder.length) % proximityOrder.length;
+  } else if (key.toLowerCase() === 'h') {
+    hoverEnabled ? disableHover() : enableHover();
+    return;
+  } else if (key === '+' || key === '=' ) {
+    tweakRadius(+50);
+    return;
+  } else if (key === '-' || key === '_') {
+    tweakRadius(-50);
+    return;
   } else {
     return;
   }
@@ -550,6 +717,14 @@ window.addEventListener('keydown', e => {
   updateSpider(newCenter);
   if (hoverEnabled) updateHoverCircleAt(newCenter);
 });
+
+function tweakRadius(delta){
+  const el = document.getElementById('distanceInput');
+  if (!el) return;
+  const cur = +el.value || 500;
+  el.value = Math.max(10, cur + delta);
+  el.dispatchEvent(new Event('change'));
+}
 
 // ===========================
 // Grafik butonları (mevcut spider verisi üzerinden)
