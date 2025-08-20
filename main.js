@@ -293,17 +293,35 @@ function buildLegend(categories) {
   if (!legend) {
     legend = document.createElement('div');
     legend.id = 'categoryLegend';
-    Object.assign(legend.style, {
-      position: 'absolute', right: '12px', bottom: '140px', zIndex: '3',
-      background: 'rgba(255,255,255,0.95)', border: '1px solid #ddd', borderRadius: '8px',
-      padding: '10px 12px', fontSize: '13px', minWidth: '220px', boxShadow: '0 2px 6px rgba(0,0,0,0.15)', lineHeight: '1.35'
-    });
-    legend.innerHTML = `<div style="font-weight:600; margin-bottom:6px;">Kategoriler</div>`;
     document.body.appendChild(legend);
-  } else {
-    legend.innerHTML = `<div style="font-weight:600; margin-bottom:6px;">Kategoriler</div>`;
   }
 
+  // ⇣⇣⇣ BURASI: KONUMU SOL‑ALTA ALDIK
+  Object.assign(legend.style, {
+    position: 'absolute',
+    left: '12px',     // ← sol
+    right: 'auto',    // ← sağ iptal
+    bottom: '12px',   // ← alt
+    zIndex: '3',
+    background: 'rgba(255,255,255,0.95)',
+    border: '1px solid #ddd',
+    borderRadius: '8px',
+    padding: '10px 12px',
+    fontSize: '13px',
+    minWidth: '220px',
+    maxWidth: '300px',
+    maxHeight: '40vh',           // uzun listelerde taşmasın
+    overflow: 'auto',            // scroll çıksın
+    boxShadow: '0 2px 6px rgba(0,0,0,0.15)',
+    lineHeight: '1.35'
+  });
+
+  // Eğer Mapbox'ın sol‑alt logosu/controllarıyla çakışıyorsa biraz yukarı al:
+  // legend.style.bottom = '80px'; // istersen bunu aç
+
+  legend.innerHTML = `<div style="font-weight:600; margin-bottom:6px;">Kategoriler</div>`;
+
+  // baştan hepsi seçili
   selectedCategories = new Set(categories);
 
   categories.forEach(cat => {
@@ -312,7 +330,9 @@ function buildLegend(categories) {
     Object.assign(wrap.style, { display: 'flex', alignItems: 'center', gap: '8px', margin: '4px 0' });
 
     const cb = document.createElement('input');
-    cb.type = 'checkbox'; cb.id = id; cb.checked = true;
+    cb.type = 'checkbox';
+    cb.id = id;
+    cb.checked = true;
     cb.addEventListener('change', () => {
       if (cb.checked) selectedCategories.add(cat);
       else selectedCategories.delete(cat);
@@ -321,8 +341,11 @@ function buildLegend(categories) {
       updateSpider([map.getCenter().lng, map.getCenter().lat]);
     });
 
-    const nameSpan = document.createElement('span'); nameSpan.textContent = cat;
-    wrap.appendChild(cb); wrap.appendChild(nameSpan);
+    const nameSpan = document.createElement('span');
+    nameSpan.textContent = cat;
+
+    wrap.appendChild(cb);
+    wrap.appendChild(nameSpan);
     legend.appendChild(wrap);
   });
 
@@ -330,7 +353,8 @@ function buildLegend(categories) {
   Object.assign(ctrlRow.style, { display: 'flex', justifyContent: 'space-between', marginTop: '8px' });
 
   const selectAllBtn = document.createElement('button');
-  selectAllBtn.textContent = 'Tümünü Seç'; selectAllBtn.style.fontSize = '12px';
+  selectAllBtn.textContent = 'Tümünü Seç';
+  selectAllBtn.style.fontSize = '12px';
   selectAllBtn.onclick = () => {
     selectedCategories = new Set(categories);
     legend.querySelectorAll('input[type="checkbox"]').forEach(cb => cb.checked = true);
@@ -340,7 +364,8 @@ function buildLegend(categories) {
   };
 
   const clearBtn = document.createElement('button');
-  clearBtn.textContent = 'Temizle'; clearBtn.style.fontSize = '12px';
+  clearBtn.textContent = 'Temizle';
+  clearBtn.style.fontSize = '12px';
   clearBtn.onclick = () => {
     selectedCategories.clear();
     legend.querySelectorAll('input[type="checkbox"]').forEach(cb => cb.checked = false);
@@ -349,9 +374,11 @@ function buildLegend(categories) {
     updateSpider([map.getCenter().lng, map.getCenter().lat]);
   };
 
-  ctrlRow.appendChild(selectAllBtn); ctrlRow.appendChild(clearBtn);
+  ctrlRow.appendChild(selectAllBtn);
+  ctrlRow.appendChild(clearBtn);
   legend.appendChild(ctrlRow);
 }
+
 
 function applyAmenityFilter() {
   if (!map.getLayer('amenities-points')) return;
@@ -692,3 +719,4 @@ function downloadChartImage(canvasId, filename) {
   link.click();
 }
 window.downloadChartImage = downloadChartImage;
+
