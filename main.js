@@ -1,5 +1,5 @@
 // ===========================
-// main.js (stabil hover + T kısayolu + turf fallback)
+// main.js (Kategori Paneli K kısayolu + stabil hover + turf fallback)
 // ===========================
 
 mapboxgl.accessToken = 'pk.eyJ1IjoiYXRha2FuZSIsImEiOiJjbWNoNGUyNWkwcjFqMmxxdmVnb2tnMWJ4In0.xgo3tCNuq6kVXFYQpoS8PQ';
@@ -33,6 +33,9 @@ let amenIdx = null;               // KDBush index
 let amenPoints = [];              // [{lng,lat,idx}]
 let allCategories = [];
 let selectedCategories = new Set();
+
+// ---- Kategori paneli görünürlük durumu (K kısayolu ile kontrol)
+let legendVisible = true;
 
 // ===========================
 // Helpers
@@ -288,6 +291,15 @@ document.getElementById('hoverToggleBtn')?.addEventListener('click', () => {
 // ===========================
 // Legend / kategori filtresi
 // ===========================
+function setLegendVisibility(visible) {
+  legendVisible = visible;
+  const el = document.getElementById('categoryLegend');
+  if (el) el.style.display = legendVisible ? 'block' : 'none';
+}
+function toggleLegendVisibility() {
+  setLegendVisibility(!legendVisible);
+}
+
 function buildLegend(categories) {
   let legend = document.getElementById('categoryLegend');
   if (!legend) {
@@ -296,12 +308,12 @@ function buildLegend(categories) {
     document.body.appendChild(legend);
   }
 
-  // ⇣⇣⇣ BURASI: KONUMU SOL‑ALTA ALDIK
+  // sol-alt konum
   Object.assign(legend.style, {
     position: 'absolute',
-    left: '12px',     // ← sol
-    right: 'auto',    // ← sağ iptal
-    bottom: '12px',   // ← alt
+    left: '12px',
+    right: 'auto',
+    bottom: '12px',
     zIndex: '3',
     background: 'rgba(255,255,255,0.95)',
     border: '1px solid #ddd',
@@ -310,14 +322,12 @@ function buildLegend(categories) {
     fontSize: '13px',
     minWidth: '220px',
     maxWidth: '300px',
-    maxHeight: '40vh',           // uzun listelerde taşmasın
-    overflow: 'auto',            // scroll çıksın
+    maxHeight: '40vh',
+    overflow: 'auto',
     boxShadow: '0 2px 6px rgba(0,0,0,0.15)',
-    lineHeight: '1.35'
+    lineHeight: '1.35',
+    display: legendVisible ? 'block' : 'none' // ⇐ mevcut görünürlük durumuna saygı
   });
-
-  // Eğer Mapbox'ın sol‑alt logosu/controllarıyla çakışıyorsa biraz yukarı al:
-  // legend.style.bottom = '80px'; // istersen bunu aç
 
   legend.innerHTML = `<div style="font-weight:600; margin-bottom:6px;">Kategoriler</div>`;
 
@@ -379,7 +389,6 @@ function buildLegend(categories) {
   legend.appendChild(ctrlRow);
 }
 
-
 function applyAmenityFilter() {
   if (!map.getLayer('amenities-points')) return;
   if (selectedCategories.size === 0) {
@@ -412,7 +421,8 @@ map.on('load', () => {
 
     // Legend
     allCategories = Array.from(new Set(amenities.map(f => f.properties?.Kategori || 'Bilinmiyor'))).sort();
-    buildLegend(allCategories);
+    buildLegend(allCategories);           // oluştur
+    setLegendVisibility(legendVisible);   // görünürlüğü uygula
 
     // Parcels
     map.addSource('parcels', { type: 'geojson', data: parcelData });
@@ -502,6 +512,10 @@ document.getElementById('styleSwitcher')?.addEventListener('change', function ()
     ensureHoverCircleLayers();
     refreshHoverToggleUI();
 
+    // Legend yeniden görünür/kapalı durumunu uygula
+    buildLegend(allCategories);
+    setLegendVisibility(legendVisible);
+
     // Spider yenile
     const newCenter = parcelCentroids[proximityOrder[currentIndex]].geometry.coordinates;
     updateSpider(newCenter);
@@ -583,7 +597,7 @@ map.on('move', () => {
 });
 
 // ===========================
-// Kısayollar: H ve +/-
+// Kısayollar: H / +/- / K (kategori paneli)
 // ===========================
 window.addEventListener('keydown', e => {
   const key = e.key;
@@ -591,8 +605,11 @@ window.addEventListener('keydown', e => {
     currentIndex = (currentIndex + 1) % proximityOrder.length;
   } else if (key === '1' || key === '7') {
     currentIndex = (currentIndex - 1 + proximityOrder.length) % proximityOrder.length;
-  } else if (key.toLowerCase() === 'h') {          // ⇐ H ile toggle
+  } else if (key.toLowerCase() === 'h') { // Hover toggle
     hoverEnabled ? disableHover() : enableHover();
+    return;
+  } else if (key.toLowerCase() === 'k') { // ⇐ K: Kategori paneli aç/kapat
+    toggleLegendVisibility();
     return;
   } else if (key === '+' || key === '=') {
     tweakRadius(+50); return;
@@ -719,5 +736,3 @@ function downloadChartImage(canvasId, filename) {
   link.click();
 }
 window.downloadChartImage = downloadChartImage;
-
-
