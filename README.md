@@ -12,6 +12,25 @@ Spider Map, özellikle kentsel dönüşüm ve sosyal altyapı planlaması gibi �
 - 🔎 **Parsel arama ve gezinme**: Parsel merkezleri arasında kolayca gezinilebilir ve belirli parseller aranabilir.
 - 🖼️ **Popup bilgi kutuları**: Donatı noktalarına sağ tıklandığında detaylı bilgi gösterilir.
 
+## ⌨️ Klavye Kısayolları
+
+Harita üzerinde gezinmeyi ve analiz özelliklerini hızlıca kullanabilmek için aşağıdaki kısayollar tanımlanmıştır:
+
+⬅️ Sol Parsel → 1 veya NumPad 7
+En yakın soldaki parsele gider.
+
+➡️ Sağ Parsel → 3 veya NumPad 9
+En yakın sağdaki parsele gider.
+
+📊 Yakın Çevre Analizi → H
+Çevredeki donatıları gösteren Yakın Çevre Analizi panelini açar/kapatır.
+
+🔍 Yakınlaştır (Zoom In) → +
+Haritayı yakınlaştırır.
+
+🔎 Uzaklaştır (Zoom Out) → -
+Haritayı uzaklaştırır.
+
 ## 🌐 Uygulamayı Deneyin
 
 🔗 Canlı harita:  
