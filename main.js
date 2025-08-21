@@ -587,9 +587,9 @@ map.on('move', () => {
 // ===========================
 window.addEventListener('keydown', e => {
   const key = e.key;
-  if (key === 'd' || key === 'D') {
+  if (key === '3' || key === '9') {
     currentIndex = (currentIndex + 1) % proximityOrder.length;
-  } else if (key === 'a' || key === 'A') {
+  } else if (key === '1' || key === '7') {
     currentIndex = (currentIndex - 1 + proximityOrder.length) % proximityOrder.length;
   } else if (key.toLowerCase() === 'h') {          // ⇐ H ile toggle
     hoverEnabled ? disableHover() : enableHover();
@@ -719,4 +719,5 @@ function downloadChartImage(canvasId, filename) {
   link.click();
 }
 window.downloadChartImage = downloadChartImage;
+
 
