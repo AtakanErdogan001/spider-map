@@ -1,5 +1,5 @@
 // ===========================
-// main.js (Kategori Paneli K kısayolu + stabil hover + turf fallback)
+// main.js (OSRM entegrasyonlu: Kuşbakışı vs Yol Ağı seçimi)
 // ===========================
 
 mapboxgl.accessToken = 'pk.eyJ1IjoiYXRha2FuZSIsImEiOiJjbWNoNGUyNWkwcjFqMmxxdmVnb2tnMWJ4In0.xgo3tCNuq6kVXFYQpoS8PQ';
@@ -10,6 +10,11 @@ const map = new mapboxgl.Map({
   center: [27.1428, 38.4192],
   zoom: 14
 });
+
+// ---- OSRM config
+const OSRM_BASE = 'http://localhost:5000';        // ← Docker OSRM endpoint
+const USE_OSRM_ROUTES_FOR_TOP = true;             // true: ilk N için gerçek rota polyline çizer
+const OSRM_ROUTE_DRAW_TOP_N = 10;                 // kaç rota çizilsin (ağır olmasın diye 10 iyi bir sınır)
 
 // ---- Global state
 let parcels = [], parcelCentroids = [], amenities = [];
@@ -70,9 +75,50 @@ function getProximityOrder(centroids) {
 }
 
 // ===========================
+// OSRM helpers
+// ===========================
+async function osrmTableDistance(center, destFeatures) {
+  // OSRM Table: tek kaynak (index 0 = center), çok hedef
+  if (!destFeatures.length) return [];
+
+  const coords = [
+    `${center[0]},${center[1]}`,
+    ...destFeatures.map(f => `${f.geometry.coordinates[0]},${f.geometry.coordinates[1]}`)
+  ].join(';');
+
+  const destIdx = destFeatures.map((_, i) => i + 1).join(';'); // 1..N
+  const url = `${OSRM_BASE}/table/v1/driving/${coords}?sources=0&destinations=${destIdx}&annotations=duration,distance`;
+
+  const res = await fetch(url);
+  if (!res.ok) throw new Error('OSRM table hatası');
+  const data = await res.json();
+
+  // data.distances[0] ve data.durations[0] tek source olduğu için
+  const distances = (data.distances && data.distances[0]) || [];
+  const durations = (data.durations && data.durations[0]) || [];
+
+  return destFeatures.map((f, i) => ({
+    feature: f,
+    distMeters: typeof distances[i] === 'number' ? distances[i] : null,
+    durationSec: typeof durations[i] === 'number' ? durations[i] : null
+  }));
+}
+
+async function osrmRouteGeoJSON(start, end) {
+  // Tam rota geometri (isteğe bağlı)
+  const coords = `${start[0]},${start[1]};${end[0]},${end[1]}`;
+  const url = `${OSRM_BASE}/route/v1/driving/${coords}?overview=full&geometries=geojson`;
+  const res = await fetch(url);
+  if (!res.ok) throw new Error('OSRM route hatası');
+  const data = await res.json();
+  const route = data.routes && data.routes[0];
+  return route ? route.geometry : null; // GeoJSON LineString
+}
+
+// ===========================
 // Spider
 // ===========================
-function updateSpider(center) {
+async function updateSpider(center) {
   const roundedCenter = center.map(n => Number(n.toFixed(6)));
   if (lastSpiderCoord &&
       roundedCenter[0] === lastSpiderCoord[0] &&
@@ -82,38 +128,133 @@ function updateSpider(center) {
   clearVisuals();
 
   const centerPoint = turf.point(center);
-  const maxDistance = parseFloat(document.getElementById('distanceInput')?.value || '0') / 1000;
+  const maxDistanceMeters = parseFloat(document.getElementById('distanceInput')?.value || '0'); // kullanıcı girdisi
   let count = document.getElementById('lineCountSelect')?.value ?? '10';
+  const distanceMode = document.getElementById('distanceMode')?.value || 'haversine'; // 'haversine' | 'osrm'
 
-  let nearest = amenities
-    .filter(f => selectedCategories.size === 0 || selectedCategories.has(f.properties?.Kategori || 'Bilinmiyor'))
-    .map(f => ({
+  // Kategori filtresi
+  const filtered = amenities.filter(f => {
+    const k = f.properties?.Kategori || 'Bilinmiyor';
+    return selectedCategories.size === 0 || selectedCategories.has(k);
+  });
+
+  let nearest = [];
+
+  if (distanceMode === 'osrm') {
+    // ---- OSRM ağ mesafesi (metre) + süre (sn)
+    try {
+      const rows = await osrmTableDistance(center, filtered);
+      // metre filtresi (0 ise filtreleme yapma)
+      let arr = rows.map(r => ({
+        feature: r.feature,
+        distMeters: r.distMeters,
+        durationSec: r.durationSec
+      })).filter(r => r.distMeters != null);
+
+      if (!isNaN(maxDistanceMeters) && maxDistanceMeters > 0) {
+        arr = arr.filter(r => r.distMeters <= maxDistanceMeters);
+      }
+
+      // OSRM sonucu distMeters'a göre sırala
+      arr.sort((a, b) => a.distMeters - b.distMeters);
+
+      if (count !== 'all') arr = arr.slice(0, parseInt(count));
+
+      // Görselleştirme + etiketleme için formatla (dist = km cinsinden)
+      nearest = arr.map(r => ({
+        feature: r.feature,
+        dist: (r.distMeters / 1000),
+        distMeters: r.distMeters,
+        durationSec: r.durationSec,
+        geometryOverride: null
+      }));
+
+      // İsteğe bağlı: en yakın ilk N için gerçek rota çiz
+      if (USE_OSRM_ROUTES_FOR_TOP && nearest.length) {
+        const topN = nearest.slice(0, OSRM_ROUTE_DRAW_TOP_N);
+        await Promise.all(topN.map(async (item, i) => {
+          try {
+            const geom = await osrmRouteGeoJSON(center, item.feature.geometry.coordinates);
+            item.geometryOverride = geom; // LineString
+          } catch (_) {}
+        }));
+      }
+    } catch (err) {
+      console.warn('OSRM erişilemedi, kuşbakışına düşüyorum. Hata:', err);
+      // OSRM yoksa fallback haversine
+      nearest = filtered.map(f => ({
+        feature: f,
+        dist: turf.distance(centerPoint, f, { units: 'kilometers' })
+      }));
+      if (!isNaN(maxDistanceMeters) && maxDistanceMeters > 0) {
+        nearest = nearest.filter(e => (e.dist * 1000) <= maxDistanceMeters);
+      }
+      nearest.sort((a, b) => a.dist - b.dist);
+      if (count !== 'all') nearest = nearest.slice(0, parseInt(count));
+    }
+  } else {
+    // ---- Haversine (turf) – kuşbakışı
+    nearest = filtered.map(f => ({
       feature: f,
       dist: turf.distance(centerPoint, f, { units: 'kilometers' })
     }));
-
-  if (!isNaN(maxDistance) && maxDistance > 0) {
-    nearest = nearest.filter(e => e.dist <= maxDistance);
+    if (!isNaN(maxDistanceMeters) && maxDistanceMeters > 0) {
+      nearest = nearest.filter(e => (e.dist * 1000) <= maxDistanceMeters);
+    }
+    nearest.sort((a, b) => a.dist - b.dist);
+    if (count !== 'all') nearest = nearest.slice(0, parseInt(count));
   }
-
-  nearest.sort((a, b) => a.dist - b.dist);
-  if (count !== 'all') nearest = nearest.slice(0, parseInt(count));
 
   lastSpiderData = nearest;
 
-  nearest.forEach((entry, i) => {
-    const coords = [center, entry.feature.geometry.coordinates];
-    const lineId = `line-${i}`, labelId = `label-${i}`;
+  // Çizimler
+  for (let i = 0; i < nearest.length; i++) {
+    const entry = nearest[i];
+    const to = entry.feature.geometry.coordinates;
 
-    map.addSource(lineId, { type: 'geojson', data: turf.lineString(coords) });
-    map.addLayer({ id: lineId, type: 'line', source: lineId, paint: { 'line-width': 1.5, 'line-color': '#3F51B5' } });
+    const lineId = `line-${i}`, labelId = `label-${i}`;
+    let lineGeom;
+
+    // OSRM modunda ve geometriOverride varsa onu kullan, yoksa düz çizgi
+    if (entry.geometryOverride && entry.geometryOverride.type === 'LineString') {
+      lineGeom = {
+        type: 'Feature',
+        geometry: entry.geometryOverride
+      };
+    } else {
+      lineGeom = turf.lineString([center, to]);
+    }
+
+    map.addSource(lineId, { type: 'geojson', data: lineGeom });
+    map.addLayer({
+      id: lineId, type: 'line', source: lineId,
+      paint: { 'line-width': 2, 'line-color': (entry.geometryOverride ? '#1E88E5' : '#3F51B5') }
+    });
     currentLines.push(lineId);
 
-    const mid = turf.midpoint(turf.point(coords[0]), turf.point(coords[1]));
+    // Etiket: OSRM metrikleri varsa onları önceliklendir
+    const distM = (entry.distMeters != null) ? entry.distMeters : entry.dist * 1000;
+    const durS = entry.durationSec;
+    const labelText = (durS != null)
+      ? `${entry.feature.properties?.Kategori || 'Donatı'}\n${Math.round(distM)} m • ${Math.round(durS / 60)} dk`
+      : `${entry.feature.properties?.Kategori || 'Donatı'}\n${Math.round(distM)} m`;
+
+    // Orta nokta (rota varsa yaklaşık orta koordinatı al)
+    let midPoint;
+    if (entry.geometryOverride && entry.geometryOverride.coordinates?.length > 1) {
+      const coords = entry.geometryOverride.coordinates;
+      const midIdx = Math.floor(coords.length / 2);
+      midPoint = turf.point(coords[midIdx]);
+    } else {
+      midPoint = turf.midpoint(turf.point(center), turf.point(to));
+    }
+
     const labelFeature = {
-      type: 'Feature', geometry: mid.geometry,
-      properties: { label: `${entry.feature.properties?.Kategori || 'Donatı'}\n${(entry.dist * 1000).toFixed(0)} m` }
+      type: 'Feature',
+      geometry: midPoint.geometry,
+      properties: { label: labelText }
     };
+
     map.addSource(labelId, { type: 'geojson', data: labelFeature });
     map.addLayer({
       id: labelId, type: 'symbol', source: labelId,
@@ -121,16 +262,19 @@ function updateSpider(center) {
       paint: { 'text-color': '#000', 'text-halo-color': '#fff', 'text-halo-width': 1 }
     });
     currentLabels.push(labelId);
-  });
+  }
 }
 
 function exportSpiderDataToExcel(nearestEntries) {
   const data = nearestEntries.map(entry => {
     const props = entry.feature.properties || {};
+    const distM = (entry.distMeters != null) ? entry.distMeters : entry.dist * 1000;
+    const durMin = (entry.durationSec != null) ? (entry.durationSec / 60).toFixed(1) : '';
     return {
       'Kategori': props.Kategori || 'Donatı',
       'Ad': props.Ad || 'Bilinmiyor',
-      'Mesafe (m)': (entry.dist * 1000).toFixed(2),
+      'Mesafe (m)': distM != null ? distM.toFixed(0) : '',
+      'Süre (dk)': durMin,
       'Koordinat': `${entry.feature.geometry.coordinates[1]}, ${entry.feature.geometry.coordinates[0]}`
     };
   });
@@ -145,7 +289,7 @@ document.getElementById('exportExcelButton')?.addEventListener('click', () => {
 });
 
 // ===========================
-// Hover circle + panel
+// Hover circle + panel (aynen)
 // ===========================
 function ensureHoverCircleLayers() {
   if (!map.getSource(HOVER_SRC)) map.addSource(HOVER_SRC, { type: 'geojson', data: turf.featureCollection([]) });
@@ -174,10 +318,9 @@ function setHoverVisibility(visible) {
   if (!visible && body) body.innerHTML = 'İmleci harita üzerinde gezdirin…';
 }
 
-// hızlı veya fallback sorgu
+// hızlı veya fallback sorgu (hover için kuşbakışı kullanıyoruz)
 function queryAmenitiesInRadius(centerLng, centerLat, radiusMeters) {
   const radiusKm = Math.max(0, radiusMeters) / 1000;
-
   // KDBush varsa:
   if (amenIdx && typeof geokdbush !== 'undefined') {
     const hits = geokdbush.around(amenIdx, centerLng, centerLat, Infinity, radiusKm);
@@ -188,8 +331,7 @@ function queryAmenitiesInRadius(centerLng, centerLat, radiusMeters) {
         return selectedCategories.size === 0 || selectedCategories.has(k);
       });
   }
-
-  // Fallback: turf (daha yavaş ama güvenilir)
+  // Fallback: turf
   const circlePoly = turf.circle([centerLng, centerLat], radiusKm, { steps: 64, units: 'kilometers' });
   const inside = turf.pointsWithinPolygon({ type: 'FeatureCollection', features: amenities }, circlePoly);
   const filtered = inside.features.filter(f => {
@@ -216,7 +358,6 @@ function updateHoverCircleAt(lngLat) {
   map.getSource(HOVER_SRC).setData(circle);
 
   const around = queryAmenitiesInRadius(lngLat[0], lngLat[1], rM);
-
   map.getSource(IN_CIRCLE_SRC).setData({ type: 'FeatureCollection', features: around.map(a => a.feature) });
 
   const counts = {};
@@ -265,6 +406,9 @@ map.on('mousemove', (e) => {
 ['input','change'].forEach(evt =>
   document.getElementById('distanceInput')?.addEventListener(evt, () => {
     if (hoverEnabled && lastMouseLngLat) updateHoverCircleAt(lastMouseLngLat);
+    // spider da yarıçap filtresine bağlı olduğundan güncelle
+    const center = [map.getCenter().lng, map.getCenter().lat];
+    updateSpider(center);
   })
 );
 
@@ -278,7 +422,7 @@ function refreshHoverToggleUI() {
   setHoverVisibility(hoverEnabled);
   if (hoverEnabled) {
     const center = lastMouseLngLat || [map.getCenter().lng, map.getCenter().lat];
-    updateHoverCircleAt(center); // AÇILIR AÇILMAZ BİR KEZ HESAPLA (kritik)
+    updateHoverCircleAt(center);
   }
 }
 function enableHover() { hoverEnabled = true; ensureHoverCircleLayers(); refreshHoverToggleUI(); }
@@ -296,9 +440,7 @@ function setLegendVisibility(visible) {
   const el = document.getElementById('categoryLegend');
   if (el) el.style.display = legendVisible ? 'block' : 'none';
 }
-function toggleLegendVisibility() {
-  setLegendVisibility(!legendVisible);
-}
+function toggleLegendVisibility() { setLegendVisibility(!legendVisible); }
 
 function buildLegend(categories) {
   let legend = document.getElementById('categoryLegend');
@@ -326,7 +468,7 @@ function buildLegend(categories) {
     overflow: 'auto',
     boxShadow: '0 2px 6px rgba(0,0,0,0.15)',
     lineHeight: '1.35',
-    display: legendVisible ? 'block' : 'none' // ⇐ mevcut görünürlük durumuna saygı
+    display: legendVisible ? 'block' : 'none'
   });
 
   legend.innerHTML = `<div style="font-weight:600; margin-bottom:6px;">Kategoriler</div>`;
@@ -347,8 +489,9 @@ function buildLegend(categories) {
       if (cb.checked) selectedCategories.add(cat);
       else selectedCategories.delete(cat);
       applyAmenityFilter();
+      const c = [map.getCenter().lng, map.getCenter().lat];
+      updateSpider(c);
       if (hoverEnabled && lastMouseLngLat) updateHoverCircleAt(lastMouseLngLat);
-      updateSpider([map.getCenter().lng, map.getCenter().lat]);
     });
 
     const nameSpan = document.createElement('span');
@@ -369,8 +512,9 @@ function buildLegend(categories) {
     selectedCategories = new Set(categories);
     legend.querySelectorAll('input[type="checkbox"]').forEach(cb => cb.checked = true);
     applyAmenityFilter();
+    const c = [map.getCenter().lng, map.getCenter().lat];
+    updateSpider(c);
     if (hoverEnabled && lastMouseLngLat) updateHoverCircleAt(lastMouseLngLat);
-    updateSpider([map.getCenter().lng, map.getCenter().lat]);
   };
 
   const clearBtn = document.createElement('button');
@@ -380,8 +524,9 @@ function buildLegend(categories) {
     selectedCategories.clear();
     legend.querySelectorAll('input[type="checkbox"]').forEach(cb => cb.checked = false);
     applyAmenityFilter();
+    const c = [map.getCenter().lng, map.getCenter().lat];
+    updateSpider(c);
     if (hoverEnabled && lastMouseLngLat) updateHoverCircleAt(lastMouseLngLat);
-    updateSpider([map.getCenter().lng, map.getCenter().lat]);
   };
 
   ctrlRow.appendChild(selectAllBtn);
@@ -405,7 +550,7 @@ map.on('load', () => {
   Promise.all([
     fetch('./data/parseller.geojson').then(r => r.json()),
     fetch('./data/donatilar.geojson').then(r => r.json())
-  ]).then(([parcelData, amenityData]) => {
+  ]).then(async ([parcelData, amenityData]) => {
     parcels = parcelData.features;
     parcelCentroids = getCentroids(parcels);
     amenities = amenityData.features;
@@ -421,8 +566,8 @@ map.on('load', () => {
 
     // Legend
     allCategories = Array.from(new Set(amenities.map(f => f.properties?.Kategori || 'Bilinmiyor'))).sort();
-    buildLegend(allCategories);           // oluştur
-    setLegendVisibility(legendVisible);   // görünürlüğü uygula
+    buildLegend(allCategories);
+    setLegendVisibility(legendVisible);
 
     // Parcels
     map.addSource('parcels', { type: 'geojson', data: parcelData });
@@ -459,7 +604,7 @@ map.on('load', () => {
     const start = parcelCentroids[proximityOrder[currentIndex]].geometry.coordinates;
     map.flyTo({ center: start });
     setupParcelSearch();
-    updateSpider(start);
+    await updateSpider(start); // async
 
     // Hover varsayılan kapalı
     setHoverVisibility(false);
@@ -477,7 +622,7 @@ document.getElementById('styleSwitcher')?.addEventListener('change', function ()
   clearVisuals();
   map.setStyle(selectedStyle);
 
-  map.once('style.load', () => {
+  map.once('style.load', async () => {
     map.setCenter(center); map.setZoom(zoom);
 
     map.addSource('parcels', { type: 'geojson', data: { type: 'FeatureCollection', features: parcels } });
@@ -518,7 +663,7 @@ document.getElementById('styleSwitcher')?.addEventListener('change', function ()
 
     // Spider yenile
     const newCenter = parcelCentroids[proximityOrder[currentIndex]].geometry.coordinates;
-    updateSpider(newCenter);
+    await updateSpider(newCenter);
   });
 });
 
@@ -528,7 +673,7 @@ document.getElementById('styleSwitcher')?.addEventListener('change', function ()
 map.on('contextmenu', e => {
   const features = map.queryRenderedFeatures(e.point, { layers: ['centroids-points', 'amenities-points'] });
   const content = features.length
-    ? Object.entries(features[0].properties).map(([k, v]) => `<b>${k}</b>: ${v}`).join('<br>')
+    ? Object.entries(features[0].properties).map(([k, v]) => `<b>${k}</b>: ${v}`).join('<br>`)
     : 'Yakında veri bulunamadı.';
   new mapboxgl.Popup().setLngLat(e.lngLat).setHTML(content).addTo(map);
 });
@@ -561,10 +706,10 @@ function setupParcelSearch() {
       li.textContent = f.properties.name;
       li.style.cursor = 'pointer';
       li.style.padding = '3px 6px';
-      li.addEventListener('click', () => {
+      li.addEventListener('click', async () => {
         const centroid = turf.centroid(f).geometry.coordinates;
         map.flyTo({ center: centroid, zoom: 17 });
-        updateSpider(centroid);
+        await updateSpider(centroid);
         if (hoverEnabled) updateHoverCircleAt(centroid);
         resultsList.innerHTML = '';
         input.value = '';
@@ -580,7 +725,7 @@ function getMoveDelay() {
   const z = map.getZoom();
   return Math.max(120, 280 - (z - 10) * 25);
 }
-map.on('move', () => {
+map.on('move', async () => {
   const now = Date.now();
   const delay = getMoveDelay();
   if (now - lastMove < delay) return;
@@ -592,14 +737,14 @@ map.on('move', () => {
   const target = parcelCentroids[nearest]?.geometry?.coordinates;
   if (!target) return;
 
-  updateSpider(target);
+  await updateSpider(target);
   if (hoverEnabled) updateHoverCircleAt(target);
 });
 
 // ===========================
-// Kısayollar: H / +/- / K (kategori paneli)
+// Kısayollar: H / +/- / K
 // ===========================
-window.addEventListener('keydown', e => {
+window.addEventListener('keydown', async e => {
   const key = e.key;
   if (key === '3' || key === '9') {
     currentIndex = (currentIndex + 1) % proximityOrder.length;
@@ -608,19 +753,21 @@ window.addEventListener('keydown', e => {
   } else if (key.toLowerCase() === 'h') { // Hover toggle
     hoverEnabled ? disableHover() : enableHover();
     return;
-  } else if (key.toLowerCase() === 'k') { // ⇐ K: Kategori paneli aç/kapat
+  } else if (key.toLowerCase() === 'k') { // K: Kategori paneli
     toggleLegendVisibility();
     return;
   } else if (key === '+' || key === '=') {
-    tweakRadius(+50); return;
+    tweakRadius(+50);
+    return;
   } else if (key === '-' || key === '_') {
-    tweakRadius(-50); return;
+    tweakRadius(-50);
+    return;
   } else {
     return;
   }
   const newCenter = parcelCentroids[proximityOrder[currentIndex]].geometry.coordinates;
   map.flyTo({ center: newCenter });
-  updateSpider(newCenter);
+  await updateSpider(newCenter);
   if (hoverEnabled) updateHoverCircleAt(newCenter);
 });
 
@@ -634,7 +781,7 @@ function tweakRadius(delta){
 }
 
 // ===========================
-// Grafikler (aynı)
+// Grafikler (aynı, OSRM verisiyle de çalışır)
 // ===========================
 function drawCategoryChart() {
   const categoryCounts = {};
@@ -642,11 +789,9 @@ function drawCategoryChart() {
     const k = entry.feature.properties?.Kategori || 'Bilinmiyor';
     categoryCounts[k] = (categoryCounts[k] || 0) + 1;
   });
-
   const el = document.getElementById('categoryChartContainer'); if (!el) return;
   el.innerHTML = '<canvas id="categoryChart"></canvas>';
   const ctx = document.getElementById('categoryChart').getContext('2d');
-
   new Chart(ctx, {
     type: 'pie',
     data: { labels: Object.keys(categoryCounts), datasets: [{ data: Object.values(categoryCounts) }] },
@@ -665,8 +810,8 @@ function drawWeightedCategoryChart() {
   const weightedCounts = {};
   lastSpiderData.forEach(entry => {
     const k = entry.feature.properties?.Kategori || 'Bilinmiyor';
-    const d = entry.dist * 1000;
-    const w = 1 / Math.max(d, 1);
+    const dMeters = (entry.distMeters != null) ? entry.distMeters : (entry.dist * 1000);
+    const w = 1 / Math.max(dMeters, 1); // metre tabanlı
     weightedCounts[k] = (weightedCounts[k] || 0) + w;
   });
 
@@ -714,9 +859,8 @@ detailBox.style.border = '1px solid #ccc';
 detailBox.style.background = '#f9f9f9';
 detailBox.innerHTML = `
   <strong>Teknik Hesaplama:</strong><br>
-  Bu grafik, her donatı noktasının merkez noktaya uzaklığına göre etkisini ağırlıklı olarak hesaplar.<br>
-  Formül: <code>Etki = 1 / Mesafe(m)</code><br>
-  Daha yakın olan noktalar, daha yüksek etkide bulunur.
+  Grafikler, seçilen mesafe türüne göre (OSRM yol ağı veya kuşbakışı) hesaplanan değerlere dayanır.<br>
+  Ağırlık formülü: <code>Etki = 1 / Mesafe(m)</code>
 `;
 weightedChartButton.after(detailToggleBtn);
 detailToggleBtn.after(detailBox);
