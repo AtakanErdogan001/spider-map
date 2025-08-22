@@ -1,5 +1,5 @@
 // ===========================
-// main.js (OSRM entegrasyonlu: Kuşbakışı vs Yol Ağı seçimi)
+// main.js (Mapbox Matrix ile Yol Ağı mesafesi + mevcut özellikler)
 // ===========================
 
 mapboxgl.accessToken = 'pk.eyJ1IjoiYXRha2FuZSIsImEiOiJjbWNoNGUyNWkwcjFqMmxxdmVnb2tnMWJ4In0.xgo3tCNuq6kVXFYQpoS8PQ';
@@ -10,11 +10,6 @@ const map = new mapboxgl.Map({
   center: [27.1428, 38.4192],
   zoom: 14
 });
-
-// ---- OSRM config
-const OSRM_BASE = 'http://localhost:5000';        // ← Docker OSRM endpoint
-const USE_OSRM_ROUTES_FOR_TOP = true;             // true: ilk N için gerçek rota polyline çizer
-const OSRM_ROUTE_DRAW_TOP_N = 10;                 // kaç rota çizilsin (ağır olmasın diye 10 iyi bir sınır)
 
 // ---- Global state
 let parcels = [], parcelCentroids = [], amenities = [];
@@ -33,13 +28,13 @@ let lastMouseLngLat = null;
 // Toggle (varsayılan kapalı)
 let hoverEnabled = false;
 
-// Fast circle query (opsiyonel)
+// Hızlı daire sorgusu (opsiyonel)
 let amenIdx = null;               // KDBush index
 let amenPoints = [];              // [{lng,lat,idx}]
 let allCategories = [];
 let selectedCategories = new Set();
 
-// ---- Kategori paneli görünürlük durumu (K kısayolu ile kontrol)
+// Kategori paneli görünürlüğü (K kısayolu)
 let legendVisible = true;
 
 // ===========================
@@ -75,41 +70,51 @@ function getProximityOrder(centroids) {
 }
 
 // ===========================
-// OSRM helpers
+// Mapbox Directions: Matrix & Route helper'ları
 // ===========================
-async function osrmTableDistance(center, destFeatures) {
-  // OSRM Table: tek kaynak (index 0 = center), çok hedef
+
+// Tek kaynak (center), çok hedef için; 25 kuralı (1 kaynak + 24 hedef) nedeniyle parçalara böler
+async function mapboxMatrixDistance(center, destFeatures) {
   if (!destFeatures.length) return [];
+  const chunks = [];
+  for (let i = 0; i < destFeatures.length; i += 24) {
+    chunks.push(destFeatures.slice(i, i + 24));
+  }
 
-  const coords = [
-    `${center[0]},${center[1]}`,
-    ...destFeatures.map(f => `${f.geometry.coordinates[0]},${f.geometry.coordinates[1]}`)
-  ].join(';');
+  const all = [];
+  for (const group of chunks) {
+    const coords = [
+      `${center[0]},${center[1]}`,
+      ...group.map(f => `${f.geometry.coordinates[0]},${f.geometry.coordinates[1]}`)
+    ].join(';');
 
-  const destIdx = destFeatures.map((_, i) => i + 1).join(';'); // 1..N
-  const url = `${OSRM_BASE}/table/v1/driving/${coords}?sources=0&destinations=${destIdx}&annotations=duration,distance`;
+    const destIdx = group.map((_, i) => i + 1).join(';'); // 1..N
+    const url = `https://api.mapbox.com/directions-matrix/v1/mapbox/driving/${coords}` +
+                `?sources=0&destinations=${destIdx}&annotations=distance,duration&access_token=${mapboxgl.accessToken}`;
 
-  const res = await fetch(url);
-  if (!res.ok) throw new Error('OSRM table hatası');
-  const data = await res.json();
+    const res = await fetch(url);
+    if (!res.ok) throw new Error('Mapbox Matrix hata: ' + (await res.text()));
+    const data = await res.json();
+    const distances = (data.distances && data.distances[0]) || [];
+    const durations = (data.durations && data.durations[0]) || [];
 
-  // data.distances[0] ve data.durations[0] tek source olduğu için
-  const distances = (data.distances && data.distances[0]) || [];
-  const durations = (data.durations && data.durations[0]) || [];
-
-  return destFeatures.map((f, i) => ({
-    feature: f,
-    distMeters: typeof distances[i] === 'number' ? distances[i] : null,
-    durationSec: typeof durations[i] === 'number' ? durations[i] : null
-  }));
+    group.forEach((f, i) => {
+      all.push({
+        feature: f,
+        distMeters: typeof distances[i] === 'number' ? distances[i] : null,
+        durationSec: typeof durations[i] === 'number' ? durations[i] : null
+      });
+    });
+  }
+  return all;
 }
 
-async function osrmRouteGeoJSON(start, end) {
-  // Tam rota geometri (isteğe bağlı)
+// (İsteğe bağlı) seçilen noktalara tek tek rota geometri getir
+async function mapboxRouteGeoJSON(start, end) {
   const coords = `${start[0]},${start[1]};${end[0]},${end[1]}`;
-  const url = `${OSRM_BASE}/route/v1/driving/${coords}?overview=full&geometries=geojson`;
+  const url = `https://api.mapbox.com/directions/v5/mapbox/driving/${coords}?overview=full&geometries=geojson&access_token=${mapboxgl.accessToken}`;
   const res = await fetch(url);
-  if (!res.ok) throw new Error('OSRM route hatası');
+  if (!res.ok) throw new Error('Mapbox Directions hata: ' + (await res.text()));
   const data = await res.json();
   const route = data.routes && data.routes[0];
   return route ? route.geometry : null; // GeoJSON LineString
@@ -128,9 +133,9 @@ async function updateSpider(center) {
   clearVisuals();
 
   const centerPoint = turf.point(center);
-  const maxDistanceMeters = parseFloat(document.getElementById('distanceInput')?.value || '0'); // kullanıcı girdisi
+  const maxDistanceMeters = parseFloat(document.getElementById('distanceInput')?.value || '0');
   let count = document.getElementById('lineCountSelect')?.value ?? '10';
-  const distanceMode = document.getElementById('distanceMode')?.value || 'haversine'; // 'haversine' | 'osrm'
+  const distanceMode = document.getElementById('distanceMode')?.value || 'haversine'; // 'haversine' | 'network'
 
   // Kategori filtresi
   const filtered = amenities.filter(f => {
@@ -140,27 +145,17 @@ async function updateSpider(center) {
 
   let nearest = [];
 
-  if (distanceMode === 'osrm') {
-    // ---- OSRM ağ mesafesi (metre) + süre (sn)
+  if (distanceMode === 'network') {
+    // ---- Yol ağı (Mapbox Matrix)
     try {
-      const rows = await osrmTableDistance(center, filtered);
-      // metre filtresi (0 ise filtreleme yapma)
-      let arr = rows.map(r => ({
-        feature: r.feature,
-        distMeters: r.distMeters,
-        durationSec: r.durationSec
-      })).filter(r => r.distMeters != null);
+      let arr = await mapboxMatrixDistance(center, filtered);
 
       if (!isNaN(maxDistanceMeters) && maxDistanceMeters > 0) {
-        arr = arr.filter(r => r.distMeters <= maxDistanceMeters);
+        arr = arr.filter(r => r.distMeters != null && r.distMeters <= maxDistanceMeters);
       }
-
-      // OSRM sonucu distMeters'a göre sırala
       arr.sort((a, b) => a.distMeters - b.distMeters);
-
       if (count !== 'all') arr = arr.slice(0, parseInt(count));
 
-      // Görselleştirme + etiketleme için formatla (dist = km cinsinden)
       nearest = arr.map(r => ({
         feature: r.feature,
         dist: (r.distMeters / 1000),
@@ -169,22 +164,17 @@ async function updateSpider(center) {
         geometryOverride: null
       }));
 
-      // İsteğe bağlı: en yakın ilk N için gerçek rota çiz
-      if (USE_OSRM_ROUTES_FOR_TOP && nearest.length) {
-        const topN = nearest.slice(0, OSRM_ROUTE_DRAW_TOP_N);
-        await Promise.all(topN.map(async (item, i) => {
-          try {
-            const geom = await osrmRouteGeoJSON(center, item.feature.geometry.coordinates);
-            item.geometryOverride = geom; // LineString
-          } catch (_) {}
-        }));
-      }
+      // en yakın 10 için gerçek rota çiz (ağır olmasın)
+      const topN = nearest.slice(0, 10);
+      await Promise.all(topN.map(async n => {
+        try {
+          n.geometryOverride = await mapboxRouteGeoJSON(center, n.feature.geometry.coordinates);
+        } catch {}
+      }));
     } catch (err) {
-      console.warn('OSRM erişilemedi, kuşbakışına düşüyorum. Hata:', err);
-      // OSRM yoksa fallback haversine
+      console.warn('Mapbox Matrix ulaşılamadı, kuşbakışına düşüyorum:', err);
       nearest = filtered.map(f => ({
-        feature: f,
-        dist: turf.distance(centerPoint, f, { units: 'kilometers' })
+        feature: f, dist: turf.distance(centerPoint, f, { units: 'kilometers' })
       }));
       if (!isNaN(maxDistanceMeters) && maxDistanceMeters > 0) {
         nearest = nearest.filter(e => (e.dist * 1000) <= maxDistanceMeters);
@@ -193,7 +183,7 @@ async function updateSpider(center) {
       if (count !== 'all') nearest = nearest.slice(0, parseInt(count));
     }
   } else {
-    // ---- Haversine (turf) – kuşbakışı
+    // ---- Kuşbakışı (Turf)
     nearest = filtered.map(f => ({
       feature: f,
       dist: turf.distance(centerPoint, f, { units: 'kilometers' })
@@ -215,12 +205,8 @@ async function updateSpider(center) {
     const lineId = `line-${i}`, labelId = `label-${i}`;
     let lineGeom;
 
-    // OSRM modunda ve geometriOverride varsa onu kullan, yoksa düz çizgi
     if (entry.geometryOverride && entry.geometryOverride.type === 'LineString') {
-      lineGeom = {
-        type: 'Feature',
-        geometry: entry.geometryOverride
-      };
+      lineGeom = { type: 'Feature', geometry: entry.geometryOverride };
     } else {
       lineGeom = turf.lineString([center, to]);
     }
@@ -232,28 +218,21 @@ async function updateSpider(center) {
     });
     currentLines.push(lineId);
 
-    // Etiket: OSRM metrikleri varsa onları önceliklendir
     const distM = (entry.distMeters != null) ? entry.distMeters : entry.dist * 1000;
     const durS = entry.durationSec;
     const labelText = (durS != null)
       ? `${entry.feature.properties?.Kategori || 'Donatı'}\n${Math.round(distM)} m • ${Math.round(durS / 60)} dk`
       : `${entry.feature.properties?.Kategori || 'Donatı'}\n${Math.round(distM)} m`;
 
-    // Orta nokta (rota varsa yaklaşık orta koordinatı al)
     let midPoint;
     if (entry.geometryOverride && entry.geometryOverride.coordinates?.length > 1) {
       const coords = entry.geometryOverride.coordinates;
-      const midIdx = Math.floor(coords.length / 2);
-      midPoint = turf.point(coords[midIdx]);
+      midPoint = turf.point(coords[Math.floor(coords.length / 2)]);
     } else {
       midPoint = turf.midpoint(turf.point(center), turf.point(to));
     }
 
-    const labelFeature = {
-      type: 'Feature',
-      geometry: midPoint.geometry,
-      properties: { label: labelText }
-    };
+    const labelFeature = { type: 'Feature', geometry: midPoint.geometry, properties: { label: labelText } };
 
     map.addSource(labelId, { type: 'geojson', data: labelFeature });
     map.addLayer({
@@ -289,7 +268,7 @@ document.getElementById('exportExcelButton')?.addEventListener('click', () => {
 });
 
 // ===========================
-// Hover circle + panel (aynen)
+// Hover circle + panel
 // ===========================
 function ensureHoverCircleLayers() {
   if (!map.getSource(HOVER_SRC)) map.addSource(HOVER_SRC, { type: 'geojson', data: turf.featureCollection([]) });
@@ -318,10 +297,9 @@ function setHoverVisibility(visible) {
   if (!visible && body) body.innerHTML = 'İmleci harita üzerinde gezdirin…';
 }
 
-// hızlı veya fallback sorgu (hover için kuşbakışı kullanıyoruz)
+// hızlı veya fallback (hover için kuşbakışı)
 function queryAmenitiesInRadius(centerLng, centerLat, radiusMeters) {
   const radiusKm = Math.max(0, radiusMeters) / 1000;
-  // KDBush varsa:
   if (amenIdx && typeof geokdbush !== 'undefined') {
     const hits = geokdbush.around(amenIdx, centerLng, centerLat, Infinity, radiusKm);
     return hits
@@ -331,7 +309,6 @@ function queryAmenitiesInRadius(centerLng, centerLat, radiusMeters) {
         return selectedCategories.size === 0 || selectedCategories.has(k);
       });
   }
-  // Fallback: turf
   const circlePoly = turf.circle([centerLng, centerLat], radiusKm, { steps: 64, units: 'kilometers' });
   const inside = turf.pointsWithinPolygon({ type: 'FeatureCollection', features: amenities }, circlePoly);
   const filtered = inside.features.filter(f => {
@@ -402,13 +379,11 @@ map.on('mousemove', (e) => {
   });
 });
 
-// yarıçap değişince anlık güncelle
+// yarıçap değişince anlık güncelle + spider yenile
 ['input','change'].forEach(evt =>
-  document.getElementById('distanceInput')?.addEventListener(evt, () => {
+  document.getElementById('distanceInput')?.addEventListener(evt, async () => {
     if (hoverEnabled && lastMouseLngLat) updateHoverCircleAt(lastMouseLngLat);
-    // spider da yarıçap filtresine bağlı olduğundan güncelle
-    const center = [map.getCenter().lng, map.getCenter().lat];
-    updateSpider(center);
+    await updateSpider([map.getCenter().lng, map.getCenter().lat]);
   })
 );
 
@@ -473,8 +448,7 @@ function buildLegend(categories) {
 
   legend.innerHTML = `<div style="font-weight:600; margin-bottom:6px;">Kategoriler</div>`;
 
-  // baştan hepsi seçili
-  selectedCategories = new Set(categories);
+  selectedCategories = new Set(categories); // başlangıçta hepsi seçili
 
   categories.forEach(cat => {
     const id = `cat_${cat.replace(/\s+/g, '_')}`;
@@ -485,12 +459,12 @@ function buildLegend(categories) {
     cb.type = 'checkbox';
     cb.id = id;
     cb.checked = true;
-    cb.addEventListener('change', () => {
+    cb.addEventListener('change', async () => {
       if (cb.checked) selectedCategories.add(cat);
       else selectedCategories.delete(cat);
       applyAmenityFilter();
       const c = [map.getCenter().lng, map.getCenter().lat];
-      updateSpider(c);
+      await updateSpider(c);
       if (hoverEnabled && lastMouseLngLat) updateHoverCircleAt(lastMouseLngLat);
     });
 
@@ -508,24 +482,24 @@ function buildLegend(categories) {
   const selectAllBtn = document.createElement('button');
   selectAllBtn.textContent = 'Tümünü Seç';
   selectAllBtn.style.fontSize = '12px';
-  selectAllBtn.onclick = () => {
+  selectAllBtn.onclick = async () => {
     selectedCategories = new Set(categories);
     legend.querySelectorAll('input[type="checkbox"]').forEach(cb => cb.checked = true);
     applyAmenityFilter();
     const c = [map.getCenter().lng, map.getCenter().lat];
-    updateSpider(c);
+    await updateSpider(c);
     if (hoverEnabled && lastMouseLngLat) updateHoverCircleAt(lastMouseLngLat);
   };
 
   const clearBtn = document.createElement('button');
   clearBtn.textContent = 'Temizle';
   clearBtn.style.fontSize = '12px';
-  clearBtn.onclick = () => {
+  clearBtn.onclick = async () => {
     selectedCategories.clear();
     legend.querySelectorAll('input[type="checkbox"]').forEach(cb => cb.checked = false);
     applyAmenityFilter();
     const c = [map.getCenter().lng, map.getCenter().lat];
-    updateSpider(c);
+    await updateSpider(c);
     if (hoverEnabled && lastMouseLngLat) updateHoverCircleAt(lastMouseLngLat);
   };
 
@@ -556,12 +530,10 @@ map.on('load', () => {
     amenities = amenityData.features;
     proximityOrder = getProximityOrder(parcelCentroids);
 
-    // Fast index (varsa)
+    // Hız index (varsa)
     amenPoints = amenities.map((f, idx) => ({ lng: f.geometry.coordinates[0], lat: f.geometry.coordinates[1], idx }));
     if (typeof KDBush !== 'undefined') {
       amenIdx = new KDBush(amenPoints, p => p.lng, p => p.lat);
-    } else {
-      console.warn('KDBush yok – turf fallback kullanılacak (daha yavaş).');
     }
 
     // Legend
@@ -604,7 +576,7 @@ map.on('load', () => {
     const start = parcelCentroids[proximityOrder[currentIndex]].geometry.coordinates;
     map.flyTo({ center: start });
     setupParcelSearch();
-    await updateSpider(start); // async
+    await updateSpider(start);
 
     // Hover varsayılan kapalı
     setHoverVisibility(false);
@@ -653,27 +625,24 @@ document.getElementById('styleSwitcher')?.addEventListener('change', function ()
     });
     applyAmenityFilter();
 
-    // Hover katmanları ve UI
     ensureHoverCircleLayers();
     refreshHoverToggleUI();
 
-    // Legend yeniden görünür/kapalı durumunu uygula
     buildLegend(allCategories);
     setLegendVisibility(legendVisible);
 
-    // Spider yenile
     const newCenter = parcelCentroids[proximityOrder[currentIndex]].geometry.coordinates;
     await updateSpider(newCenter);
   });
 });
 
 // ===========================
-// Popup
+// Popup (sağ tık)
 // ===========================
 map.on('contextmenu', e => {
   const features = map.queryRenderedFeatures(e.point, { layers: ['centroids-points', 'amenities-points'] });
   const content = features.length
-    ? Object.entries(features[0].properties).map(([k, v]) => `<b>${k}</b>: ${v}`).join('<br>`)
+    ? Object.entries(features[0].properties).map(([k, v]) => `<b>${k}</b>: ${v}`).join('<br>')
     : 'Yakında veri bulunamadı.';
   new mapboxgl.Popup().setLngLat(e.lngLat).setHTML(content).addTo(map);
 });
@@ -757,11 +726,9 @@ window.addEventListener('keydown', async e => {
     toggleLegendVisibility();
     return;
   } else if (key === '+' || key === '=') {
-    tweakRadius(+50);
-    return;
+    tweakRadius(+50); return;
   } else if (key === '-' || key === '_') {
-    tweakRadius(-50);
-    return;
+    tweakRadius(-50); return;
   } else {
     return;
   }
@@ -781,7 +748,7 @@ function tweakRadius(delta){
 }
 
 // ===========================
-// Grafikler (aynı, OSRM verisiyle de çalışır)
+// Grafikler
 // ===========================
 function drawCategoryChart() {
   const categoryCounts = {};
@@ -811,7 +778,7 @@ function drawWeightedCategoryChart() {
   lastSpiderData.forEach(entry => {
     const k = entry.feature.properties?.Kategori || 'Bilinmiyor';
     const dMeters = (entry.distMeters != null) ? entry.distMeters : (entry.dist * 1000);
-    const w = 1 / Math.max(dMeters, 1); // metre tabanlı
+    const w = 1 / Math.max(dMeters, 1);
     weightedCounts[k] = (weightedCounts[k] || 0) + w;
   });
 
@@ -859,8 +826,8 @@ detailBox.style.border = '1px solid #ccc';
 detailBox.style.background = '#f9f9f9';
 detailBox.innerHTML = `
   <strong>Teknik Hesaplama:</strong><br>
-  Grafikler, seçilen mesafe türüne göre (OSRM yol ağı veya kuşbakışı) hesaplanan değerlere dayanır.<br>
-  Ağırlık formülü: <code>Etki = 1 / Mesafe(m)</code>
+  Grafikler, seçilen mesafe türüne göre (Yol Ağı/Matrix veya Kuşbakışı) hesaplanan değerlere dayanır.<br>
+  Ağırlık: <code>Etki = 1 / Mesafe(m)</code>
 `;
 weightedChartButton.after(detailToggleBtn);
 detailToggleBtn.after(detailBox);
@@ -880,3 +847,8 @@ function downloadChartImage(canvasId, filename) {
   link.click();
 }
 window.downloadChartImage = downloadChartImage;
+
+// Mesafe türü değişince spider’ı yenile
+document.getElementById('distanceMode')?.addEventListener('change', async () => {
+  await updateSpider([map.getCenter().lng, map.getCenter().lat]);
+});
