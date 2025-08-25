@@ -3226,7 +3226,7 @@
 { "type": "Feature", "properties": { "Kategori": "Parklar", "Ad": "İsimsiz", "name": "Balatçık Mahallesi" }, "geometry": { "type": "Point", "coordinates": [ 27.039234859109996, 38.506623277995295 ] } },
 { "type": "Feature", "properties": { "Kategori": "Parklar", "Ad": "İsimsiz", "name": "Balatçık Mahallesi" }, "geometry": { "type": "Point", "coordinates": [ 27.041451273801538, 38.514581056442076 ] } },
 { "type": "Feature", "properties": { "Kategori": "Parklar", "Ad": "Balatçık Merkez Parkı", "name": "Balatçık Mahallesi" }, "geometry": { "type": "Point", "coordinates": [ 27.039661150703264, 38.512584014410002 ] } },
-{ "type": "Feature", "properties": { "Kategori": "Parklar", "Ad": "İsimsiz", "name": "Balatçık Mahallesi" }, "geometry": { "type": "Point", "coordinates": [ 27.043557585147934, 38.520377338873217 ] } },
+{ "type": "Feature", "properties": { "Kategori": "Nihat Gürer Parkı", "Ad": "İsimsiz", "name": "Balatçık Mahallesi" }, "geometry": { "type": "Point", "coordinates": [ 27.043557585147934, 38.520377338873217 ] } },
 { "type": "Feature", "properties": { "Kategori": "Parklar", "Ad": "Şehit Mehmet Çakıcı Parkı", "name": "Balatçık Mahallesi" }, "geometry": { "type": "Point", "coordinates": [ 27.038984293707362, 38.511579459700712 ] } },
 { "type": "Feature", "properties": { "Kategori": "Parklar", "Ad": "İsimsiz", "name": "Balatçık Mahallesi" }, "geometry": { "type": "Point", "coordinates": [ 27.03748540827873, 38.509163857609188 ] } },
 { "type": "Feature", "properties": { "Kategori": "Parklar", "Ad": "Çiğli Belediyesi Şair Ahmed Arif Parkı", "name": "Balatçık Mahallesi" }, "geometry": { "type": "Point", "coordinates": [ 27.037677750477172, 38.509904700408512 ] } },
