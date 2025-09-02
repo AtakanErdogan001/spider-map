@@ -4,6 +4,7 @@
 "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
 "features": [
 { "type": "Feature", "properties": { "Kategori": "Sağlık Kurumları", "Ad": "Karşıyaka 9 Nolu Zübeyde Hanım Aile Sağlığı Merkezi", "name": "" }, "geometry": { "type": "Point", "coordinates": [ 27.108563839649225, 38.49409886797477 ] } },
+{ "type": "Feature", "properties": { "Kategori": "Sağlık Kurumları", "Ad": "Karşıyaka xxx Nolu Zübeyde Hanım Aile Sağlığı Merkezi", "name": "" }, "geometry": { "type": "Point", "coordinates": [ 27.108563839649, 38.49409886797 ] } },
 { "type": "Feature", "properties": { "Kategori": "Sağlık Kurumları", "Ad": "Karşıyaka 7 Nolu Şemikler Aile Sağlığı Merkezi", "name": "" }, "geometry": { "type": "Point", "coordinates": [ 27.08922857981379, 38.4722164328421 ] } },
 { "type": "Feature", "properties": { "Kategori": "Sağlık Kurumları", "Ad": "Karşıyaka 6 Nolu Alaybey Aile Sağlığı Merkezi", "name": "" }, "geometry": { "type": "Point", "coordinates": [ 27.121210759154923, 38.4584285978998 ] } },
 { "type": "Feature", "properties": { "Kategori": "Sağlık Kurumları", "Ad": "Karşıyaka 5 Nolu Bostanlı-1 Aile Sağlığı Merkezi", "name": "" }, "geometry": { "type": "Point", "coordinates": [ 27.088351456955554, 38.465099967243276 ] } },
