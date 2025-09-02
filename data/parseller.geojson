@@ -2,6 +2,29 @@
   "type": "FeatureCollection",
   "features": [
     {
+      "type":"Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [27.12881,38.40127],[27.12879,38.40115],[27.12877,38.40104],[27.12899,38.40104],[27.12905,38.40125],[27.12881,38.40127]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "Halk Konut 11",
+        "İl": "İzmir",
+        "İlçe": "Konak",
+        "Mahalle": "Güneşli",
+        "Ada": "6885",
+        "ParselNo": "18",
+        "Alan": "500",
+        "Pafta": "723 Plan",
+        "Nitelik": "Arsa",
+        "Mevkii": ""
+      }
+    },
+    {
       "type": "Feature",
       "geometry": {
         "type": "Polygon",
@@ -962,6 +985,7 @@
     }
   ]
 }
+
 
 
 
