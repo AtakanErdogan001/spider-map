@@ -123,6 +123,62 @@
         "type": "Polygon",
         "coordinates": [
           [
+            [26.97379,38.8016],
+            [26.97393,38.80173],
+            [26.97387,38.80175],
+            [26.9738,38.80179],
+            [26.97366,38.80167],
+            [26.97379,38.8016]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "FUAT ÖZER VE HİSSEDARLARI",
+        "İl": "İzmir",
+        "İlçe": "Aliağa",
+        "Mahalle": "Aliağa",
+        "Ada": "",
+        "ParselNo": "5945",
+        "Alan": "261,00",
+        "Pafta": "25",
+        "Nitelik": "Arsa",
+        "Mevkii": "Kültür"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [27.09146,38.46066],
+            [27.09115,38.46084],
+            [27.09104,38.46071],
+            [27.09135,38.46053],
+            [27.09145,38.46065],
+            [27.09146,38.46066]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "ERDİL APARTMAN",
+        "İl": "İzmir",
+        "İlçe": "Karşıyaka",
+        "Mahalle": "Şemikler",
+        "Ada": "",
+        "ParselNo": "2075",
+        "Alan": "578,00",
+        "Pafta": "41",
+        "Nitelik": "Arsa",
+        "Mevkii": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
             [26.91728,38.38224],
             [26.91729,38.38223],
             [26.91729,38.38222],
@@ -1112,6 +1168,7 @@
     }
   ]
 }
+
 
 
 
