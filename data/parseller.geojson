@@ -824,29 +824,6 @@
         "type": "Polygon",
         "coordinates": [
           [
-            [27.1951,38.46856],[27.19444,38.46849],[27.19477,38.46764],[27.19524,38.46773],[27.1951,38.46856]
-          ]
-        ]
-      },
-      "properties": {
-        "name": "DENEME",
-        "İl": "İzmir",
-        "İlçe": "Bayraklı",
-        "Mahalle": "Mansuroğlu",
-        "Ada": "3954",
-        "ParselNo": "1",
-        "Alan": "3943.00",
-        "Pafta": "31Jıııc",
-        "Nitelik": "(A1-A3-A4) Dokuz Katlı, (B) Blok 8 Katlı Ve (A2) Blok Zemin Dahil 8 Katlı Kargir Apartman",
-        "Mevkii": ""
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
             [
               27.19874,
               38.46584
@@ -1437,6 +1414,7 @@
     }
   ]
 }
+
 
 
 
