@@ -65,6 +65,62 @@
         "type": "Polygon",
         "coordinates": [
           [
+            [27.21651,38.48258],
+            [27.21658,38.48237],
+            [27.21661,38.48238],
+            [27.21667,38.48239],
+            [27.2166,38.48259],
+            [27.21651,38.48258]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "NURULLAH EFE APARTMANI",
+        "İl": "İzmir",
+        "İlçe": "Bornova",
+        "Mahalle": "Ergene",
+        "Ada": "3359",
+        "ParselNo": "10",
+        "Alan": "191,00",
+        "Pafta": "",
+        "Nitelik": "Arsa",
+        "Mevkii": "Döşemealtı"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [26.97984,38.8019],
+            [26.97993,38.80187],
+            [26.98009,38.80183],
+            [26.98013,38.80209],
+            [26.97994,38.80214],
+            [26.97984,38.8019]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "ERDOĞAN OLTULU VE HİSSEDARLARI",
+        "İl": "İzmir",
+        "İlçe": "Bayraklı",
+        "Mahalle": "Salhane",
+        "Ada": "25003",
+        "ParselNo": "2",
+        "Alan": "2.554,00",
+        "Pafta": "25N2c",
+        "Nitelik": "Arsa",
+        "Mevkii": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
             [27.14635,38.43444],
             [27.14664,38.43434],
             [27.14668,38.43447],
@@ -1168,6 +1224,7 @@
     }
   ]
 }
+
 
 
 
