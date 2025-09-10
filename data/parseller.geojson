@@ -30,6 +30,63 @@
       }
     },
     {
+      "type":"Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [27.17659,38.37092],
+            [27.17656,38.37085],
+            [27.17659,38.37084],
+            [27.1767,38.37081],
+            [27.17672,38.37088],
+            [27.17661,38.37091],
+            [27.17659,38.37092]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "YUNUS GÜLER",
+        "İl": "İzmir",
+        "İlçe": "Buca",
+        "Mahalle": "Dumlupınar",
+        "Ada": "7485",
+        "ParselNo": "7",
+        "Alan": "98,00",
+        "Pafta": "21N-3D",
+        "Nitelik": "Arsa",
+        "Mevkii": ""
+      }
+    },
+    {
+      "type":"Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [27.20193,38.46373],
+            [27.20204,38.46347],
+            [27.20263,38.46362],
+            [27.20254,38.46381],
+            [27.20215,38.46377],
+            [27.20193,38.46373]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "HALK KONUT 18",
+        "İl": "İzmir",
+        "İlçe": "Bornova",
+        "Mahalle": "Kazımdirik",
+        "Ada": "3857",
+        "ParselNo": "2",
+        "Alan": "1.438,00",
+        "Pafta": "18",
+        "Nitelik": "Arsa",
+        "Mevkii": ""
+      }
+    },
+    {
       "type": "Feature",
       "geometry": {
         "type": "Polygon",
@@ -1224,6 +1281,7 @@
     }
   ]
 }
+
 
 
 
