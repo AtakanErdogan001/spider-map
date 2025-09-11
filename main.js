@@ -707,6 +707,31 @@ map.on('load', () => {
       }
     });
 
+    // amenityData yüklendikten sonra:
+    const pts = amenityData.features.map((f, i) => ({
+      lng: f.geometry.coordinates[0],
+      lat: f.geometry.coordinates[1],
+      idx: i
+    }));
+    const kd = new KDBush(pts, p => p.lng, p => p.lat);
+
+    // her nokta için 150 m çevredeki komşu sayısı:
+    const R_METERS = 150;
+    const metersPerPixel = z => 156543.03392 * Math.cos((38.43 * Math.PI)/180) / Math.pow(2, z); // İzmir enlemi
+    const pxAtZ12 = R_METERS / metersPerPixel(12); // yaklaşık ölçek; kaba bir sabit de verebilirsiniz
+    const R_KM = R_METERS / 1000;
+
+    for (const p of pts) {
+      // geokdbush 'around' ile hızlı komşu sayımı (yaklaşık; radius km)
+      const neighbors = geokdbush.around(kd, p.lng, p.lat, Infinity, R_KM);
+      // kendisi de listede olur, -1 yapabilirsiniz:
+      const count = Math.max(0, neighbors.length - 1);
+      const f = amenityData.features[p.idx];
+      // 0..1 aralığına sıkıştır (ör: 0-20 komşu -> 0..1)
+      f.properties.localDensity = Math.min(1, count / 20);
+    }
+
+
     // Başlangıç görünürlüğü
     map.setLayoutProperty('amenities-heat',   'visibility', heatmapOn ? 'visible' : 'none');
     map.setLayoutProperty('amenities-points', 'visibility', heatmapOn ? 'none'    : 'visible');
@@ -774,13 +799,22 @@ document.getElementById('styleSwitcher')?.addEventListener('change', function ()
       maxzoom: 19,
       paint: {
         'heatmap-weight': [
-          'case',
-          ['has', 'weight'],
-          ['coalesce', ['to-number', ['get', 'weight']], 1],
-          1
+          'interpolate', ['linear'], ['zoom'],
+          10, ['coalesce', ['get','localDensity'], 0.2],
+          15, ['*', ['coalesce', ['get','localDensity'], 0.2], 1.8]
         ],
         'heatmap-intensity': ['interpolate', ['linear'], ['zoom'], 10, 1, 15, 3],
-        'heatmap-radius':    ['interpolate', ['linear'], ['zoom'], 10, 15, 15, 40],
+        'heatmap-radius': [
+          'interpolate', ['linear'], ['zoom'],
+          10, ['interpolate', ['linear'], ['coalesce', ['get','localDensity'], 0],
+              0, 12,      // az yoğun: 12px
+              1, 28       // çok yoğun: 28px
+          ],
+          15, ['interpolate', ['linear'], ['coalesce', ['get','localDensity'], 0],
+              0, 22,
+              1, 48
+          ]
+        ],
         'heatmap-color': [
           'interpolate', ['linear'], ['heatmap-density'],
           0, 'rgba(0,0,0,0)',
