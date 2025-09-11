@@ -757,57 +757,19 @@ function drawCategoryChart() {
     categoryCounts[k] = (categoryCounts[k] || 0) + 1;
   });
 
-  const el = document.getElementById('categoryChartContainer');
-  if (!el) return;
-
+  const el = document.getElementById('categoryChartContainer'); if (!el) return;
   el.innerHTML = '<canvas id="categoryChart"></canvas>';
   const ctx = document.getElementById('categoryChart').getContext('2d');
 
-  const labels = Object.keys(categoryCounts);
-  const values = Object.values(categoryCounts);
-  const total = values.reduce((a, b) => a + b, 0);
-
   new Chart(ctx, {
     type: 'pie',
-    data: {
-      labels,
-      datasets: [{ data: values }]
-    },
+    data: { labels: Object.keys(categoryCounts), datasets: [{ data: Object.values(categoryCounts) }] },
     options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      plugins: {
-        legend: {
-          position: 'bottom',
-          labels: {
-            // Legend etiketlerinde de ad + sayı göster
-            generateLabels(chart) {
-              const {labels: {generateLabels}} = Chart.overrides.pie.plugins.legend;
-              const base = generateLabels(chart);
-              return base.map((item, i) => ({
-                ...item,
-                text: `${labels[i]} (${values[i]})`
-              }));
-            }
-          }
-        },
-        title: {
-          display: true,
-          text: `Kategorisel Yoğunluk Dağılımı (Toplam: ${total})`
-        },
-        tooltip: {
-          callbacks: {
-            // Tooltip: Kategori: 12 (%% opsiyonel istersen ekleyebilirsin)
-            label: (ctx) => `${ctx.label}: ${ctx.parsed}`
-          }
-        },
-        datalabels: {
-          color: '#fff',
-          // SADECE SAYI
-          formatter: (v) => String(v),
-          font: { weight: 'bold' }
-        }
-      }
+      responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { position: 'bottom' }, title: { display: true, text: 'Kategorisel Yoğunluk Dağılımı' },
+        datalabels: { color: '#fff',
+          formatter: (v, c) => { const t = c.chart.data.datasets[0].data.reduce((a,b)=>a+b,0); return `${v} (${(v/t*100).toFixed(1)}%)`; },
+          font: { weight: 'bold' } } }
     },
     plugins: [ChartDataLabels]
   });
@@ -893,4 +855,5 @@ window.downloadChartImage = downloadChartImage;
 document.getElementById('distanceMode')?.addEventListener('change', async () => {
   await updateSpider([map.getCenter().lng, map.getCenter().lat]);
 });
+
 
