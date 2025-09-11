@@ -768,7 +768,7 @@ function drawCategoryChart() {
       responsive: true, maintainAspectRatio: false,
       plugins: { legend: { position: 'bottom' }, title: { display: true, text: 'Kategorisel Yoğunluk Dağılımı' },
         datalabels: { color: '#fff',
-          formatter: (v, c) => { const t = c.chart.data.datasets[0].data.reduce((a,b)=>a+b,0); return `${v} (${(v/t*100).toFixed(1)}%)`; },
+          formatter: (v) => v,
           font: { weight: 'bold' } } }
     },
     plugins: [ChartDataLabels]
@@ -855,5 +855,6 @@ window.downloadChartImage = downloadChartImage;
 document.getElementById('distanceMode')?.addEventListener('change', async () => {
   await updateSpider([map.getCenter().lng, map.getCenter().lat]);
 });
+
 
 
