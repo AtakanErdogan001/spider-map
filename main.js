@@ -981,6 +981,123 @@ async function exportPNGStatic() {
   hidden.forEach(id => map.setLayoutProperty(id, 'visibility', 'visible'));
 }
 
+
+// ============== MESAFE EXCEL ==============
+
+// merkezdeki parsel centroid'ini bul
+function getCurrentParcelCentroid() {
+  const c = map.getCenter();
+  const idx = getNearestCentroidIndex([c.lng, c.lat]);
+  return parcelCentroids[idx];
+}
+
+// seçili kategorı filtresini uygulayarak yarıçap içindeki donatıları getir
+function getAmenitiesWithinRadiusFiltered(centerLng, centerLat, radiusM) {
+  const radiusKm = Math.max(0, radiusM) / 1000;
+  // önce kategori filtresi uygula
+  const catFilter = f => {
+    const k = f.properties?.Kategori || 'Bilinmiyor';
+    return selectedCategories.size === 0 || selectedCategories.has(k);
+  };
+
+  if (amenIdx && typeof window.geokdbush !== 'undefined') {
+    // hızlı (kdbush)
+    const hits = window.geokdbush.around(amenIdx, centerLng, centerLat, Infinity, radiusKm);
+    return hits.map(h => amenities[h.idx]).filter(catFilter);
+  } else {
+    // fallback (turf)
+    const circlePoly = turf.circle([centerLng, centerLat], radiusKm, { steps: 64, units: 'kilometers' });
+    const inside = turf.pointsWithinPolygon({ type: 'FeatureCollection', features: amenities }, circlePoly);
+    return inside.features.filter(catFilter);
+  }
+}
+
+// export: en yakın parsel için yarıçap içindeki donatıların mesafe/süre listesi
+async function exportDistancesExcelForCurrentParcel() {
+  const parcel = getCurrentParcelCentroid();
+  if (!parcel) { alert('Yakında parsel bulunamadı.'); return; }
+
+  const R = Math.max(0, parseFloat(document.getElementById('distanceInput')?.value || '500') || 500);
+  const mode = (document.getElementById('distanceMode')?.value || 'haversine');
+  const center = parcel.geometry.coordinates; // [lng, lat]
+
+  // yarıçap içindeki ve kategori filtresine uyan donatılar
+  const feats = getAmenitiesWithinRadiusFiltered(center[0], center[1], R);
+  if (!feats.length) {
+    alert('Bu yarıçap içinde donatı bulunamadı.');
+    return;
+  }
+
+  let rows = [];
+
+  if (mode === 'network') {
+    // yol ağı mesafe & süre için matrix
+    try {
+      const enriched = await mapboxMatrixDistance(center, feats);
+      // sıralayıp tablo yap
+      enriched
+        .filter(e => e.distMeters != null)
+        .sort((a,b) => a.distMeters - b.distMeters)
+        .forEach(e => {
+          const p = e.feature.properties || {};
+          rows.push({
+            'Parsel': parcel.properties?.name || '',
+            'Yarıçap (m)': R,
+            'Kategori': p.Kategori || 'Donatı',
+            'Ad': p.Ad || 'Bilinmiyor',
+            'Mesafe (m)': Math.round(e.distMeters),
+            'Süre (dk)': (e.durationSec != null) ? (e.durationSec/60).toFixed(1) : '',
+            'Donatı Koordinat': `${e.feature.geometry.coordinates[1]}, ${e.feature.geometry.coordinates[0]}`
+          });
+        });
+    } catch (err) {
+      console.warn('Matrix hatası, kuşbakışıya düşüyorum:', err);
+      // kuşbakışı yedek
+      rows = feats.map(f => {
+        const d = turf.distance(turf.point(center), f, { units: 'kilometers' }) * 1000;
+        const p = f.properties || {};
+        return {
+          'Parsel': parcel.properties?.name || '',
+          'Yarıçap (m)': R,
+          'Kategori': p.Kategori || 'Donatı',
+          'Ad': p.Ad || 'Bilinmiyor',
+          'Mesafe (m)': Math.round(d),
+          'Süre (dk)': '',
+          'Donatı Koordinat': `${f.geometry.coordinates[1]}, ${f.geometry.coordinates[0]}`
+        };
+      }).sort((a,b) => a['Mesafe (m)'] - b['Mesafe (m)']);
+    }
+  } else {
+    // kuşbakışı mesafe
+    rows = feats.map(f => {
+      const d = turf.distance(turf.point(center), f, { units: 'kilometers' }) * 1000;
+      const p = f.properties || {};
+      return {
+        'Parsel': parcel.properties?.name || '',
+        'Yarıçap (m)': R,
+        'Kategori': p.Kategori || 'Donatı',
+        'Ad': p.Ad || 'Bilinmiyor',
+        'Mesafe (m)': Math.round(d),
+        'Süre (dk)': '',
+        'Donatı Koordinat': `${f.geometry.coordinates[1]}, ${f.geometry.coordinates[0]}`
+      };
+    }).sort((a,b) => a['Mesafe (m)'] - b['Mesafe (m)']);
+  }
+
+  // Excel çıktısı
+  const ws = XLSX.utils.json_to_sheet(rows);
+  const wb = XLSX.utils.book_new();
+  XLSX.utils.book_append_sheet(wb, ws, 'Mesafeler');
+  const parcelNameSafe = (parcel.properties?.name || 'parsel').replace(/[\\/:*?"<>|]/g, '_');
+  XLSX.writeFile(wb, `${parcelNameSafe}_${R}m_mesafe.xlsx`);
+}
+
+// click handler
+document.getElementById('exportProxExcelButton')?.addEventListener('click', async () => {
+  await exportDistancesExcelForCurrentParcel();
+});
+
+
 // ===========================
 // KISAYOLLAR (+ mevcutlar)
 // ===========================
