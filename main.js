@@ -135,11 +135,19 @@ function getProximityOrder(centroids) {
 
 function colorForCategory(k) {
   if (!k) return '#607D8B';
-  const s = (k + '').toLowerCase();
+
+    // Türkçe locale ile normalize
+  const s = (k + '')
+    .normalize('NFKD')             // Unicode normalizasyonu (İ → I + .̇ gibi ayırıyor)
+    .replace(/[\u0300-\u036f]/g, '') // üst/alt işaretleri at
+    .toLocaleLowerCase('tr')       // Türkçe kurallarıyla küçült
+    .replace(/ı/g, 'i');
   if (s.includes('park')) return '#4CAF50';
   if (s.includes('okul')) return '#2196F3';
   if (s.includes('ibadet')) return '#9C27B0';
+    if (s.includes('belediye')) return '#a88c3fff';
   if (s.includes('su')) return '#00BCD4';
+  if (s.includes('kültürel')) return '#d47800ff';  
   if (s.includes('sağlık') || s.includes('saglik') || s.includes('hastane')) return '#F44336';
   if (s.includes('raylı') || s.includes('rayli')) return '#FF9800';
   return '#607D8B';
@@ -1141,34 +1149,47 @@ function tweakRadius(delta){
 // Grafikler (opsiyonel)
 // ===========================
 function drawCategoryChart() {
-  const categoryCounts = {};
-  lastSpiderData.forEach(entry => {
-    const k = entry.feature.properties?.Kategori || 'Bilinmiyor';
-    categoryCounts[k] = (categoryCounts[k] || 0) + 1;
+  const counts = {};
+  lastSpiderData.forEach(e => {
+    const k = e.feature.properties?.Kategori || 'Bilinmiyor';
+    counts[k] = (counts[k] || 0) + 1;
   });
+
+  const labels = Object.keys(counts);
+  const data   = labels.map(l => counts[l]);
+  const colors = labels.map(l => colorForCategory(l)); // <-- mevcut fonksiyon
+
   const el = document.getElementById('categoryChartContainer'); if (!el) return;
   el.innerHTML = '<canvas id="categoryChart"></canvas>';
   const ctx = document.getElementById('categoryChart').getContext('2d');
+
   new Chart(ctx, {
     type: 'pie',
-    data: { labels: Object.keys(categoryCounts), datasets: [{ data: Object.values(categoryCounts) }] },
+    data: { labels, datasets: [{ data, backgroundColor: colors, borderColor: '#fff', borderWidth: 1 }] },
     options: {
       responsive: true, maintainAspectRatio: false,
-      plugins: { legend: { position: 'bottom' }, title: { display: true, text: 'Kategorisel Yoğunluk Dağılımı' },
-        datalabels: { color: '#fff', formatter: (v) => v, font: { weight: 'bold' } } }
+      plugins: {
+        legend: { position: 'bottom' },
+        title: { display: true, text: 'Kategorisel Yoğunluk Dağılımı' },
+        datalabels: { color: '#fff', formatter: v => v, font: { weight: 'bold' } }
+      }
     },
     plugins: [ChartDataLabels]
   });
 }
 
 function drawWeightedCategoryChart() {
-  const weightedCounts = {};
-  lastSpiderData.forEach(entry => {
-    const k = entry.feature.properties?.Kategori || 'Bilinmiyor';
-    const dMeters = (entry.distMeters != null) ? entry.distMeters : (entry.dist * 1000);
-    const w = 1 / Math.max(dMeters, 1);
-    weightedCounts[k] = (weightedCounts[k] || 0) + w;
+  const weighted = {};
+  lastSpiderData.forEach(e => {
+    const k = e.feature.properties?.Kategori || 'Bilinmiyor';
+    const d = (e.distMeters != null) ? e.distMeters : (e.dist * 1000);
+    const w = 1 / Math.max(d, 1);
+    weighted[k] = (weighted[k] || 0) + w;
   });
+
+  const labels = Object.keys(weighted);
+  const data   = labels.map(l => weighted[l]);
+  const colors = labels.map(l => colorForCategory(l)); // <-- mevcut fonksiyon
 
   const el = document.getElementById('weightedChartContainer'); if (!el) return;
   el.innerHTML = '<canvas id="weightedCategoryChart"></canvas>';
@@ -1176,17 +1197,26 @@ function drawWeightedCategoryChart() {
 
   new Chart(ctx, {
     type: 'pie',
-    data: { labels: Object.keys(weightedCounts), datasets: [{ data: Object.values(weightedCounts) }] },
+    data: { labels, datasets: [{ data, backgroundColor: colors, borderColor: '#fff', borderWidth: 1 }] },
     options: {
       responsive: true, maintainAspectRatio: false,
-      plugins: { legend: { position: 'bottom' }, title: { display: true, text: 'Mesafe Ağırlıklı Kategorisel Dağılım' },
-        datalabels: { color: '#fff',
-          formatter: (v, c) => { const t = c.chart.data.datasets[0].data.reduce((a,b)=>a+b,0); return `${v.toFixed(2)} (${(v/t*100).toFixed(1)}%)`; },
-          font: { weight: 'bold' } } }
+      plugins: {
+        legend: { position: 'bottom' },
+        title: { display: true, text: 'Mesafe Ağırlıklı Kategorisel Dağılım' },
+        datalabels: {
+          color: '#fff',
+          formatter: (v, c) => {
+            const t = c.chart.data.datasets[0].data.reduce((a,b)=>a+b,0);
+            return `${v.toFixed(2)} (${(v/t*100).toFixed(1)}%)`;
+          },
+          font: { weight: 'bold' }
+        }
+      }
     },
     plugins: [ChartDataLabels]
   });
 }
+
 
 document.getElementById('btnCatChart')?.addEventListener('click', () =>
   lastSpiderData.length ? drawCategoryChart() : alert('Henüz analiz edilen veri yok.')
@@ -1210,3 +1240,4 @@ window.downloadChartImage = downloadChartImage;
 document.getElementById('distanceMode')?.addEventListener('change', async () => {
   await updateSpider([map.getCenter().lng, map.getCenter().lat]);
 });
+
