@@ -2,41 +2,46 @@
 <html lang="tr">
 <head>
   <meta charset="UTF-8" />
-  <title>Spider Map</title>
+  <title>İzmir Harita</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link href="https://api.mapbox.com/mapbox-gl-js/v2.13.0/mapbox-gl.css" rel="stylesheet" />
   <style>
-    body { margin:0; padding:0; font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; }
-    #map { position:absolute; top:0; bottom:0; width:100%; }
+    body{margin:0;padding:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,'Helvetica Neue',Arial}
+    #map{position:absolute;inset:0}
+    .btn{padding:6px 12px;border:none;border-radius:6px;cursor:pointer}
   </style>
+
+  <!-- UMD (global) sürümler -->
+  <script src="https://unpkg.com/kdbush@4.0.2/dist/kdbush.umd.js"></script>
+  <script src="https://unpkg.com/geokdbush@4.0.2/dist/geokdbush.umd.js"></script>
 </head>
 <body>
 
-  <!-- Kontrol paneli -->
-  <div style="position:absolute; top:10px; left:10px; z-index:2; background:white; padding:12px 16px; border-radius:8px; box-shadow:0 2px 6px rgba(0,0,0,.2); font-size:14px;">
-
+  <!-- Kontrol Paneli -->
+  <div style="position:absolute; top:10px; left:10px; z-index:2; background:#fff; padding:12px 16px; border-radius:8px; box-shadow:0 2px 6px rgba(0,0,0,.2); font-size:14px;">
     <div style="margin-bottom:10px;">
-      <label for="distanceInput"><strong>distance (m):</strong></label><br>
+      <label for="distanceInput"><strong>Yarıçap (m):</strong></label><br>
       <input type="number" id="distanceInput" value="500" min="0" style="width:100%; padding:4px; margin-top:4px;">
     </div>
 
     <div style="margin-bottom:10px;">
-      <label for="lineCountSelect"><strong>Connection Count:</strong></label><br>
+      <label for="lineCountSelect"><strong>Bağlantı Sayısı:</strong></label><br>
       <select id="lineCountSelect" style="width:100%; padding:4px; margin-top:4px;">
         <option value="5">5</option>
         <option value="10" selected>10</option>
         <option value="20">20</option>
         <option value="50">50</option>
-        <option value="all">All</option>
+        <option value="all">Tümü</option>
       </select>
     </div>
 
     <div style="margin-bottom:10px;">
       <label for="distanceMode"><strong>Mesafe Türü:</strong></label><br>
       <select id="distanceMode" style="width:100%; padding:4px; margin-top:4px;">
-        <option value="haversine">Kuşbakışı (Turf)</option>
+        <option value="haversine">Kuşbakışı</option>
         <option value="network">Yol Ağı (Mapbox)</option>
       </select>
+      <div id="modeBadge" style="margin-top:6px; font-size:12px; color:#c62828;">Mesafe Türü: Kuşbakışı (fallback)</div>
     </div>
 
     <div style="margin-bottom:10px;">
@@ -50,51 +55,52 @@
       </select>
     </div>
 
-    <div style="margin-top:10px;">
-      <button id="exportExcelButton" style="padding:6px 12px; background-color:#4CAF50; color:white; border:none; border-radius:4px; cursor:pointer;">
-        Excel Çıktısı Al
-      </button>
+    <div style="position:relative; margin-top:10px;">
+      <input type="text" id="parcelSearchInput" placeholder="Mahalle veya parsel ara..." style="width:250px;"/>
+      <ul id="searchResults"
+          style="position:absolute; top:36px; left:0; background:white; z-index:2000;
+                list-style:none; padding:5px; max-height:180px; overflow-y:auto;
+                width:250px; border:1px solid #ccc; box-shadow:0 4px 10px rgba(0,0,0,.12);">
+      </ul>
     </div>
 
-    <div style="margin-top:10px;">
-      <input type="text" id="parcelSearchInput" placeholder="Mahalle veya parsel ara..." />
-      <ul id="searchResults" style="position:absolute; background:white; z-index:999; list-style:none; padding:5px; max-height:150px; overflow-y:auto; width:250px; border:1px solid #ccc;"></ul>
+    <div style="display:flex; gap:8px; flex-wrap:wrap; margin-top:10px;">
+      <button id="exportExcelButton" class="btn" style="background:#4CAF50;color:#fff;">Analiz Excel</button>
+      <button id="exportPNGButton"  class="btn" style="background:#1976D2;color:#fff;">Harita PNG</button>
+      <!-- heatmap butonu JS tarafından eklenecek -->
+      <button id="btnCatChart" class="btn">Kategorisel Grafik</button>
+      <button id="btnWeightedChart" class="btn">Mesafeli Grafik</button>
     </div>
 
-    <div id="categoryChartContainer" style="margin-top:15px;"></div>
-    <div style="text-align:right; margin-bottom:15px;">
-      <button onclick="downloadChartImage('categoryChart', 'kategorisel_grafik.png')">Kategorisel Grafiği İndir</button>
+    <div style="margin-top:6px; font-size:12px; color:#444;">
+      <strong>Kısayol:</strong> <code>A</code> = Dinamik etki analizi (centroid boyutu + renk)
     </div>
 
-    <div id="weightedChartContainer" style="margin-top:15px;"></div>
-    <div style="text-align:right; margin-bottom:15px;">
-      <button onclick="downloadChartImage('weightedCategoryChart', 'mesafeli_grafik.png')">Mesafeli Grafiği İndir</button>
+    <div id="categoryChartContainer" style="margin-top:12px;"></div>
+    <div style="text-align:right; margin-bottom:10px;">
+      <button class="btn" onclick="downloadChartImage('categoryChart', 'kategorisel_grafik.png')">Grafik PNG indir</button>
+    </div>
+
+    <div id="weightedChartContainer" style="margin-top:12px;"></div>
+    <div style="text-align:right;">
+      <button class="btn" onclick="downloadChartImage('weightedCategoryChart', 'mesafeli_grafik.png')">Grafik PNG indir</button>
     </div>
   </div>
 
   <!-- Sağ altta hover toggle + özet -->
-  <div style="position: absolute; right: 12px; bottom: 12px; z-index: 3; display: flex; flex-direction: column; gap: 8px; align-items: end;">
-    <button id="hoverToggleBtn"
-            style="padding: 8px 12px; border-radius: 8px; border: 1px solid #bbb; background: #fff; cursor: pointer; font-size: 13px;">
+  <div style="position:absolute; right:12px; bottom:12px; z-index:3; display:flex; flex-direction:column; gap:8px; align-items:end;">
+    <button id="hoverToggleBtn" class="btn" style="border:1px solid #bbb; background:#fff; color:#222;">
       Yakın Çevre Analizi: KAPALI
     </button>
-
-    <div id="categorySummary" style="
-      display:none;
-      background: rgba(255,255,255,0.95); border: 1px solid #ddd;
-      border-radius: 8px; padding: 10px 12px; font-size: 13px; min-width: 220px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.15); line-height: 1.35;">
+    <div id="categorySummary" style="display:none; background:rgba(255,255,255,.95); border:1px solid #ddd; border-radius:8px; padding:10px 12px; font-size:13px; min-width:220px; box-shadow:0 2px 6px rgba(0,0,0,.15); line-height:1.35;">
       <div style="font-weight:600; margin-bottom:6px;">Daire İçi Kategori Sayıları</div>
       <div id="categorySummaryBody">İmleci harita üzerinde gezdirin…</div>
     </div>
   </div>
 
-  <!-- Harita -->
   <div id="map"></div>
 
   <!-- Kütüphaneler -->
-  <script src="https://unpkg.com/kdbush@4"></script>
-  <script src="https://unpkg.com/geokdbush@4"></script>
   <script src="https://api.mapbox.com/mapbox-gl-js/v2.13.0/mapbox-gl.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@turf/turf@6/turf.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
@@ -102,6 +108,6 @@
   <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"></script>
 
   <!-- Uygulama -->
-  <script src="main.js"></script>
+  <script src="./main.js"></script>
 </body>
 </html>
