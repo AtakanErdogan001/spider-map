@@ -551,20 +551,21 @@ function setupParcelSearch() {
   if (!input || !resultsList) return;
 
   input.addEventListener('input', () => {
-    const query = input.value.toLowerCase().trim();
+    const query = normTR(input.value.trim());
     resultsList.innerHTML = '';
     if (!query) return;
 
-    const matches = parcels.filter(f => (f.properties.name || '').toLowerCase().includes(query));
+    const matches = parcels.filter(f => normTR((f.properties?.name ?? '').trim()).includes(query));
+
     matches.forEach(f => {
       const li = document.createElement('li');
-      li.textContent = f.properties.name;
+      li.textContent = f.properties?.name ?? '(İsimsiz)';
       li.style.cursor = 'pointer';
       li.style.padding = '3px 6px';
-      li.addEventListener('click', () => {
+      li.addEventListener('click', async () => {
         const centroid = turf.centroid(f).geometry.coordinates;
         map.flyTo({ center: centroid, zoom: 17 });
-        updateSpider(centroid);
+        await updateSpider(centroid);
         if (hoverEnabled) updateHoverCircleAt(centroid);
         resultsList.innerHTML = '';
         input.value = '';
@@ -736,3 +737,4 @@ function downloadChartImage(canvasId, filename) {
   link.click();
 }
 window.downloadChartImage = downloadChartImage;
+
