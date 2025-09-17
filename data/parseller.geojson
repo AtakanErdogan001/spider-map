@@ -45,15 +45,31 @@
           ]
         ]
       },
+      {
+      "type":"Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [27.10198,38.4634],
+            [27.10194,38.46328],
+            [27.10196,38.46326],
+            [27.10229,38.46319],
+            [27.10232,38.46333],
+            [27.10232,38.46333],
+            [27.10198,38.4634]
+          ]
+        ]
+      },
       "properties": {
-        "name": "HALK KONUT 24",
+        "name": "MEHLİKA ÖNMAN APT.",
         "İl": "İzmir",
-        "İlçe": "Bayraklı",
-        "Mahalle": "Manavkuyu",
-        "Ada": "3880",
-        "ParselNo": "1",
-        "Alan": "2.342,00",
-        "Pafta": "9",
+        "İlçe": "Karşıyaka",
+        "Mahalle": "Nergiz",
+        "Ada": "25500",
+        "ParselNo": "2",
+        "Alan": "493,00"",
+        "Pafta": "25L-3A",
         "Nitelik": "Arsa",
         "Mevkii": ""
       }
@@ -1414,6 +1430,7 @@
     }
   ]
 }
+
 
 
 
