@@ -4,6 +4,13 @@
 "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
 "features": [
 
+{ "type": "Feature", "properties": { "Kategori": "Kültürel Miras (Köşk, Çeşme vb.)", "Ad": "TCDD 3. Bölge Müze ve Sanat Galerisi", "name": "Alsancak Mahallesi" }, "geometry": { "type": "Point", "coordinates": [ 27.14730645489835, 38.438530791559266 ] } },
+{ "type": "Feature", "properties": { "Kategori": "Kültürel Miras (Köşk, Çeşme vb.)", "Ad": "Selçuk Yaşar Resim Müzesi", "name": "Alsancak Mahallesi" }, "geometry": { "type": "Point", "coordinates": [ 27.142390560751952, 38.43826279657292 ] } },
+{ "type": "Feature", "properties": { "Kategori": "Kültürel Miras (Köşk, Çeşme vb.)", "Ad": "Konak Belediyesi Nejdet Alpar Evi Mask Müzesi", "name": "Alsancak Mahallesi" }, "geometry": { "type": "Point", "coordinates": [ 27.142532934343144, 38.435664192203014 ] } },
+{ "type": "Feature", "properties": { "Kategori": "Kültürel Miras (Köşk, Çeşme vb.)", "Ad": "Konak Belediyesi İzmir Neşe ve Karikatür Müzesi", "name": "Alsancak Mahallesi" }, "geometry": { "type": "Point", "coordinates": [ 27.143714448120438, 38.43793949132707 ] } },
+{ "type": "Feature", "properties": { "Kategori": "Kültürel Miras (Köşk, Çeşme vb.)", "Ad": "İzmir Müzik ve Müzik Enstrumanları Müzesi", "name": "Alsancak Mahallesi" }, "geometry": { "type": "Point", "coordinates": [ 27.14738385022788, 38.43760248294177 ] } },
+{ "type": "Feature", "properties": { "Kategori": "Kültürel Miras (Köşk, Çeşme vb.)", "Ad": "İzmir Atatürk Müzesi", "name": "Alsancak Mahallesi" }, "geometry": { "type": "Point", "coordinates": [ 27.140619609753944, 38.43558434388706 ] } },
+{ "type": "Feature", "properties": { "Kategori": "Kültürel Miras (Köşk, Çeşme vb.)", "Ad": "Cumhuriyet Ağacı", "name": "Alsancak Mahallesi" }, "geometry": { "type": "Point", "coordinates": [ 27.139385365572778, 38.435674703479506 ] } },
 { "type": "Feature", "properties": { "Kategori": "Kültürel Miras (Köşk, Çeşme vb.)", "Ad": "Namık Kemal Lisesi", "name": "Mimar Sinan Mahallesi" }, "geometry": { "type": "Point", "coordinates": [ 27.145726810701653, 38.43182426741975 ] } },
 { "type": "Feature", "properties": { "Kategori": "Kültürel Miras (Köşk, Çeşme vb.)", "Ad": "Alsancak Tekel Sigara Fabrikası", "name": "Mimar Sinan Mahallesi" }, "geometry": { "type": "Point", "coordinates": [ 27.14767662324532, 38.43622116390291 ] } },
 { "type": "Feature", "properties": { "Kategori": "Kültürel Miras (Köşk, Çeşme vb.)", "Ad": "İzmir Tarih ve Sanat Müzesi", "name": "Mimar Sinan Mahallesi" }, "geometry": { "type": "Point", "coordinates": [ 27.14817135208148, 38.43624564832039 ] } },
