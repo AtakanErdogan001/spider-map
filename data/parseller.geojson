@@ -56,6 +56,36 @@
       }
     },
     {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [27.18928,38.45477],
+            [27.18908,38.45516],
+            [27.18878,38.45506],
+            [27.1888,38.45503],
+            [27.1889,38.45486],
+            [27.189,38.45472],
+            [27.18908,38.45469],
+            [27.18928,38.45477]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "Aleyna Şekerciler Apt.",
+        "İl": "İzmir",
+        "İlçe": "Bayraklı",
+        "Mahalle": "Mansuroğlu",
+        "Ada": "8473",
+        "ParselNo": "3",
+        "Alan": "1.268,00",
+        "Pafta": "31 J Iıı C",
+        "Nitelik": "Arsa",
+        "Mevkii": ""
+      }
+    },
+    {
       "type":"Feature",
       "geometry": {
         "type": "Polygon",
@@ -986,6 +1016,7 @@
     }
   ]
 }
+
 
 
 
