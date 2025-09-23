@@ -41,8 +41,8 @@ state.map = map;
 
 map.on('load', async () => {
   const [parcelData, amenityData] = await Promise.all([
-    fetch('../data/parseller.geojson').then(r => r.json()),
-    fetch('../data/donatilar.geojson').then(r => r.json())
+    fetch('./data/parseller.geojson').then(r => r.json()),
+    fetch('./data/donatilar.geojson').then(r => r.json())
   ]);
 
   state.parcels = parcelData.features;
