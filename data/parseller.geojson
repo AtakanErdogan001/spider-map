@@ -58,6 +58,66 @@
         "Mevkii": ""
       }
     },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [27.19048,38.45685],
+            [27.19103,38.45705],
+            [27.19104,38.45705],
+            [27.191,38.45722],
+            [27.19099,38.45727],
+            [27.19041,38.45715],
+            [27.19042,38.4571],
+            [27.19048,38.45685]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "Güler Apt.",
+        "İl": "İzmir",
+        "İlçe": "Bayraklı",
+        "Mahalle": "Mansuroğlu",
+        "Ada": "70",
+        "ParselNo": "387",
+        "Alan": "1.500,00",
+        "Pafta": "11",
+        "Nitelik": "Arsa",
+        "Mevkii": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [27.18928,38.45477],
+            [27.18908,38.45516],
+            [27.18878,38.45506],
+            [27.1888,38.45503],
+            [27.1889,38.45486],
+            [27.189,38.45472],
+            [27.18908,38.45469],
+            [27.18928,38.45477]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "Aleyna Şekerciler Apt.",
+        "İl": "İzmir",
+        "İlçe": "Bayraklı",
+        "Mahalle": "Mansuroğlu",
+        "Ada": "8473",
+        "ParselNo": "3",
+        "Alan": "1.268,00",
+        "Pafta": "31 J Iıı C",
+        "Nitelik": "Arsa",
+        "Mevkii": ""
+      }
+    },
       {
       "type":"Feature",
       "geometry": {
@@ -1443,6 +1503,7 @@
     }
   ]
 }
+
 
 
 
