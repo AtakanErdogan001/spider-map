@@ -1,65 +1,379 @@
-/* Sayfa genel ayarları */
-body {
-    margin: 0;
-    padding: 0;
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f8f8f8;
-  }
+/* ===========================
+   GENEL AYARLAR (büyütülmüş UI)
+   =========================== */
+:root{
+  --panel-bg: #ffffff;
+  --panel-border: #ddd;
+  --shadow: 0 2px 6px rgba(0,0,0,.15);
+  --text: #222;
+  --muted: #666;
+  --accent: #1976D2;
 
-  
-  /* Harita görünümünü kaplayan tam ekran */
-  #map {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 100%;
+  /* 🔧 İnce ayar: tüm UI genel ölçek */
+  --base-font-size: 16.5px;        /* body yazısı */
+  --control-font-size: 15.5px;     /* panel içi yazı */
+  --btn-font-size: 14.5px;         /* buton yazısı */
+  --input-font-size: 15px;         /* input/select yazısı */
+  --min-touch: 40px;               /* dokunmatik hedef min yükseklik */
+  --radius: 8px;                   /* genel kenar yuvarlama */
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,'Helvetica Neue',Arial;
+  color: var(--text);
+  background: #f8f8f8;
+  font-size: var(--base-font-size);
+}
+
+#map {
+  position: absolute;
+  inset: 0;
+}
+
+/* ===========================
+   BUTONLAR (büyütülmüş)
+   =========================== */
+.btn {
+  padding: 10px 14px;                           /* ↑ */
+  min-height: var(--min-touch);                 /* ↑ 40px dokunmatik hedef */
+  border: 1px solid #bbb;
+  border-radius: var(--radius);
+  background: #fff;
+  color: #222;
+  cursor: pointer;
+  transition: transform .04s ease, box-shadow .15s ease, background .15s ease;
+  font-size: var(--btn-font-size);              /* ↑ */
+  line-height: 1.2;
+}
+.btn:hover { box-shadow: var(--shadow); }
+.btn:active { transform: translateY(1px); }
+.btn:disabled { opacity: .6; cursor: not-allowed; }
+
+.btn-blue   { background: #1976D2; color: #fff; border-color: #1976D2; }
+.btn-green  { background: #4CAF50; color: #fff; border-color: #4CAF50; }
+.btn-purple { background: #6A1B9A; color: #fff; border-color: #6A1B9A; }
+.btn-ghost  { background: #fff; color: #222; }
+
+/* Küçük ikon butonu (panel başlığı) */
+.btn-icon{
+  width: 36px; height: 36px; padding: 0;        /* ↑ */
+  display: inline-grid; place-items: center;
+  border-radius: var(--radius);
+  font-size: 16px;
+}
+
+/* Badge */
+.badge { margin-top: 6px; font-size: 13px; }    /* ↑ */
+.badge-warn { color: #c62828; }
+
+/* ===========================
+   SOL ÜST PANEL (büyütülmüş)
+   =========================== */
+.control-panel{
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 10;
+  background: rgba(255,255,255,.55); /* istersen var(--panel-bg) */
+  border: 1px solid var(--panel-border);
+  border-radius: var(--radius);
+  padding: 14px 18px;                            /* ↑ */
+  box-shadow: var(--shadow);
+  font-size: var(--control-font-size);           /* ↑ */
+  max-width: 650px;                              /* ↑ */
+  width: 380px;                                  /* ↑ */
+  resize: horizontal;                            /* sürükleyerek genişlet */
+  overflow: auto;                                /* resize için */
+  min-width: 320px;                              /* ↑ */
+}
+
+.control-group { margin-bottom: 14px; }          /* ↑ */
+.control-group input[type="number"],
+.control-group select,
+.search-wrap input[type="text"]{
+  width: 100%;
+  padding: 10px 12px;                            /* ↑ */
+  margin-top: 6px;
+  border: 1px solid #ccc;
+  border-radius: var(--radius);
+  font-size: var(--input-font-size);             /* ↑ */
+  background: #fff;
+  min-height: var(--min-touch);                  /* ↑ */
+}
+
+/* Panel başlığı ve ikon buton */
+.panel-header{
+  display: flex;
+  align-items: center;
+  gap: 10px;                                     /* ↑ */
+  margin-bottom: 10px;                           /* ↑ */
+}
+.panel-header .spacer{ flex: 1; }
+
+/* Panel gövdesi — daraltılmışken gizlenecek */
+.panel-body{ display: block; }
+
+/* Daraltılmış görünüm */
+.control-panel.collapsed{
+  width: 54px !important;                        /* ↑ */
+  min-width: 54px !important;
+  max-width: 54px !important;
+  padding: 8px;
+}
+.control-panel.collapsed .panel-body{ display: none; }
+.control-panel.collapsed .panel-header strong{ display: none; }
+.control-panel.collapsed #panelCollapseBtn{ transform: rotate(-90deg); }
+
+/* Tutacak görseli (opsiyonel) */
+.panel-grip{
+  position: absolute;
+  right: 6px; bottom: 6px;
+  width: 16px; height: 16px;
+  cursor: nwse-resize;
+  opacity: .35;
+  background:
+    linear-gradient(135deg, transparent 6px, #999 6px) no-repeat,
+    linear-gradient(135deg, transparent 9px, #bbb 9px) no-repeat,
+    linear-gradient(135deg, transparent 12px, #ddd 12px) no-repeat;
+  background-size: 100% 100%;
+  pointer-events: none;   /* sadece görsel */
+}
+
+/* Genişlik daraldıkça “kompakt” mod: küçük buton/padding */
+.control-panel.compact .btn{
+  padding: 8px 10px;                             /* kompakt */
+  min-height: 36px;
+  font-size: 13px;
+}
+.control-panel.compact .button-row{ gap: 6px; }
+.control-panel.compact .control-group input[type="number"],
+.control-panel.compact .control-group select,
+.control-panel.compact .search-wrap input[type="text"]{
+  padding: 8px 10px;
+  font-size: 13.5px;
+}
+
+/* ===========================
+   ARAMA SONUÇLARI
+   =========================== */
+.search-wrap{
+  position: relative;
+  margin-top: 10px;
+}
+#searchResults{
+  position: absolute;
+  top: 42px;                                     /* ↑ */
+  left: 0;
+  right: 0;
+  background: #fff;
+  z-index: 2000;
+  list-style: none;
+  padding: 6px;
+  margin: 0;
+  max-height: 260px;                             /* ↑ */
+  overflow-y: auto;
+  border: 1px solid #ccc;
+  border-radius: var(--radius);
+  box-shadow: 0 4px 10px rgba(0,0,0,.12);
+}
+#searchResults:empty{ display: none; }           /* boşken gizle */
+#searchResults li{
+  padding: 8px 10px;                             /* ↑ */
+  border-radius: 6px;                            /* ↑ */
+  cursor: pointer;
+  font-size: 14.5px;                             /* ↑ */
+}
+#searchResults li:hover{ background: #f3f6ff; }
+
+/* ===========================
+   BUTON SATIRI / İPUCU
+   =========================== */
+.button-row{
+  display: flex;
+  gap: 10px;                                     /* ↑ */
+  flex-wrap: wrap;
+  margin-top: 12px;                              /* ↑ */
+}
+
+/* Eski hint kullanılmıyorsa silebilirsin */
+.hint{
+  margin-top: 6px;
+  font-size: 13px;
+  color: #444;
+}
+
+/* Kısayollar bloğu (yeni yapı için) */
+.shortcuts{
+  margin-top: 10px;
+  font-size: 14px;                               /* ↑ */
+  color: #444;
+}
+.shortcuts-title{
+  font-weight: 700;
+  letter-spacing: .3px;
+  margin-bottom: 6px;
+  font-size: 12.5px;                             /* ↑ */
+  color: #222;
+}
+.shortcuts-list{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 6px;
+}
+.shortcuts-list li{ line-height: 1.4; }
+.shortcuts code{
+  font-weight: 600;
+  background: #f3f5f9;
+  border: 1px solid #e0e6ef;
+  padding: 3px 8px;                              /* ↑ */
+  border-radius: 6px;                            /* ↑ */
+}
+
+/* ===========================
+   GRAFİK KUTULARI
+   =========================== */
+.chart-box{
+  margin-top: 12px;
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: var(--radius);
+  min-height: 90px;                              /* ↑ */
+  padding: 10px;                                  /* ↑ */
+}
+.chart-actions{
+  text-align: right;
+  margin-top: 10px;                              /* ↑ */
+}
+
+/* ===========================
+   SAĞ ALT YIĞIN (hover + özet)
+   =========================== */
+.right-bottom-stack{
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  z-index: 12;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;                                     /* ↑ */
+  align-items: end;
+}
+
+.summary-card{
+  background: rgba(255,255,255,.95);
+  border: 1px solid var(--panel-border);
+  border-radius: var(--radius);
+  padding: 12px 14px;                            /* ↑ */
+  font-size: 14px;                               /* ↑ */
+  min-width: 260px;                              /* ↑ */
+  max-width: 360px;                              /* ↑ */
+  box-shadow: var(--shadow);
+  line-height: 1.45;                             /* ↑ */
+  resize: both;                                  /* sürükleyerek büyüt/küçült */
+  overflow: auto;
+  min-height: 120px;
+  max-height: 60vh;
+}
+.summary-title{ font-weight: 600; margin-bottom: 8px; }  /* ↑ */
+
+/* ===========================
+   KATEGORİ EFSANESİ (legend)
+   =========================== */
+#categoryLegend{
+  position: absolute;
+  left: 12px;
+  bottom: 12px;
+  z-index: 11;
+  background: rgba(255,255,255,.95);
+  border: 1px solid var(--panel-border);
+  border-radius: var(--radius);
+  padding: 10px 12px;
+  font-size: 14px;                               /* ↑ */
+  min-width: 240px;                              /* ↑ */
+  max-width: 360px;                              /* ↑ */
+  max-height: 40vh;
+  overflow: auto;
+  box-shadow: var(--shadow);
+  line-height: 1.4;                               /* ↑ */
+  resize: both;                                   /* sürükleyerek büyüt/küçült */
+  min-height: 120px;
+}
+
+/* Sağ grafik paneli (drawer) */
+.chart-panel{
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  bottom: auto;
+  width: 420px;                 /* istersen 360–480 arası */
+  max-width: 46vw;
+  background: rgba(255,255,255,.57);
+  border: 1px solid var(--panel-border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  transform: translateX(110%);  /* başlangıçta gizli */
+  transition: transform .25s ease;
+  display: flex;
+  flex-direction: column;
+  z-index: 13;
+}
+
+.chart-panel.open{
+  transform: translateX(0);
+}
+
+.chart-panel-header{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-bottom: 1px solid #eee;
+  font-size: 15px;
+}
+.chart-panel-header .spacer{ flex: 1; }
+
+.chart-panel-body{
+  padding: 10px;
+  overflow: auto;
+  flex: 1;
+}
+
+:root{ --chart-height: 380px; } /* istediğin boy */
+
+.chart-slot{
+  position: relative;
+  height: var(--chart-height); /* yüksekliği ebeveyne veriyoruz */
+}
+.chart-slot canvas{
+  display: block;   /* inline boşluklarını engelle */
+  /* genişlik/yükseklik ZORLAMASI YOK! Chart.js kontrol etsin */
+}
+
+
+@media (max-width: 920px){
+  .chart-panel{
+    width: min(92vw, 520px);
+    top: 8px; right: 8px; bottom: 8px;
   }
-  
-  /* Style Switcher Dropdown */
-  #styleSwitcher {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    z-index: 10;
-    padding: 6px 10px;
-    background-color: white;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 14px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+
+/* ===========================
+   MOBİL
+   =========================== */
+@media (max-width: 720px){
+  .control-panel{
+    width: calc(100% - 20px);
+    max-width: none;
+    min-width: 260px;
   }
-  
-  /* Hover efekti */
-  #styleSwitcher:hover {
-    border-color: #888;
-  }
-  
-  /* Başlık eklemek istersen */
-  #title {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    z-index: 10;
-    background-color: rgba(255, 255, 255, 0.85);
-    padding: 8px 12px;
-    border-radius: 4px;
-    font-weight: bold;
-    font-size: 16px;
-  }
-  
-  /* Mobil uyumluluk */
-  @media (max-width: 600px) {
-    #styleSwitcher {
-      top: auto;
-      bottom: 10px;
-      left: 10px;
-    }
-  
-    #title {
-      top: auto;
-      bottom: 10px;
-      right: 10px;
-      font-size: 14px;
-    }
-  }
-  
+}
+
+
