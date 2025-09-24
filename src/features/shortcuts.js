@@ -32,6 +32,8 @@ export function attachShortcuts(){
       tweakRadius(-50); return;
     } else if (key.toLowerCase() === 'a') {
       analyzeParcelsDynamic(); return;
+    } else if (key.toLowerCase() === 'c') {
+      analyzeParcelsDynamic(); return;
     } else {
       return;
     }
