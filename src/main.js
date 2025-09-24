@@ -12,6 +12,7 @@ import { attachExportButtons } from './features/export.js';
 import { setupParcelSearch } from './features/search.js';
 import { attachShortcuts } from './features/shortcuts.js';
 import { attachPanelUX } from './ui/panel.js';
+import { initFunCat } from './fun/fun-cat.js';
 
 mapboxgl.accessToken = MAPBOX_TOKEN;
 
@@ -81,6 +82,9 @@ map.on('load', async () => {
 
   // Hover paneli ilk kapalı
   setHoverVisibility(false);
+
+  // Fun Things
+  initFunCat(map);
 
   // Kontroller: yarıçap / mesafe türü değişince spider güncelle
   ['input','change'].forEach(evt =>
