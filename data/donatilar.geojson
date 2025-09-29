@@ -471,7 +471,6 @@
 { "type": "Feature", "properties": { "Kategori": "Sağlık Kurumları", "Ad": "Bornova 6 Nolu Aile Sağlığı Merkezi", "name": "" }, "geometry": { "type": "Point", "coordinates": [ 27.210432746286294, 38.47830118855926 ] } },
 { "type": "Feature", "properties": { "Kategori": "Sağlık Kurumları", "Ad": "Ümit Sağlık Ocağı", "name": "" }, "geometry": { "type": "Point", "coordinates": [ 27.257685309419116, 38.441568316358264 ] } },
 { "type": "Feature", "properties": { "Kategori": "Sağlık Kurumları", "Ad": "Bornova Şükrü Ergil 9 Nolu Merkez Aile Sağlığı Merkezi", "name": "" }, "geometry": { "type": "Point", "coordinates": [ 27.224531661884175, 38.46228667817864 ] } },
-{ "type": "Feature", "properties": { "Kategori": "Sağlık Kurumları", "Ad": "Ökmen Tesisleri", "name": "" }, "geometry": { "type": "Point", "coordinates": [ 27.1763543, 38.4646371 ] } },
 { "type": "Feature", "properties": { "Kategori": "Kültürel Miras (Köşk, Çeşme vb.)", "Ad": "Yeşilova Höyüğü", "name": "Karacaoğlan Mahallesi" }, "geometry": { "type": "Point", "coordinates": [ 27.2138644, 38.4417435 ] } },
 { "type": "Feature", "properties": { "Kategori": "Kültürel Miras (Köşk, Çeşme vb.)", "Ad": "Yassıtepe Höyüğü", "name": "Kazımdirik Mahallesi" }, "geometry": { "type": "Point", "coordinates": [ 27.2104469, 38.4478442 ] } },
 { "type": "Feature", "properties": { "Kategori": "Kültürel Miras (Köşk, Çeşme vb.)", "Ad": "Ulucak Höyüğü", "name": "Kemalpaşa Mahallesi" }, "geometry": { "type": "Point", "coordinates": [ 27.3519826, 38.4664962 ] } },
