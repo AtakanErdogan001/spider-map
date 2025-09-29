@@ -63,6 +63,33 @@
         "type": "Polygon",
         "coordinates": [
           [
+            [26.27544,38.29058],
+            [26.27518,38.29048],
+            [26.27528,38.29032],
+            [26.27555,38.29042],
+            [26.27544,38.29058]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "Çeşme İkiz Villa",
+        "İl": "İzmir",
+        "İlçe": "Çeşme",
+        "Mahalle": "Çiftlik",
+        "Ada": "6265",
+        "ParselNo": "6",
+        "Alan": "512,00",
+        "Pafta": "26Gıv",
+        "Nitelik": "Arsa",
+        "Mevkii": "Ali Ören"
+        }
+      },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
             [27.09807,38.39657],
             [27.09791,38.3967],
             [27.0979,38.39669],
@@ -1590,6 +1617,7 @@
     }
   ]
 }
+
 
 
 
