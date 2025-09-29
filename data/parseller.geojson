@@ -30,6 +30,33 @@
       }
     },
     {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [27.18076,38.46303],
+            [27.18098,38.46277],
+            [27.18138,38.46278],
+            [27.18121,38.46327],
+            [27.18075,38.46313],
+            [27.18076,38.46303]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "Tuna Sitesi.",
+        "İl": "İzmir",
+        "İlçe": "Bayraklı",
+        "Mahalle": "Salhane",
+        "Ada": "25001",
+        "ParselNo": "1",
+        "Alan": "1.972,00",
+        "Pafta": "384",
+        "Nitelik": "Bahçeli İki Bloklu A Blok Otuz Altı Daire B Blok Ondört Daireli Kargir Apartman",
+        "Mevkii": ""
+      }
+    {
       "type":"Feature",
       "geometry": {
         "type": "Polygon",
@@ -1503,6 +1530,7 @@
     }
   ]
 }
+
 
 
 
