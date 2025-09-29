@@ -57,6 +57,36 @@
         "Mevkii": ""
         }
       },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [27.27,38.43071],
+            [27.27,38.43069],
+            [27.27,38.43063],
+            [27.27,38.4306],
+            [27.27009,38.4306],
+            [27.27009,38.43061],
+            [27.27009,38.43074],
+            [27.27,38.43071]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "Sümbül xxxxxxxxxxxxxxxxxxxx.",
+        "İl": "İzmir",
+        "İlçe": "Bayraklı",
+        "Mahalle": "Salhane",
+        "Ada": "22983",
+        "ParselNo": "2",
+        "Alan": "110,97",
+        "Pafta": "L18-B-06-A-3-C",
+        "Nitelik": "Arsa",
+        "Mevkii": ""
+        }
+      },
       {
       "type":"Feature",
       "geometry": {
@@ -1531,6 +1561,7 @@
     }
   ]
 }
+
 
 
 
