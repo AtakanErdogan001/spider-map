@@ -56,7 +56,7 @@
         "Nitelik": "Bahçeli İki Bloklu A Blok Otuz Altı Daire B Blok Ondört Daireli Kargir Apartman",
         "Mevkii": ""
       },
-    {
+      {
       "type":"Feature",
       "geometry": {
         "type": "Polygon",
@@ -1530,6 +1530,7 @@
     }
   ]
 }
+
 
 
 
