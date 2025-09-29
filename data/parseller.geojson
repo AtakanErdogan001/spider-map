@@ -63,6 +63,35 @@
         "type": "Polygon",
         "coordinates": [
           [
+            [27.09807,38.39657],
+            [27.09791,38.3967],
+            [27.0979,38.39669],
+            [27.09773,38.39653],
+            [27.09775,38.39652],
+            [27.09787,38.39639],
+            [27.09807,38.39657]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "Onur Apartmanı Basın Sitesi.",
+        "İl": "İzmir",
+        "İlçe": "Karabağlar",
+        "Mahalle": "Basın Sitesi",
+        "Ada": "8227",
+        "ParselNo": "3",
+        "Alan": "515,00",
+        "Pafta": "373-184",
+        "Nitelik": "8 Katlı Kargir Mesken",
+        "Mevkii": ""
+        }
+      },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
             [27.27,38.43071],
             [27.27,38.43069],
             [27.27,38.43063],
@@ -1561,6 +1590,7 @@
     }
   ]
 }
+
 
 
 
