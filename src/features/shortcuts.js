@@ -33,10 +33,6 @@ export function attachShortcuts(){
     } else if (key.toLowerCase() === 'a') {
       // ⬇️ daha önce analyzeParcelsDynamic idi; artık toggle
       toggleParcelsDynamic(); return;
-    } else if (key.toLowerCase() === 'c') {
-      // c tuşu “yeniden hesapla” olarak kalsın (istersen toggle’a da yönlendirebilirsin)
-      analyzeParcelsDynamic(); return;
-      // veya kapamak istersen: clearParcelsDynamic(); return;
     } else {
       return;
     }
