@@ -57,6 +57,51 @@ export function analyzeParcelsDynamic(){
     results.push(row);
   });
 
+function closeSideChartPanel(){
+  const panel = document.getElementById('chartPanel');
+  const host  = document.getElementById('sideChartContainer');
+  if (panel){
+    panel.classList.remove('open');
+    panel.setAttribute('aria-hidden', 'true');
+  }
+  if (host) host.innerHTML = '';
+  if (sideChartInstance) { try { sideChartInstance.destroy(); } catch{} sideChartInstance = null; }
+}
+
+export function clearParcelsDynamic(){
+  // centroid property’lerinden analiz alanlarını kaldır
+  state.parcelCentroids.forEach(c => {
+    if (!c?.properties) return;
+    delete c.properties.impact_raw;
+    delete c.properties.impact_norm;
+    delete c.properties.top_category;
+    delete c.properties.top_color;
+  });
+
+  const src = state.map.getSource('centroids');
+  if (src) src.setData({ type:'FeatureCollection', features: state.parcelCentroids });
+
+  // panel/grafik kapat
+  closeSideChartPanel();
+
+  // dışa aktarma cache'ini temizle (opsiyonel)
+  window.__lastAnalysisExcel = null;
+
+  // bayrağı kapat
+  state.analysisActive = false;
+}
+
+export function toggleParcelsDynamic(){
+  if (state.analysisActive) {
+    clearParcelsDynamic();
+  } else {
+    analyzeParcelsDynamic();
+  }
+}
+
+
+
+
   const arr = state.parcelCentroids.map(c => c.properties.impact_raw || 0);
   const min = Math.min(...arr), max = Math.max(...arr);
   state.parcelCentroids.forEach(c => {
@@ -68,6 +113,8 @@ export function analyzeParcelsDynamic(){
   if (src) src.setData({ type:'FeatureCollection', features: state.parcelCentroids });
 
   window.__lastAnalysisExcel = results;
+  // ⬇️ EKLE: açık olduğunu işaretle
+  state.analysisActive = true;
   return results;
 }
 
@@ -241,3 +288,4 @@ function drawWeightedCategoryChart(hostEl) {
   canvas._chartInstance = chart;
   setTimeout(() => sideChartInstance?.resize(), 0);
 }
+
