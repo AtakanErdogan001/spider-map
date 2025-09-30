@@ -35,6 +35,118 @@
         "type": "Polygon",
         "coordinates": [
           [
+            [26.97086,38.79941],
+            [26.97104,38.79931],
+            [26.97116,38.79942],
+            [26.97104,38.79951],
+            [26.97101,38.79952],
+            [26.97098,38.79954],
+            [26.97095,38.79955],
+            [26.97086,38.79941]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "Ayşe Mete ve Hissedarları",
+        "İl": "İzmir",
+        "İlçe": "Aliağa",
+        "Mahalle": "Aliağa",
+        "Ada": "0",
+        "ParselNo": "7088",
+        "Alan": "562,00",
+        "Pafta": "16",
+        "Nitelik": "Arsa",
+        "Mevkii": ""
+        }
+      },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [27.09297,38.46125],
+            [27.09309,38.4614],
+            [27.09282,38.46154],
+            [27.0927,38.46139],
+            [27.09297,38.46125]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "Türkyılmaz Apartmanı",
+        "İl": "İzmir",
+        "İlçe": "Karşıyaka",
+        "Mahalle": "Şemikler",
+        "Ada": "0",
+        "ParselNo": "1960",
+        "Alan": "562,00",
+        "Pafta": "41",
+        "Nitelik": "5 Katlı Betonarme Apartman Ve Arsası",
+        "Mevkii": ""
+        }
+      },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [27.22503,38.44524],
+            [27.22505,38.44514],
+            [27.22521,38.44516],
+            [27.22519,38.44525],
+            [27.22503,38.44524]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "Onur Özkan Apartmanı",
+        "İl": "İzmir",
+        "İlçe": "Bornova",
+        "Mahalle": "Erzene",
+        "Ada": "12016",
+        "ParselNo": "8",
+        "Alan": "151,00",
+        "Pafta": "24 Ö I D",
+        "Nitelik": "Arsa",
+        "Mevkii": ""
+        }
+      },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [27.13844,38.43244],
+            [27.13849,38.43254],
+            [27.13824,38.43269],
+            [27.1381,38.43254],
+            [27.13834,38.43241],
+            [27.13844,38.43244]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "Ses Apartmanı",
+        "İl": "İzmir",
+        "İlçe": "Konak",
+        "Mahalle": "Kültür",
+        "Ada": "1195",
+        "ParselNo": "16",
+        "Alan": "574,00",
+        "Pafta": "384",
+        "Nitelik": "Arsa",
+        "Mevkii": ""
+        }
+      },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
             [27.18076,38.46303],
             [27.18098,38.46277],
             [27.18138,38.46278],
@@ -1617,6 +1729,7 @@
     }
   ]
 }
+
 
 
 
