@@ -4,50 +4,59 @@ import { colorForCategory } from '../utils.js';
 
 let sideChartInstance = null; // sağ paneldeki son grafiği temizlemek için
 
-export function analyzeParcelsDynamic(){
-  const radiusM = Math.max(0, parseFloat(document.getElementById('distanceInput')?.value || '500') || 500);
+export function analyzeParcelsDynamic() {
+  const radiusM  = Math.max(0, parseFloat(document.getElementById('distanceInput')?.value || '500') || 500);
   const radiusKm = radiusM / 1000;
-  const results = [];
+  const results  = [];
 
   state.parcelCentroids.forEach((c) => {
     const [lng, lat] = c.geometry.coordinates;
 
+    // --- yakın POI'leri topla
     let hits = [];
     if (state.amenIdx && window.geokdbush) {
+      // geokdbush.around(index, lon, lat, maxResults, maxDistance(km))
       hits = window.geokdbush.around(state.amenIdx, lng, lat, Infinity, radiusKm)
         .map(h => ({ feature: state.amenities[h.idx] }));
     } else {
       const circlePoly = turf.circle([lng, lat], radiusKm, { steps: 64, units: 'kilometers' });
-      const inside = turf.pointsWithinPolygon({ type: 'FeatureCollection', features: state.amenities }, circlePoly);
+      const inside = turf.pointsWithinPolygon(
+        { type: 'FeatureCollection', features: state.amenities },
+        circlePoly
+      );
       hits = inside.features.map(f => ({ feature: f }));
     }
 
+    // --- kategori sayımları
     const counts = {};
-    const parts = [];
+    const parts  = [];
     hits.forEach(h => {
       const k = h.feature.properties?.Kategori || 'Bilinmiyor';
       counts[k] = (counts[k] || 0) + 1;
     });
 
+    // --- skorlama (log1p + ağırlık)
     let score = 0;
     Object.entries(CATEGORY_WEIGHTS).forEach(([k, w]) => {
       const cnt = counts[k] || 0;
-      const v = w * Math.log1p(cnt);
+      const v   = w * Math.log1p(cnt);
       score += v;
-      parts.push({ key:k, val:v });
+      parts.push({ key: k, val: v });
     });
 
-    parts.sort((a,b)=>b.val-a.val);
+    parts.sort((a, b) => b.val - a.val);
     const topKey = parts[0]?.key || '';
-    const total = parts.reduce((a,b)=>a+b.val,0);
-    const topPct = total>0 ? parts[0].val/total : 0;
+    const total  = parts.reduce((a, b) => a + b.val, 0);
+    const topPct = total > 0 ? parts[0].val / total : 0;
 
-    c.properties.impact_raw  = score;
+    // centroid property'lerine yaz
+    c.properties.impact_raw   = score;
     c.properties.top_category = topKey;
-    c.properties.top_color = colorForCategory(topKey);
+    c.properties.top_color    = colorForCategory(topKey);
 
+    // rapor satırı
     const row = {
-      'Parsel Adı': c.properties?.name || '',
+      'Parsel Adı' : c.properties?.name || '',
       'Yarıçap (m)': radiusM,
       'Impact (Ham)': score,
       'En Etkileyen': topKey,
@@ -57,18 +66,48 @@ export function analyzeParcelsDynamic(){
     results.push(row);
   });
 
-function closeSideChartPanel(){
+  // --- normalize (0..1)
+  const arr = state.parcelCentroids.map(c => c.properties.impact_raw || 0);
+  const min = Math.min(...arr), max = Math.max(...arr);
+  state.parcelCentroids.forEach(c => {
+    const v = c.properties.impact_raw || 0;
+    c.properties.impact_norm = (max > min) ? (v - min) / (max - min) : 0.5;
+  });
+
+  // --- kaynagi güncelle
+  const src = state.map.getSource('centroids');
+  if (src) src.setData({ type: 'FeatureCollection', features: state.parcelCentroids });
+
+  // export için cache
+  window.__lastAnalysisExcel = results;
+
+  // toggle bayrağı
+  state.analysisActive = true;
+
+  return results;
+}
+
+/* ---------------------------
+   Paneli programatik kapatma
+   --------------------------- */
+function closeSideChartPanel() {
   const panel = document.getElementById('chartPanel');
   const host  = document.getElementById('sideChartContainer');
-  if (panel){
+  if (panel) {
     panel.classList.remove('open');
     panel.setAttribute('aria-hidden', 'true');
   }
   if (host) host.innerHTML = '';
-  if (sideChartInstance) { try { sideChartInstance.destroy(); } catch{} sideChartInstance = null; }
+  if (sideChartInstance) {
+    try { sideChartInstance.destroy(); } catch {}
+    sideChartInstance = null;
+  }
 }
 
-export function clearParcelsDynamic(){
+/* ---------------------------
+   Analizi temizle (kapama)
+   --------------------------- */
+export function clearParcelsDynamic() {
   // centroid property’lerinden analiz alanlarını kaldır
   state.parcelCentroids.forEach(c => {
     if (!c?.properties) return;
@@ -79,7 +118,7 @@ export function clearParcelsDynamic(){
   });
 
   const src = state.map.getSource('centroids');
-  if (src) src.setData({ type:'FeatureCollection', features: state.parcelCentroids });
+  if (src) src.setData({ type: 'FeatureCollection', features: state.parcelCentroids });
 
   // panel/grafik kapat
   closeSideChartPanel();
@@ -91,7 +130,10 @@ export function clearParcelsDynamic(){
   state.analysisActive = false;
 }
 
-export function toggleParcelsDynamic(){
+/* ---------------------------
+   Toggle (A tuşu)
+   --------------------------- */
+export function toggleParcelsDynamic() {
   if (state.analysisActive) {
     clearParcelsDynamic();
   } else {
@@ -99,32 +141,13 @@ export function toggleParcelsDynamic(){
   }
 }
 
-
-
-
-  const arr = state.parcelCentroids.map(c => c.properties.impact_raw || 0);
-  const min = Math.min(...arr), max = Math.max(...arr);
-  state.parcelCentroids.forEach(c => {
-    const v = c.properties.impact_raw || 0;
-    c.properties.impact_norm = (max>min) ? (v - min) / (max - min) : 0.5;
-  });
-
-  const src = state.map.getSource('centroids');
-  if (src) src.setData({ type:'FeatureCollection', features: state.parcelCentroids });
-
-  window.__lastAnalysisExcel = results;
-  // ⬇️ EKLE: açık olduğunu işaretle
-  state.analysisActive = true;
-  return results;
-}
-
 /* ---------------------------
    Sağ taraftaki grafik paneli
    --------------------------- */
-function openSideChartPanel(title){
-  const panel = document.getElementById('chartPanel');
+function openSideChartPanel(title) {
+  const panel  = document.getElementById('chartPanel');
   const titleEl = document.getElementById('chartPanelTitle');
-  const host = document.getElementById('sideChartContainer');
+  const host   = document.getElementById('sideChartContainer');
   if (!panel || !host) return null;
   if (titleEl && title) titleEl.textContent = title;
 
@@ -134,23 +157,22 @@ function openSideChartPanel(title){
   // Panel animasyonu bittiğinde Chart.js’e gerçek ölçüleri ver
   const fireResize = () => window.dispatchEvent(new Event('resize'));
   panel.addEventListener('transitionend', fireResize, { once: true });
-  // Emniyet: bir sonraki frame'de de tetikle
   requestAnimationFrame(() => fireResize());
 
   return host;
 }
 
+// Kapat düğmesi
 (function wireChartPanelClose(){
-  const btn = document.getElementById('chartPanelClose');
+  const btn   = document.getElementById('chartPanelClose');
   const panel = document.getElementById('chartPanel');
-  const host = document.getElementById('sideChartContainer');
-  if (btn && panel){
+  const host  = document.getElementById('sideChartContainer');
+  if (btn && panel) {
     btn.addEventListener('click', () => {
       panel.classList.remove('open');
       panel.setAttribute('aria-hidden', 'true');
-      // İstersen içerik temizlensin:
       if (host) host.innerHTML = '';
-      if (sideChartInstance) { try { sideChartInstance.destroy(); } catch{} sideChartInstance = null; }
+      if (sideChartInstance) { try { sideChartInstance.destroy(); } catch {} sideChartInstance = null; }
     });
   }
 })();
@@ -158,23 +180,23 @@ function openSideChartPanel(title){
 /* ---------------------------
    Buton bağlama
    --------------------------- */
-export function attachAnalysisButtons(){
+export function attachAnalysisButtons() {
   document.getElementById('exportExcelButton')?.addEventListener('click', () => {
     const data = window.__lastAnalysisExcel || analyzeParcelsDynamic();
-    const ws = XLSX.utils.json_to_sheet(data);
-    const wb = XLSX.utils.book_new();
+    const ws   = XLSX.utils.json_to_sheet(data);
+    const wb   = XLSX.utils.book_new();
     XLSX.utils.book_append_sheet(wb, ws, 'Analiz');
     XLSX.writeFile(wb, 'parseller_dinamik_analiz.xlsx');
   });
 
-  document.getElementById('btnCatChart')?.addEventListener('click', ()=>{
+  document.getElementById('btnCatChart')?.addEventListener('click', () => {
     if (!state.lastSpiderData.length) return alert('Henüz analiz edilen veri yok.');
     const host = openSideChartPanel('Kategorisel Grafik');
     if (!host) return;
     drawCategoryChart(host);            // sağ panel
   });
 
-  document.getElementById('btnWeightedChart')?.addEventListener('click', ()=>{
+  document.getElementById('btnWeightedChart')?.addEventListener('click', () => {
     if (!state.lastSpiderData.length) return alert('Henüz analiz edilen veri yok.');
     const host = openSideChartPanel('Mesafe Ağırlıklı Kategorisel Dağılım');
     if (!host) return;
@@ -204,7 +226,7 @@ function drawCategoryChart(hostEl) {
   if (!canvas) return;
   const ctx = canvas.getContext('2d');
 
-  if (sideChartInstance) { try { sideChartInstance.destroy(); } catch{} }
+  if (sideChartInstance) { try { sideChartInstance.destroy(); } catch {} }
 
   const chart = new Chart(ctx, {
     type: 'pie',
@@ -241,7 +263,7 @@ function drawWeightedCategoryChart(hostEl) {
   state.lastSpiderData.forEach(e => {
     const k = e.feature.properties?.Kategori || 'Bilinmiyor';
     const d = (e.distMeters != null) ? e.distMeters : (e.dist * 1000);
-    const w = 1 / Math.max(d, 1);
+    const w = 1 / Math.max(d, 1); // küçük mesafe -> yüksek ağırlık
     weighted[k] = (weighted[k] || 0) + w;
   });
 
@@ -257,7 +279,7 @@ function drawWeightedCategoryChart(hostEl) {
   if (!canvas) return;
   const ctx = canvas.getContext('2d');
 
-  if (sideChartInstance) { try { sideChartInstance.destroy(); } catch{} }
+  if (sideChartInstance) { try { sideChartInstance.destroy(); } catch {} }
 
   const chart = new Chart(ctx, {
     type: 'pie',
@@ -266,10 +288,8 @@ function drawWeightedCategoryChart(hostEl) {
       responsive: true,
       maintainAspectRatio: false,
       plugins: {
-        legend: {
-          position: 'bottom',
-          labels: { font: { size: 15, weight: '500' }, color: '#222', padding: 14, boxWidth: 16 }
-        },
+        legend: { position: 'bottom',
+          labels: { font: { size: 15, weight: '500' }, color: '#222', padding: 14, boxWidth: 16 } },
         title: { display: true, text: 'Mesafe Ağırlıklı Kategorisel Dağılım', font: { size: 16, weight: '600' } },
         datalabels: {
           color: '#fff',
@@ -288,4 +308,3 @@ function drawWeightedCategoryChart(hostEl) {
   canvas._chartInstance = chart;
   setTimeout(() => sideChartInstance?.resize(), 0);
 }
-
