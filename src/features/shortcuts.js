@@ -1,6 +1,7 @@
 import { state } from '../state.js';
 import { updateSpider } from './spider.js';
-import { analyzeParcelsDynamic } from './analysis.js';
+import { analyzeParcelsDynamic, toggleParcelsDynamic, clearParcelsDynamic } from './analysis.js';
+
 
 function tweakRadius(delta){
   const el = document.getElementById('distanceInput');
@@ -20,8 +21,7 @@ export function attachShortcuts(){
       state.currentIndex = (state.currentIndex - 1 + state.proximityOrder.length) % state.proximityOrder.length;
     } else if (key.toLowerCase() === 'h') {
       const btn = document.getElementById('hoverToggleBtn');
-      btn?.click();
-      return;
+      btn?.click(); return;
     } else if (key.toLowerCase() === 'k') {
       const legend = document.getElementById('categoryLegend');
       if (legend) legend.style.display = (legend.style.display === 'none' ? 'block' : 'none');
@@ -31,9 +31,12 @@ export function attachShortcuts(){
     } else if (key === '-' || key === '_') {
       tweakRadius(-50); return;
     } else if (key.toLowerCase() === 'a') {
-      analyzeParcelsDynamic(); return;
+      // ⬇️ daha önce analyzeParcelsDynamic idi; artık toggle
+      toggleParcelsDynamic(); return;
     } else if (key.toLowerCase() === 'c') {
+      // c tuşu “yeniden hesapla” olarak kalsın (istersen toggle’a da yönlendirebilirsin)
       analyzeParcelsDynamic(); return;
+      // veya kapamak istersen: clearParcelsDynamic(); return;
     } else {
       return;
     }
