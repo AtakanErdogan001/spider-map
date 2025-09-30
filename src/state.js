@@ -28,5 +28,7 @@ export const state = {
 
   animDots: [],
   animRunning: false,
-  DOT_PERIOD_MS: 9000
+  DOT_PERIOD_MS: 9000,
+
+  analysisActive: false   // ⬅️ eklendi: A ile toggle
 };
