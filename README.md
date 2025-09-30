@@ -64,4 +64,39 @@ Haritayı uzaklaştırır.
 Proje geri bildirimlere ve önerilere açık. Pull request ya da issue açabilirsiniz.
 
 ---
+## Dosya Akışı
+.
+├─ data/
+│  ├─ donatilar.geojson
+│  └─ parseller.geojson
+├─ preprocessing/
+│  (boş ya da iş akışına ait dosyalar burada)
+├─ src/
+│  ├─ features/
+│  │  ├─ analysis.js
+│  │  ├─ export.js
+│  │  ├─ search.js
+│  │  ├─ shortcuts.js
+│  │  └─ spider.js
+│  ├─ fun/
+│  │  └─ fun-cat.js
+│  ├─ layers/
+│  │  ├─ amenities.js
+│  │  └─ parcels.js
+│  ├─ services/
+│  │  ├─ mapbox.js
+│  │  └─ spatial.js
+│  ├─ ui/
+│  │  ├─ hover.js
+│  │  ├─ legend.js
+│  │  ├─ panel.js
+│  │  └─ styleSwitcher.js
+│  ├─ config.js
+│  ├─ main.js
+│  ├─ state.js
+│  └─ utils.js
+├─ README.md
+├─ index.html
+└─ style.css
 
+---
