@@ -1,6 +1,6 @@
 export function addParcelsLayers(map, parcels, centroids) {
   map.addSource('parcels', { type: 'geojson', data: { type: 'FeatureCollection', features: parcels } });
-  map.addLayer({ id: 'parcels-polygons', type: 'fill', source: 'parcels', paint: { 'fill-color': '#FFCDD2', 'fill-opacity': 0.3 } });
+  map.addLayer({ id: 'parcels-polygons', type: 'fill', source: 'parcels', paint: { 'fill-color': '#FFCDD2', 'fill-opacity': 0.6 } });
 
   map.addSource('centroids', { type: 'geojson', data: { type: 'FeatureCollection', features: centroids } });
   map.addLayer({
