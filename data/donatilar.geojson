@@ -5704,6 +5704,23 @@
         ]
       }
     },
+      "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Okullar",
+        "Ad": "Namık Kemal İlkokulu",
+        "name": "Akdeniz Mahallesi",
+        "tarih_saat": "2025-10-02 12:37:35"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.309730848197376,
+          38.32484674694052
+        ]
+      }
+    },
     {
       "type": "Feature",
       "properties": {
