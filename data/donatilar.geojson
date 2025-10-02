@@ -5355,363 +5355,9 @@
 {
       "type": "Feature",
       "properties": {
-        "Kategori": "Belediye Binaları",
-        "Ad": "İzmir Ticaret Odası Ek Hizmet Binası",
-        "name": "Akdeniz Mahallesi",
-        "tarih_saat": "2025-10-02 12:09:06"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          27.132707,
-          38.4267799
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "Kategori": "Belediye Binaları",
-        "Ad": "İzmir İl Kültür ve Turizm Müdürlüğü",
-        "name": "Akdeniz Mahallesi",
-        "tarih_saat": "2025-10-02 12:09:06"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          27.1315689,
-          38.4241113
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "Kategori": "Raylı Sistem Durakları",
-        "Ad": "Gazi Bulvarı",
-        "name": "Akdeniz Mahallesi",
-        "tarih_saat": "2025-10-02 12:09:06"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          27.1369784,
-          38.4241593
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "Kategori": "Raylı Sistem Durakları",
-        "Ad": "Gazi Bulvarı",
-        "name": "Akdeniz Mahallesi",
-        "tarih_saat": "2025-10-02 12:09:06"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          27.1369965,
-          38.4241264
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "Kategori": "Raylı Sistem Durakları",
-        "Ad": "Çankaya",
-        "name": "Akdeniz Mahallesi",
-        "tarih_saat": "2025-10-02 12:09:06"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          27.135996,
-          38.4224884
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "Kategori": "Belediye Binaları",
-        "Ad": "Konak Vergi Dairesi",
-        "name": "Akdeniz Mahallesi",
-        "tarih_saat": "2025-10-02 12:09:06"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          27.1419529,
-          38.4240638
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "Kategori": "Hizmet Binaları",
-        "Ad": "Basmane Polis Merkezi Amirliği",
-        "name": "Akdeniz Mahallesi",
-        "tarih_saat": "2025-10-02 12:09:06"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          27.143578,
-          38.4211142
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "Kategori": "Raylı Sistem Durakları",
-        "Ad": "Basmane",
-        "name": "Akdeniz Mahallesi",
-        "tarih_saat": "2025-10-02 12:09:06"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          27.1448355,
-          38.4228152
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "Kategori": "Raylı Sistem Durakları",
-        "Ad": "Basmane",
-        "name": "Akdeniz Mahallesi",
-        "tarih_saat": "2025-10-02 12:09:06"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          27.1439012,
-          38.4224462
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "Kategori": "Belediye Binaları",
-        "Ad": "İzmir Defterdarlığı",
-        "name": "Akdeniz Mahallesi",
-        "tarih_saat": "2025-10-02 12:09:06"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          27.1332777,
-          38.4243023
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "Kategori": "Belediye Binaları",
-        "Ad": "Izmir İl Emniyet Müdürlüğü",
-        "name": "Akdeniz Mahallesi",
-        "tarih_saat": "2025-10-02 12:09:06"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          27.1389019,
-          38.4238932
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "Kategori": "Belediye Binaları",
-        "Ad": "T.C. İzmir Valiliği Konak Sosyal Hizmet Müdürlüğü",
-        "name": "Akdeniz Mahallesi",
-        "tarih_saat": "2025-10-02 12:09:06"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          27.1395457,
-          38.4259328
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "Kategori": "Belediye Binaları",
-        "Ad": "Gelecek Partisi İzmir İl Başkanlığı",
-        "name": "Akdeniz Mahallesi",
-        "tarih_saat": "2025-10-02 12:09:06"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          27.1392399,
-          38.4261461
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "Kategori": "Belediye Binaları",
-        "Ad": "HDP İzmir İl Başkanlığı",
-        "name": "Akdeniz Mahallesi",
-        "tarih_saat": "2025-10-02 12:09:06"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          27.1392171,
-          38.4260999
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "Kategori": "Belediye Binaları",
-        "Ad": "İYİ Parti İzmir İl Başkanlığı",
-        "name": "Akdeniz Mahallesi",
-        "tarih_saat": "2025-10-02 12:09:06"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          27.1384594,
-          38.4252961
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "Kategori": "Kültürel Miras (Köşk, Çeşme vb.)",
-        "Ad": "İsimsiz",
-        "name": "Akdeniz Mahallesi",
-        "tarih_saat": "2025-10-02 12:09:06"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          27.1322259,
-          38.4260922
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "Kategori": "Sağlık Kurumları",
-        "Ad": "Özel Dentiz Ağız ve Diş Sağlığı Polikliniği",
-        "name": "Akdeniz Mahallesi",
-        "tarih_saat": "2025-10-02 12:09:06"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          27.1327434,
-          38.4271476
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "Kategori": "İbadet Alanları",
-        "Ad": "Sipahipazarı Camii",
-        "name": "Akdeniz Mahallesi",
-        "tarih_saat": "2025-10-02 12:09:06"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          27.1383363,
-          38.4232315
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "Kategori": "İbadet Alanları",
-        "Ad": "Çankaya Camii",
-        "name": "Akdeniz Mahallesi",
-        "tarih_saat": "2025-10-02 12:09:06"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          27.1369979,
-          38.4226329
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "Kategori": "Belediye Binaları",
-        "Ad": "Konak Belediyesi",
-        "name": "Akdeniz Mahallesi",
-        "tarih_saat": "2025-10-02 12:09:06"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          27.1435593,
-          38.4236208
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "Kategori": "İbadet Alanları",
-        "Ad": "Hisar Camii",
-        "name": "Akdeniz Mahallesi",
-        "tarih_saat": "2025-10-02 12:09:06"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          27.13358698006822,
-          38.42149184919633
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "Kategori": "İbadet Alanları",
-        "Ad": "Şadırvanaltı Camii",
-        "name": "Akdeniz Mahallesi",
-        "tarih_saat": "2025-10-02 12:09:06"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          27.13507555541736,
-          38.421174221691416
-        ]
-      }
-    },
-      "features": [
-    {
-      "type": "Feature",
-      "properties": {
         "Kategori": "Okullar",
         "Ad": "Namık Kemal İlkokulu",
-        "name": "Akdeniz Mahallesi",
-        "tarih_saat": "2025-10-02 12:37:35"
+        "name": "Akdeniz Mahallesi"
       },
       "geometry": {
         "type": "Point",
@@ -5724,128 +5370,60 @@
     {
       "type": "Feature",
       "properties": {
-        "Kategori": "Su Kaynakları",
+        "Kategori": "Belediye Binaları",
+        "Ad": "Çeşme Belediyesi",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.3033231,
+          38.3241125
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Belediye Binaları",
         "Ad": "İsimsiz",
-        "name": "Akdeniz Mahallesi",
-        "tarih_saat": "2025-10-02 12:09:06"
+        "name": "Akdeniz Mahallesi"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          27.142863924613412,
-          38.42376289871196
+          26.2965823,
+          38.3224889
         ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "Kategori": "İbadet Alanları",
-        "Ad": "Hatuniye Camii",
-        "name": "Akdeniz Mahallesi",
-        "tarih_saat": "2025-10-02 12:09:06"
+        "Kategori": "Belediye Binaları",
+        "Ad": "T.C. Çeşme Kaymakamlığı",
+        "name": "Akdeniz Mahallesi"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          27.141192435768907,
-          38.4204980342706
+          26.312655180896346,
+          38.324249470061496
         ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "Kategori": "Okullar",
-        "Ad": "Şehit Fethi Bey Ortaokulu",
-        "name": "Akdeniz Mahallesi",
-        "tarih_saat": "2025-10-02 12:09:06"
+        "Kategori": "Belediye Binaları",
+        "Ad": "T.C. Çeşme Kaymakamlığı",
+        "name": "Akdeniz Mahallesi"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          27.144455517884527,
-          38.42019916660339
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "Kategori": "İbadet Alanları",
-        "Ad": "Basmane Çorakkapı Camii",
-        "name": "Akdeniz Mahallesi",
-        "tarih_saat": "2025-10-02 12:09:06"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          27.14378493970021,
-          38.421824177455306
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "Kategori": "İbadet Alanları",
-        "Ad": "Saint Polycarpe Kilisesi",
-        "name": "Akdeniz Mahallesi",
-        "tarih_saat": "2025-10-02 12:09:06"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          27.135703544197234,
-          38.425663775542304
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "Kategori": "Parklar",
-        "Ad": "Kültürpark",
-        "name": "Akdeniz Mahallesi",
-        "tarih_saat": "2025-10-02 12:09:06"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          27.14519938719785,
-          38.427904146646945
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "Kategori": "İbadet Alanları",
-        "Ad": "Fettah Camisi",
-        "name": "Akdeniz Mahallesi",
-        "tarih_saat": "2025-10-02 12:09:06"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          27.14321095,
-          38.42107645000001
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "Kategori": "İbadet Alanları",
-        "Ad": "Katipzade Mescidi",
-        "name": "Akdeniz Mahallesi",
-        "tarih_saat": "2025-10-02 12:09:06"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          27.13125259472616,
-          38.4205412575564
+          26.312567937793503,
+          38.32434962707591
         ]
       }
     },
@@ -5853,79 +5431,44 @@
       "type": "Feature",
       "properties": {
         "Kategori": "Sağlık Kurumları",
-        "Ad": "İsimsiz",
-        "name": "Akdeniz Mahallesi",
-        "tarih_saat": "2025-10-02 12:09:06"
+        "Ad": "Çeşme Alper Çizgenakat Devlet Hastanesi",
+        "name": "Akdeniz Mahallesi"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          27.13881865937527,
-          38.42751798807343
+          26.325575702837483,
+          38.31664384613492
         ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "Kategori": "Parklar",
-        "Ad": "Hatuniye Parkı",
-        "name": "Akdeniz Mahallesi",
-        "tarih_saat": "2025-10-02 12:09:06"
+        "Kategori": "Mezarlıklar",
+        "Ad": "Maşatlık",
+        "name": "Akdeniz Mahallesi"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          27.141424568708388,
-          38.42064655896503
+          26.28309402895333,
+          38.29239097024208
         ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "Kategori": "İbadet Alanları",
-        "Ad": "Mumyakmaz Camii",
-        "name": "Akdeniz Mahallesi",
-        "tarih_saat": "2025-10-02 12:09:06"
+        "Kategori": "Mezarlıklar",
+        "Ad": "Mezarlık",
+        "name": "Akdeniz Mahallesi"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          27.1425284,
-          38.4204933
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "Kategori": "İbadet Alanları",
-        "Ad": "Abdullah Efendi Camii",
-        "name": "Akdeniz Mahallesi",
-        "tarih_saat": "2025-10-02 12:09:06"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          27.145497885680847,
-          38.42095043219664
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "Kategori": "Kültürel Miras (Köşk, Çeşme vb.)",
-        "Ad": "Altınpark",
-        "name": "Akdeniz Mahallesi",
-        "tarih_saat": "2025-10-02 12:09:06"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          27.14439941317418,
-          38.42079839197128
+          26.282682359113707,
+          38.291701870206495
         ]
       }
     }
