@@ -275,11 +275,11 @@
         "name": "HALK KONUT 24",
         "İl": "İzmir",
         "İlçe": "Bayraklı",
-        "Mahalle": "xxxxx",
-        "Ada": "25500",
-        "ParselNo": "2",
-        "Alan": "493,00",
-        "Pafta": "25L-3A",
+        "Mahalle": "Manavkuyu",
+        "Ada": "3880",
+        "ParselNo": "1",
+        "Alan": "2.342,00",
+        "Pafta": "9",
         "Nitelik": "Arsa",
         "Mevkii": ""
       }
@@ -1729,6 +1729,7 @@
     }
   ]
 }
+
 
 
 
