@@ -5471,6 +5471,7821 @@
           38.291701870206495
         ]
       }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Okullar",
+        "Ad": "Candarli Mehmet Dilsiz Ilkogretim Okulu",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.9325977,
+          38.9368737
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Okullar",
+        "Ad": "Özel Kelebeğim Anaokulu",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.1639406,
+          39.101955
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Okullar",
+        "Ad": "Atölye Akademisi",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.1638229,
+          39.1018823
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Okullar",
+        "Ad": "Özel Bergama Özel Eğitim ve Rehabilitasyon Merkezi",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.1618846,
+          39.1009918
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Okullar",
+        "Ad": "Özel Renkler Evi Anaokulu",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.1709842,
+          39.1061736
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Okullar",
+        "Ad": "Özel Esat Başaran Kreş ve Gündüz Bakım Evi",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.1818209,
+          39.1115424
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Okullar",
+        "Ad": "Özel Bergama Okyanus Anaokulu",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.1751625,
+          39.1008593
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Okullar",
+        "Ad": "Bahçeli Köyü İlkokulu",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.81794024022865,
+          39.207458263832685
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Okullar",
+        "Ad": "EBSO Ortaokulu",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.325669745369677,
+          39.274420040359864
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Okullar",
+        "Ad": "Doğa Koleji Bergama Kampüsü",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.118958760608212,
+          39.07872429089832
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Okullar",
+        "Ad": "Bergama Rehberlik ve Araştırma Merkezi",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.1761467,
+          39.116816449999995
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Okullar",
+        "Ad": "80. Yıl Cumhuriyet Ortaokulu",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.15261493529648,
+          39.10402499034352
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Okullar",
+        "Ad": "Ali Rıza Eroğlu İlkokulu",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.167143936933694,
+          39.10897916984895
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Okullar",
+        "Ad": "Bergama Anaokulu",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.167813077663467,
+          39.10884109018709
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Okullar",
+        "Ad": "Bergama 70. Yıl Anadolu Sağlık Meslek Lisesi",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.168571004276046,
+          39.109345015956755
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Okullar",
+        "Ad": "Şehit Ömer Yiğit Ulus Mesleki ve Teknik Anadolu Lisesi",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.173209737130716,
+          39.11098711394827
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Okullar",
+        "Ad": "Yusuf Kemalettin Perin Mesleki ve Teknik Anadolu Lisesi",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.17422249282898,
+          39.111134809749835
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Okullar",
+        "Ad": "Osman Nuri Ersezgin İlkokulu / Osman Nuri Ersezgin Ortaokulu",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.185633841334205,
+          39.111411504299426
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Okullar",
+        "Ad": "Ulubatlı Hasan İlkokulu / Ulubatlı Hasan İmam Hatip Ortaokulu",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.188848133164147,
+          39.10213127978507
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Okullar",
+        "Ad": "Selçukbey İlkokulu",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.175216450582116,
+          39.12777169978214
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Okullar",
+        "Ad": "Bergama 14 Eylül İlkokulu",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.183089680139844,
+          39.12401386519844
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Okullar",
+        "Ad": "Mualla Ersezgin Ortaokulu",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.161982530419497,
+          39.0998717891603
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Okullar",
+        "Ad": "Bergama Anadolu İmam Hatip Lisesi",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.16079342947599,
+          39.09934711890149
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Okullar",
+        "Ad": "Bergama Atatürk İlkokulu",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.17610405552265,
+          39.12276866094706
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Okullar",
+        "Ad": "Bergama 13 Nisan Anadolu Lisesi A Blok",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.17678806442804,
+          39.11673745208388
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Okullar",
+        "Ad": "Bergama 13 Nisan Anadolu Lisesi B Blok",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.177320663704567,
+          39.11729472181849
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Okullar",
+        "Ad": "İsmail Hakkı Pamukçu İlkokulu",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.181088835847152,
+          39.11957722967764
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Okullar",
+        "Ad": "Bergama Akif Ersezgin Anadolu Lisesi",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.14903824449196,
+          39.09995740079739
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Okullar",
+        "Ad": "80. Yıl Cumhuriyet Ortaokulu",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.15253158108585,
+          39.10400621299541
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Okullar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.17403288212857,
+          39.11093923293727
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Okullar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.174473149999997,
+          39.1112469
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Okullar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.172909977939057,
+          39.11097667727886
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Okullar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.17323054495823,
+          39.1107883992841
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Okullar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.173576450000002,
+          39.111131099999994
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Okullar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.173806278742187,
+          39.11141817515516
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Okullar",
+        "Ad": "İsmail Hakkı Pamukçu İlkokulu",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.181057813225102,
+          39.11949829370886
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Okullar",
+        "Ad": "Bergama 14 Eylül İlkokulu",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.183071460672227,
+          39.124011785830284
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Okullar",
+        "Ad": "Bergama Gazi İlkokulu / Bergama Gazi Ortaokulu / Bergama Cumhuriyet Anadolu Lisesi",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.18826719621347,
+          39.1207476357425
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Okullar",
+        "Ad": "Osman Nuri Ersezgin İlkokulu / Osman Nuri Ersezgin Ortaokulu",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.185520705120336,
+          39.11149341482989
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Okullar",
+        "Ad": "Bergamalı Kadri Anadolu İmam Hatip Lisesi",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.177056167842693,
+          39.100391570151594
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Okullar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.176823363713066,
+          39.10074888598125
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Okullar",
+        "Ad": "Ulubatlı Hasan İlkokulu",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.188648360993128,
+          39.10191878115838
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Okullar",
+        "Ad": "Ulubatlı Hasan İmam Hatip Ortaokulu",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.18875263381528,
+          39.102190050313666
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Okullar",
+        "Ad": "Bergama Atatürk İlkokulu",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.176205651643713,
+          39.12282202309865
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Okullar",
+        "Ad": "Selçukbey İlkokulu",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.175147288441803,
+          39.12779429046739
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Okullar",
+        "Ad": "Bergama Doğa Koleji",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.163493560709536,
+          39.10005556799928
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Okullar",
+        "Ad": "Bergama Özel Doğa Lisesi",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.119120669428163,
+          39.078770895547585
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Okullar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.11889005791498,
+          39.0782263289397
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Okullar",
+        "Ad": "Bergama Yalnızev İlkokulu",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.12732166942775,
+          39.092240489796104
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Okullar",
+        "Ad": "Bergama Küçükkaya Köyü İlkokulu",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.135460099366973,
+          39.09406053866769
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Okullar",
+        "Ad": "Ali Rıza Eroğlu İlkokulu",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.167068998252873,
+          39.108984600556994
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Okullar",
+        "Ad": "Bergama 70. Yıl Anadolu Sağlık Meslek Lisesi",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.16847253528856,
+          39.109314282464126
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Okullar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.173588,
+          39.1069877
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Okullar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.17323027006575,
+          39.106791291428394
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Okullar",
+        "Ad": "Bergama 100. Yıl İlkokulu",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.173170099999997,
+          39.1063201
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Okullar",
+        "Ad": "Fatih İlkokulu",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.17605210371314,
+          39.1038458256339
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Okullar",
+        "Ad": "Mert Öztüre İlkokulu",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.148969306620973,
+          39.0987848309001
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Okullar",
+        "Ad": "Bergama Yusuf Kemalettin Perin Fen Lisesi",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.155565267833698,
+          39.10324744271101
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Okullar",
+        "Ad": "6 Eylül Çok Programlı Lisesi",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.84027639186462,
+          39.38699407594982
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Okullar",
+        "Ad": "Şehit Mustafa Güvenç Aldemir İlköğretim Okulu",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.844450609317793,
+          39.39360394095131
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Okullar",
+        "Ad": "Ulubeyler Ortaokulu",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.87873737595006,
+          39.33357962447569
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Okullar",
+        "Ad": "Bergama Zeytindağ Çok Programlı Anadolu Lisesi",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.071527460666506,
+          38.97035466870464
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Okullar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.887093887658143,
+          39.067911804076076
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Okullar",
+        "Ad": "Ali Çetinkaya İlkokulu",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.890960764379095,
+          39.070885958062206
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Okullar",
+        "Ad": "Zeytindağ Yılmaz Ortaokulu",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.070727667205986,
+          38.96773009105969
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Okullar",
+        "Ad": "Zeytindağ Yılmaz İlkokulu",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.070534983313713,
+          38.96741056086113
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Okullar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.195737410409798,
+          39.10830306673705
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Okullar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.148981866265682,
+          39.10047690262279
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Okullar",
+        "Ad": "Bakırçay Ticaret Mesleki ve Teknik Anadolu Lisesi",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.186289915150205,
+          39.10545629272332
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Okullar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.19585975,
+          39.10857285
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Okullar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.195409883584507,
+          39.10827714735405
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Okullar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.194858107856028,
+          39.10806428456336
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Okullar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.19511718432503,
+          39.108188451988326
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Okullar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.19583146544029,
+          39.108105585268476
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Okullar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.19637235287446,
+          39.108366459163854
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Okullar",
+        "Ad": "Ahmet Tulun Himam İlkokulu",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.838299033090095,
+          39.38441825266487
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Okullar",
+        "Ad": "Gömeç Anadolu Lisesi",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.830869932856924,
+          39.37924994710422
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Okullar",
+        "Ad": "Bergama Kız Anadolu İmam Hatip Lisesi",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.16073879762847,
+          39.09974024580419
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Okullar",
+        "Ad": "Bergama Anaokulu",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.167752646786127,
+          39.10892206058233
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Okullar",
+        "Ad": "Bergama Güzel Sanatlar Lisesi",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.176933508095406,
+          39.11728270923646
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Okullar",
+        "Ad": "Bergama Güzel Sanatlar Lisesi",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.177020433631963,
+          39.11726792594369
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Okullar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.173077249616842,
+          39.11056862876353
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Okullar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.17332119074097,
+          39.11043947560314
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Okullar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.173244708440855,
+          39.11054479041387
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Okullar",
+        "Ad": "Özgür Akademi",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.154917387935782,
+          39.09866966449927
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Okullar",
+        "Ad": "Bergama 14 Eylül Anadolu Lisesi",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.14763350495113,
+          39.09973260833196
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Okullar",
+        "Ad": "Bergama Kız Anadolu İmam Hatip Lisesi",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.160639565460883,
+          39.09975071383036
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Okullar",
+        "Ad": "Bergama Anadolu İmam Hatip Lisesi",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.161269601515333,
+          39.09957403617186
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Okullar",
+        "Ad": "Can Rüştü Tüfekçioğlu Ortaokulu",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.890779197349897,
+          39.07707594285366
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Okullar",
+        "Ad": "Dikili Çok Programlı Anadolu Lisesi",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.89101991974247,
+          39.07649278727826
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Okullar",
+        "Ad": "Şehit Hakan Sağınç Anadolu Lisesi",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.36345192681171,
+          39.08763102786125
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Okullar",
+        "Ad": "Remziye Akalınlı Anaokulu",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.379096146096337,
+          39.09062662862767
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Okullar",
+        "Ad": "Şehit Cafer Atilla Ortaokulu",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.378992223112082,
+          39.0911098696478
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Okullar",
+        "Ad": "Bergama Necla-Mithat Öztüre Anaokulu",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.19813644795254,
+          39.11721997628066
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Okullar",
+        "Ad": "Bergama Gazi İlkokulu / Bergama Gazi Ortaokulu / Bergama Cumhuriyet Anadolu Lisesi",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.188455812930158,
+          39.12064965903707
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Okullar",
+        "Ad": "Zübeyde Hanım Ortaokulu",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.175834314851233,
+          39.11681402529127
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Okullar",
+        "Ad": "Bergama Rehberlik ve Araştırma Merkezi",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.176176885015284,
+          39.116818037420686
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Okullar",
+        "Ad": "Bergama Halk Eğitim Merkezi",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.175767049373658,
+          39.116004672041505
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Okullar",
+        "Ad": "Şehit Üsteğmen Cemil Canan Çiçek İmam Hatip Ortaokulu",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.18440876911192,
+          39.11559953221522
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Okullar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.176125266801538,
+          39.11719779671042
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Okullar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.175596708977487,
+          39.116828073566154
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Okullar",
+        "Ad": "Bergama Akif Ersezgin Anadolu Lisesi",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.149096538509806,
+          39.10039834910601
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Okullar",
+        "Ad": "Bergama 14 Eylül Anadolu Lisesi",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.147935415959616,
+          39.09952365835626
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Okullar",
+        "Ad": "Mert Öztüre İlkokulu",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.14899734476406,
+          39.09871616341967
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Okullar",
+        "Ad": "Bergama Yusuf Kemalettin Perin Fen Lisesi",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.155846761056154,
+          39.102841380380724
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Okullar",
+        "Ad": "Bergama 100. Yıl Ortaokulu",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.173412097518742,
+          39.10688511957492
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Okullar",
+        "Ad": "Bergama 100. Yıl İlkokulu",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.173239886935164,
+          39.10643395430106
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Okullar",
+        "Ad": "Mualla Ersezgin Ortaokulu",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.162388529306213,
+          39.09980490100722
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Okullar",
+        "Ad": "Bergama Doğa Koleji",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.163502305777445,
+          39.10004229019955
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Okullar",
+        "Ad": "Bergama 13 Nisan Anadolu Lisesi",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.17702839462432,
+          39.11708086395223
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Okullar",
+        "Ad": "Zübeyde Hanım Ortaokulu",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.17588431162394,
+          39.11710430923568
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Okullar",
+        "Ad": "Şehit Üsteğmen Cemil Canan Çiçek İmam Hatip Ortaokulu",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.184317429032433,
+          39.11558449167612
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Okullar",
+        "Ad": "Bakırçay Ticaret Mesleki ve Teknik Anadolu Lisesi",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.186158379909877,
+          39.10537466460396
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Okullar",
+        "Ad": "Fatih İlkokulu",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.175978055150527,
+          39.10379275092966
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Okullar",
+        "Ad": "Bergamalı Kadri Anadolu İmam Hatip Lisesi",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.17703442349063,
+          39.100803390360035
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "Alesta Garden",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.1741956,
+          39.1372566
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "Şahap Bora Parkı",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.890642166666666,
+          39.07480196666666
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.88469296506331,
+          39.06700855179261
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.89434282245661,
+          39.082602937267325
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.93323908115978,
+          38.93604914845361
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "Zeytinpark",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.183357318213204,
+          39.11454580971716
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.893819354201014,
+          39.07616561637313
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İttihati Terakki Meydanı",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.180097437936514,
+          39.12593821625848
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "Sevgi Parkı",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.169553010095388,
+          39.10696124858309
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "Çamlıpark",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.175067006868918,
+          39.114970054539434
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.17349159613521,
+          39.1055731060389
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.18250456476008,
+          39.11094678690852
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "Kamil Mahmut Tınas Parkı",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.18344215479551,
+          39.119564808934236
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.18296814698054,
+          39.119350776304024
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "Ahmet Hamdi Arıkan Parkı",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.167469504019234,
+          39.10341752858294
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.163576950251617,
+          39.100957315555505
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.162272732681902,
+          39.100381234352675
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.163675658518333,
+          39.0988941598528
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "Cumhuriyet Meydanı",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.177335118439203,
+          39.11887652350296
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "14 Eylül Kurtuluş Parkı",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.195718479703025,
+          39.11852763144043
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "Şehit Hava Pilot Üsteğmen Saadettin Baycan Parkı",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.838961104234535,
+          39.386256186261846
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.89236229892106,
+          39.07640759276998
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.894341093554612,
+          39.07917052496426
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.888512138751725,
+          39.082160933755844
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.78152199322236,
+          39.22208668022929
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.79632976384437,
+          39.21958716210311
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.89189316052007,
+          39.07796665528278
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.88419502089869,
+          39.05982969810511
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.892998000000002,
+          39.080133933333336
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.89044571454985,
+          39.072882152334344
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.892718406169607,
+          39.08969433067363
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.895346170580407,
+          39.089132626247746
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.893851684455313,
+          39.08884213082794
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.887572093114702,
+          39.07300614403701
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "Nazım Hikmet Ran Parkı",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.890283069345788,
+          39.07576242797857
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.89174618841042,
+          39.0927423775921
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.89197717123395,
+          39.092260763662026
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.893422124902074,
+          39.09334662242046
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.887895033495628,
+          39.09438740380285
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.880509468497767,
+          39.094689200036804
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.881348505713746,
+          39.09501443726406
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.880766122558295,
+          39.096137770897975
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.89106699715943,
+          39.09062622728475
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.893543694447523,
+          39.079965337410144
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "Barış Manço Parkı",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.887925723024363,
+          39.0721452026861
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.887195799804115,
+          39.0690086801213
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.885660820375946,
+          39.062456247402075
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.88651329846846,
+          39.06230481124995
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.877414096577656,
+          39.061199705987136
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.881797752529515,
+          39.06411201963386
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "Hüsnü Özdemir Parkı",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.8444118,
+          39.39146045
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.824359089654354,
+          39.035305705322465
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.824682571349488,
+          39.03454131893513
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.824667342082254,
+          39.03353254578963
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.823487339126263,
+          39.033672928681106
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.823910269117345,
+          39.03236743943902
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.822951058870416,
+          39.03293517125488
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.82624641614411,
+          39.0336859596325
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.835556520613792,
+          39.041245102310135
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.89426654717058,
+          39.07272514753141
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.93942352836458,
+          38.93958740378137
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.879274081025997,
+          39.10553883226451
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.879797065336216,
+          39.104972814501174
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.873177989942384,
+          39.107448191155456
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.874399873448674,
+          39.11070927621478
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.869072871622347,
+          39.11301235641068
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.870905554721844,
+          39.11344950609861
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.867725139634636,
+          39.116048641574295
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.867090212395553,
+          39.117299769084276
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.867927669122963,
+          39.11412523378551
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.86577265203976,
+          39.11503524833179
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.864447117082975,
+          39.11682740493001
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.86450157660909,
+          39.11472852352872
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.857339143437198,
+          39.119418789429005
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.859128317137692,
+          39.12034861481264
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.860996536920442,
+          39.121510253565006
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.857277076523374,
+          39.123130019084165
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.855955816729526,
+          39.12254533751821
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.85468107673133,
+          39.12198686470029
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.85650362484676,
+          39.118642311337815
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.853543274122465,
+          39.125551835673534
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.854955559490506,
+          39.12621457626462
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.838394566149002,
+          39.148796166059306
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.836914976048387,
+          39.1477233238357
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.83526472387141,
+          39.14621546206137
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.83378887419438,
+          39.145084372035015
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.835059017190897,
+          39.14378875034903
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.838237105586803,
+          39.15655658463672
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.828295495890416,
+          39.15035166006737
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.830355704430353,
+          39.152094789927396
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.829397622121668,
+          39.1513779759813
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.833519005979497,
+          39.15303636103702
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.834426480009085,
+          39.153729198495704
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.834844346859963,
+          39.153245287645724
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.82543994219701,
+          39.16085253675813
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.82579188588772,
+          39.15652013128923
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.825420239699675,
+          39.1569223902651
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.833204257131012,
+          39.15800196244032
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.82905870950658,
+          39.16030806546053
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.827289122459916,
+          39.15989835704605
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.83115710774585,
+          39.161218793359915
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.816586317659006,
+          39.15957336267864
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.827063226638327,
+          39.16753525499933
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.827421505410847,
+          39.167077984946985
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.820105196286146,
+          39.16872299882514
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.821077798218994,
+          39.1676961839878
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.811466492006435,
+          39.16647845196757
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.807330343360587,
+          39.16430061127135
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.806755828056694,
+          39.16346374279076
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.80915991663349,
+          39.16512316079769
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.80960101678802,
+          39.16790424536198
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.809347402831076,
+          39.167524713384736
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.809060359766534,
+          39.167166759045614
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.808783504218503,
+          39.166805439902035
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.80855142262004,
+          39.166467562036374
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.80835936469896,
+          39.16572036230967
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.808018510499576,
+          39.16512921399445
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.805458652424882,
+          39.16529271408183
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.76484406645477,
+          39.18080493758375
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.76368356893184,
+          39.181559909073584
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.764504274610662,
+          39.18234619767609
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.762970263642437,
+          39.182146099621704
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.762327195032665,
+          39.1826136318811
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.76571890379739,
+          39.184595304436066
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.766369966231338,
+          39.18366018689791
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.76559827564934,
+          39.18339378098838
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.765972232206714,
+          39.18284429679632
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.76654802670574,
+          39.18171984487362
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.765695206044562,
+          39.18164953332885
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.76507885485914,
+          39.182709022718484
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.763422199361628,
+          39.18335293434413
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.763400986222493,
+          39.18484978851383
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.763247288738867,
+          39.185740243307905
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.765457744562354,
+          39.17663986681452
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.766616976647132,
+          39.17698827702504
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "Şefik Birdar Parkı",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.834388192083814,
+          39.38330277439454
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.758309236690135,
+          39.186106749657625
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.7592562255012,
+          39.185238496763226
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.760506067894884,
+          39.18464984842646
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.76175516095559,
+          39.184004271333016
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.75969432188622,
+          39.18365283237525
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.757258219791932,
+          39.18675703279159
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.931125090313774,
+          38.94032161541379
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.93141468946479,
+          38.93849408276736
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.92549970802406,
+          38.94000342822959
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.925044022510946,
+          38.940186920749056
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.9176370321673,
+          38.94144319386426
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.91761409772444,
+          38.942171191683364
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.916596466262362,
+          38.942161774379045
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.934984890008437,
+          38.93608029479225
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.934217112190456,
+          38.93549089259691
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.92971904597325,
+          38.93698550914761
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.94203628666471,
+          38.93928554140429
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.932227241358305,
+          38.937263673071115
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "Zübeyde Hanım Parkı",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.84023391094911,
+          39.39102416491198
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "Hüsnü Özdemir Parkı",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.844977133687703,
+          39.39146471814674
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.347873121509448,
+          39.09116171314134
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.80325367532554,
+          39.391480438220576
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.933069169860016,
+          38.93379972817241
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.854319446613545,
+          39.13818212482988
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.854643951716394,
+          39.138314637110525
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.8551884728943,
+          39.138545756599775
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.801018733928576,
+          39.389130900852116
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.77495124226919,
+          39.22381522723112
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.168536946374207,
+          39.10636685719177
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.773349133333333,
+          39.22452356666666
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.1801213981712,
+          39.11467510223521
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.311598600000004,
+          39.08028816666667
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.381333089557486,
+          39.09201181110802
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.38457416561257,
+          39.09099301987598
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.389569101657354,
+          39.09224060716204
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.38570154880682,
+          39.08871797318893
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.839717054215765,
+          39.385032512636336
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.897988310005868,
+          39.07946154669427
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.821188629608365,
+          39.16170180426796
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.757109451788196,
+          39.35837481315151
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.183787333841696,
+          39.104726403832466
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.17865185270914,
+          39.10201145639087
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "Bergama Millet Bahçesi",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.174946352000017,
+          39.112573683824465
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.1662097871473,
+          39.10934219645308
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "Kemal Sunal Parkı",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.167252507445465,
+          39.110211376051204
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "Şehit Er Ali Balıkçı Parkı",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.169953325250706,
+          39.11129405377582
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.767395386841976,
+          39.36770120798641
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.768446847759535,
+          39.367745682046596
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.173211591321618,
+          39.106139514467124
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "Şehitlik Parkı",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.165616200869664,
+          39.107125384916756
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "Hüsnü Şenlendirici Parkı",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.177906743195365,
+          39.110384887343265
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.896467520077483,
+          39.079919633288874
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.178401334704567,
+          39.10727013862352
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.166387681393598,
+          39.110168457251966
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.168213186469107,
+          39.11001354963376
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.16828325523092,
+          39.110366186543374
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.169650229795863,
+          39.10989791973441
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.17068778058731,
+          39.110631884248455
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.17037824238273,
+          39.11100397085146
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.16931848560237,
+          39.11147725455009
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.16878155793572,
+          39.1117649268441
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.164359495680074,
+          39.10542253597979
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "Karayolları Üstü Yeşil Parkı",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.16460998705479,
+          39.10511865620922
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "Yuvam Parkı",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.157505948692382,
+          39.09893798402281
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.17125334577996,
+          39.11056460198875
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.165296135398016,
+          39.10233248818061
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.178303538981382,
+          39.108161706355226
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.1716624103246,
+          39.10757523666209
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "Sami Altan Parkı",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.16538019961593,
+          39.09978666219736
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "Metin Altıok Parkı",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.15034517342607,
+          39.097937048375414
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.163065779707303,
+          39.10205363460455
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.177967216445605,
+          39.10719435364009
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.163949199376468,
+          39.10474429862307
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.163310272388998,
+          39.105333297161785
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.16385099317391,
+          39.10532247821181
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.186867718850795,
+          39.11159959791827
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "Bergama Belediyesi Kleopatra Güzellik Ilıcası Sosyal Tesisleri",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.153217449699024,
+          39.10106522240288
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.170554694659415,
+          39.10924218629794
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "Bergama Orduevi, Askeri Gazinosu ve Askeri Lojmanları Parkı",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.171454501875232,
+          39.108802078184596
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.18291561975707,
+          39.12231049037905
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "Akasya Parkı",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.186868831194744,
+          39.121603459503945
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "Mukaddes Kuduğ Parkı",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.167660650348193,
+          39.107651556968364
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "Onur Uslu Parkı",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.933084133717177,
+          38.94301809854318
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.19458767709496,
+          39.107637044285646
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Parklar",
+        "Ad": "Nazif Özçelik Parkı",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.183491925081757,
+          39.10876090275826
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Sağlık Kurumları",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.8186237,
+          39.1629538
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Sağlık Kurumları",
+        "Ad": "Medigün",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.1751773,
+          39.1182505
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Sağlık Kurumları",
+        "Ad": "Diş Hekimi Selahattin Şen",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.1770611,
+          39.1192127
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Sağlık Kurumları",
+        "Ad": "Özel SR Dental Ağız ve Diş Sağlığı Polikliniği",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.1780768,
+          39.1136534
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Sağlık Kurumları",
+        "Ad": "Özel Bergama Dental Ağız Diş Sağlığı Polikliniği",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.1689516,
+          39.106948
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Sağlık Kurumları",
+        "Ad": "Bergama Necla-Mithat Öztüre Devlet Hastanesi Toplum Ruh Sağlığı Merkezi",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.1751245,
+          39.1059342
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Sağlık Kurumları",
+        "Ad": "İzmir Bergama 13 Nolu Ertuğrul Aile Sağlığı Merkezi",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.177654,
+          39.1174993
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Sağlık Kurumları",
+        "Ad": "İzmir Bergama 11 Nolu Güzeloğulları Aile Sağlığı Merkezi",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.1666876,
+          39.1040237
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Sağlık Kurumları",
+        "Ad": "İzmir Bergama 1 Nolu Aile Sağlığı Merkezi",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.1752104,
+          39.1167956
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Sağlık Kurumları",
+        "Ad": "Bergama Toplum Sağlığı Merkezi",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.1751339,
+          39.1166512
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Sağlık Kurumları",
+        "Ad": "İzmir Bergama 1 Nolu Sağlıklı Hayat Merkezi",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.1745806,
+          39.1168054
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Sağlık Kurumları",
+        "Ad": "İzmir Bergama 1 Nolu Acil Yardım İstasyonu",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.1746731,
+          39.1169245
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Sağlık Kurumları",
+        "Ad": "İzmir Bergama 4 Nolu Dr. Hasan Ergil Aile Sağlığı Merkezi",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.1726023,
+          39.1104522
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Sağlık Kurumları",
+        "Ad": "Özel Bergama Diyaliz Merkezi",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.15568673377598,
+          39.09873251734841
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Sağlık Kurumları",
+        "Ad": "Dikili Devlet Hastanesi",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.892357001752917,
+          39.06495167510238
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Sağlık Kurumları",
+        "Ad": "Yenikent Aile Sağlığı Merkezi",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.055065,
+          39.0105774
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Sağlık Kurumları",
+        "Ad": "Zeytindağ 8 Nolu Aile Sağlığı Merkezi",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.07629765,
+          38.965887200000004
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Sağlık Kurumları",
+        "Ad": "İzmir Bergama 2 Nolu Acil Yardım İstasyonu",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.18530326476977,
+          39.11126792507984
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Sağlık Kurumları",
+        "Ad": "İzmir Bergama 3 Nolu Ömer Perihan Filiz Aile Sağlığı Merkezi",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.177789051056124,
+          39.126014168168076
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Sağlık Kurumları",
+        "Ad": "Kınık İlçe Devlet Hastanesi",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.362935818348763,
+          39.0895725892575
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Sağlık Kurumları",
+        "Ad": "Gömeç İlçe Devlet Hastanesi",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.843692680944194,
+          39.393970228042214
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Sağlık Kurumları",
+        "Ad": "Gömeç İlçe Devlet Hastanesi",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.84372813421288,
+          39.394019497956705
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Sağlık Kurumları",
+        "Ad": "İzmir Dikili 1 Nolu Aile Sağlığı Merkezi",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.888048162366424,
+          39.07130609630435
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Sağlık Kurumları",
+        "Ad": "Kınık İlçe Devlet Hastanesi",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.36293095873244,
+          39.089352116171014
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Sağlık Kurumları",
+        "Ad": "İzmir Bergama Necla - Mithat Öztüre Devlet Hastanesi",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.197970788767137,
+          39.11843388117982
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Sağlık Kurumları",
+        "Ad": "Bergama Ağız ve Diş Sağlığı Merkezi",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.1748666793475,
+          39.11642310879509
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Sağlık Kurumları",
+        "Ad": "Bergama Ağız ve Diş Sağlığı Merkezi",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.174878996525774,
+          39.11637634864633
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Sağlık Kurumları",
+        "Ad": "İzmir Bergama 2 Nolu Merkez Aile Sağlığı Merkezi",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.185063942975034,
+          39.11148613584379
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Sağlık Kurumları",
+        "Ad": "İzmir Bergama Necla - Mithat Öztüre Devlet Hastanesi",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.197506022369755,
+          39.117980768821035
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "İbadet Alanları",
+        "Ad": "Gömeç Belediyesi Mezarlığı",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.8375111,
+          39.3934777
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "İbadet Alanları",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.8796981,
+          39.2901701
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "İbadet Alanları",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.382653450000003,
+          39.0880308
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "İbadet Alanları",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.34727698257928,
+          39.09191983735397
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "İbadet Alanları",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.37047105,
+          39.0892113
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "İbadet Alanları",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.851331893917767,
+          39.18431468369099
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "İbadet Alanları",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.824239449622112,
+          39.027557883620794
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "İbadet Alanları",
+        "Ad": "Yunus Emre Cami",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.19292656683615,
+          39.101522255461184
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "İbadet Alanları",
+        "Ad": "Abdullah Efendi Cami",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.18293293944477,
+          39.10912999656045
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "İbadet Alanları",
+        "Ad": "Sanayi Cami",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.191915218692728,
+          39.110698739526576
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "İbadet Alanları",
+        "Ad": "Fevzipaşa Cami",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.197748550000004,
+          39.105887499999994
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "İbadet Alanları",
+        "Ad": "Mezarlıkbaşı Camii",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.17301165,
+          39.1056042
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "İbadet Alanları",
+        "Ad": "Bergama Ulu Camii",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.179457420651097,
+          39.12501493671822
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "İbadet Alanları",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.277294400000002,
+          39.29726475
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "İbadet Alanları",
+        "Ad": "Şadırvanlı Camii",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.177888082180992,
+          39.122337298024846
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "İbadet Alanları",
+        "Ad": "Kulaksız Cami",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.17963752641849,
+          39.120374175038954
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "İbadet Alanları",
+        "Ad": "Kurşunlu Cami",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.176814999999998,
+          39.118358799999996
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "İbadet Alanları",
+        "Ad": "Fatih Cami",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.18813035,
+          39.101964699999996
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "İbadet Alanları",
+        "Ad": "Kozan Mescidi",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.17668736956731,
+          39.127391638688685
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "İbadet Alanları",
+        "Ad": "Hacı Hekim Cami",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.17927544961564,
+          39.12107523754127
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "İbadet Alanları",
+        "Ad": "Ansarlı Cami",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.177481797170767,
+          39.12393608908917
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "İbadet Alanları",
+        "Ad": "Aslanlı Cami",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.177277674880333,
+          39.12113537800912
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "İbadet Alanları",
+        "Ad": "Mescitaltı Mescidi",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.17841065,
+          39.121773600000004
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "İbadet Alanları",
+        "Ad": "Parmaklı Mescidi",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.178827899999995,
+          39.123909149999996
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "İbadet Alanları",
+        "Ad": "Yeni Cami",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.179123366403036,
+          39.11946075099019
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "İbadet Alanları",
+        "Ad": "Emir Sultan Camii",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.182590370239403,
+          39.119017153709294
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "İbadet Alanları",
+        "Ad": "Sultan Cami",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.172586414379257,
+          39.11298142427787
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "İbadet Alanları",
+        "Ad": "Selimiye Camii",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.173474149999997,
+          39.1184184
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "İbadet Alanları",
+        "Ad": "Laleli Cami",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.174295029849212,
+          39.121562741718336
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "İbadet Alanları",
+        "Ad": "İncirli Cami",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.178396418250262,
+          39.12030228916884
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "İbadet Alanları",
+        "Ad": "Divan Hızır Cami",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.178874822576773,
+          39.12245915434135
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "İbadet Alanları",
+        "Ad": "Hoca Sinan Cami",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.182429151026994,
+          39.12015119819442
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "İbadet Alanları",
+        "Ad": "Osmanlar Cami",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.18062653649427,
+          39.117122235573966
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "İbadet Alanları",
+        "Ad": "Maltepe Cami",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.17468612194521,
+          39.109676489334
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "İbadet Alanları",
+        "Ad": "Hatuniye Cami",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.177620112600867,
+          39.11629347458824
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "İbadet Alanları",
+        "Ad": "H. Osman Burcu Cami",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.195127049999996,
+          39.1192097
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "İbadet Alanları",
+        "Ad": "Gazi Osman Paşa Cami",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.188387079168972,
+          39.11102353630288
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "İbadet Alanları",
+        "Ad": "Hacı Ali Rıza Eroğlu Cami",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.13410899999999,
+          39.09334355
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "İbadet Alanları",
+        "Ad": "Cami",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.84109962367407,
+          39.2899823091447
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "İbadet Alanları",
+        "Ad": "Cami",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.87862175068687,
+          39.33391266654396
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "İbadet Alanları",
+        "Ad": "Cami",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.90678010673471,
+          39.360216031827214
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "İbadet Alanları",
+        "Ad": "Yeni Cami",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.843238550000002,
+          39.391451550000006
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "İbadet Alanları",
+        "Ad": "Cami",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.89070815833952,
+          39.12961652694155
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "İbadet Alanları",
+        "Ad": "Merkez Cami",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.889865908587772,
+          39.07104168530816
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "İbadet Alanları",
+        "Ad": "Zafer Cami",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.165721,
+          39.10886515
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "İbadet Alanları",
+        "Ad": "Aska Yıldız Cami",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.177260464393566,
+          39.1016448253121
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "İbadet Alanları",
+        "Ad": "Eroğlu Cami",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.160149667694956,
+          39.10010080807625
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "İbadet Alanları",
+        "Ad": "Yukarıbey Orta Cami",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.092061699999995,
+          39.25201584999999
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "İbadet Alanları",
+        "Ad": "Cami",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.068311650000005,
+          39.28916005000001
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "İbadet Alanları",
+        "Ad": "Cami",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.140243279125773,
+          39.318893268330115
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "İbadet Alanları",
+        "Ad": "Cami",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.930660224890115,
+          38.93891944637761
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "İbadet Alanları",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.48363205,
+          39.1529532
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "İbadet Alanları",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.35188385,
+          39.08671505
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "İbadet Alanları",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.35363961474085,
+          39.085804738966296
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "İbadet Alanları",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.35760796871838,
+          39.090371021034684
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "İbadet Alanları",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.48586195850849,
+          39.1470220692133
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "İbadet Alanları",
+        "Ad": "Gömeç Çarşı Camii",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.841024911208393,
+          39.390538575267115
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "İbadet Alanları",
+        "Ad": "Çandarlı Merkez Cami",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.93461040940532,
+          38.93537639459488
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "İbadet Alanları",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.78664975,
+          39.220026100000005
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "İbadet Alanları",
+        "Ad": "Tahtalı Camii",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.385112984417464,
+          39.08327021337218
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "İbadet Alanları",
+        "Ad": "Kazıkbağlar Camii",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.048746249999997,
+          38.943543
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "İbadet Alanları",
+        "Ad": "Denizköy Mahallesi Camii",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.810697437127192,
+          38.95398073870105
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "İbadet Alanları",
+        "Ad": "Denizköy Camii",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.814332150000002,
+          38.9534505
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "İbadet Alanları",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.911491165205742,
+          39.022897457032826
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "İbadet Alanları",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.852073378818787,
+          38.99629881404584
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "İbadet Alanları",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.944351810152313,
+          39.001958123480925
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "İbadet Alanları",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.762869531786812,
+          39.183935156572716
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "İbadet Alanları",
+        "Ad": "Altınova İskele Camii",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.748368668785005,
+          39.21318697509852
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "İbadet Alanları",
+        "Ad": "Yaya Mahallesi Cami",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.83264665,
+          39.382139550000005
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "İbadet Alanları",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.122602353090123,
+          39.050379459280755
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "İbadet Alanları",
+        "Ad": "küçük Camii",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.071518788104836,
+          38.967612876424106
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "İbadet Alanları",
+        "Ad": "Yeni Camii (Hacı Ahmet Camii)",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.072699613696468,
+          38.967651871509084
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "İbadet Alanları",
+        "Ad": "Örlemiş Köyü Camii",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.1184696,
+          38.940531449999995
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "İbadet Alanları",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.1996291906973,
+          39.07669820475981
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "İbadet Alanları",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.3753688924454,
+          39.0120455676745
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "İbadet Alanları",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.8253353,
+          39.25546425
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "İbadet Alanları",
+        "Ad": "Keremköy Camii",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.800528355238093,
+          39.36199922803427
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "İbadet Alanları",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.3845521,
+          39.09143085
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "İbadet Alanları",
+        "Ad": "Bayburtlu Hasan Şentürk Camii",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.895004765823472,
+          39.082748003167545
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "İbadet Alanları",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.308991994995345,
+          39.270560470713306
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "İbadet Alanları",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.4256592,
+          39.38100055
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "İbadet Alanları",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.150102874496223,
+          39.101041791198426
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "İbadet Alanları",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.8521571,
+          39.2516306
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "İbadet Alanları",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.77584014433727,
+          39.22352954382171
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "İbadet Alanları",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.981442350000002,
+          39.26690975
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "İbadet Alanları",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.965006399999996,
+          39.28559584999999
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "İbadet Alanları",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.958702950000003,
+          39.235005599999994
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "İbadet Alanları",
+        "Ad": "Bergama Cemevi",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.19461177631664,
+          39.116710558719596
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "İbadet Alanları",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.305707150000007,
+          39.10180220000001
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "İbadet Alanları",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.316147610983982,
+          38.99599732782864
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "İbadet Alanları",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.265583298542428,
+          39.25031496701543
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "İbadet Alanları",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.510892535050274,
+          39.17417449161495
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "İbadet Alanları",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.511819603045517,
+          39.03185203219491
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "İbadet Alanları",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.973090323381097,
+          39.34987731160532
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "İbadet Alanları",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.96463885,
+          39.302220600000005
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "İbadet Alanları",
+        "Ad": "Hz. Hatice Camii",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.808694449999997,
+          39.3858244
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "İbadet Alanları",
+        "Ad": "Kurtuluş Cami",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.183678750037963,
+          39.122093784792256
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "İbadet Alanları",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.875122732353123,
+          39.1686677956299
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "İbadet Alanları",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.79483595252623,
+          39.21971688229161
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "İbadet Alanları",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.83301464753863,
+          39.24844281781979
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "İbadet Alanları",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.83442438434899,
+          39.25755497067043
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "İbadet Alanları",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.125483731492412,
+          39.34291144379632
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "İbadet Alanları",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.096367274845885,
+          39.31685948715202
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "İbadet Alanları",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.14890843239275,
+          39.288512283968494
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "İbadet Alanları",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.27994231664071,
+          39.130005157715125
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "İbadet Alanları",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.2931088,
+          39.1402629
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "İbadet Alanları",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.277189466661593,
+          39.1815889539488
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "İbadet Alanları",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.292194555727608,
+          39.193772929771725
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "İbadet Alanları",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.30168625,
+          39.19591245
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "İbadet Alanları",
+        "Ad": "Halilağalar Mahallesi Cami",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.303920550970663,
+          39.331345683042294
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "İbadet Alanları",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.325109599999998,
+          39.35573265
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "İbadet Alanları",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.334264286826585,
+          39.34239392340688
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "İbadet Alanları",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.336987693677138,
+          39.320990824240255
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "İbadet Alanları",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.321990605763816,
+          39.318007930154
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "İbadet Alanları",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.37163575,
+          39.35669225000001
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "İbadet Alanları",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.234705050000006,
+          39.1891174
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "İbadet Alanları",
+        "Ad": "Yukarıbey Koca Camii",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.089761749999997,
+          39.2519421
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "İbadet Alanları",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.039507650000008,
+          39.38732710000001
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "İbadet Alanları",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.942422915223464,
+          39.32212472037394
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "İbadet Alanları",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.01385915357401,
+          39.26990826621976
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "İbadet Alanları",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.520267749404628,
+          38.96706106685042
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "İbadet Alanları",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.3493348,
+          38.96124915
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "İbadet Alanları",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.533898434038168,
+          39.15771994506209
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "İbadet Alanları",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.479481849999996,
+          39.185220449999996
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "İbadet Alanları",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.448110156436154,
+          39.2170047307111
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "İbadet Alanları",
+        "Ad": "Göçbeyir Merkez Camii",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.404603550000004,
+          39.22289919999999
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "İbadet Alanları",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.40402497184588,
+          39.22514762100551
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "İbadet Alanları",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.518064500000005,
+          39.246091050000004
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "İbadet Alanları",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.518148449999998,
+          39.28493355000001
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "İbadet Alanları",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.515687483212357,
+          39.17354114591014
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "İbadet Alanları",
+        "Ad": "TOKİ Camii",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.159977399267955,
+          39.102723116909985
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "İbadet Alanları",
+        "Ad": "Katrancı Mahallesi Camii",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.311637849999997,
+          39.321951649999995
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "İbadet Alanları",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.968149850000003,
+          39.25081745
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "İbadet Alanları",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.476017699999996,
+          39.132614999999994
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "İbadet Alanları",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.0969799,
+          39.254814950000004
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "İbadet Alanları",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.32517265,
+          39.324951399999996
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "İbadet Alanları",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.324580149999996,
+          39.27708145
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "İbadet Alanları",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.362021799999997,
+          39.2763645
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Stadyumlar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.37440330706299,
+          39.09873286347845
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Stadyumlar",
+        "Ad": "Gömeç Stadyumu",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.833826525943927,
+          39.38424582016053
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Stadyumlar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.889642332431997,
+          39.07865940309569
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Mezarlıklar",
+        "Ad": "Dikili Mezarlığı",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.896977396216894,
+          39.08308403633999
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Mezarlıklar",
+        "Ad": "Bergama Mezarlığı",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.172522220587897,
+          39.10059347670428
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Mezarlıklar",
+        "Ad": "Bergama Mezarlığı",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.17247627227045,
+          39.103635187003455
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Mezarlıklar",
+        "Ad": "Çandarlı Belde Mezarlığı",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.9459562365299,
+          38.94726746901412
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Mezarlıklar",
+        "Ad": "Zeytindağ Mezarlığı",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.069408747671037,
+          38.96952686900166
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Mezarlıklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.850602039679604,
+          38.99833515069879
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Mezarlıklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.418564797295996,
+          39.1805574886793
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Mezarlıklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.416796521676726,
+          39.18020893705417
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Mezarlıklar",
+        "Ad": "Mezarlık",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.35124931134507,
+          39.09308098780614
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Mezarlıklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.82746275361813,
+          39.25545610463681
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Mezarlıklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.474527550925945,
+          39.18135754993001
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Mezarlıklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.53827751208778,
+          39.22161909975495
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Mezarlıklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.880778050230774,
+          39.165768863579856
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Mezarlıklar",
+        "Ad": "İsimsiz",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.272079568553313,
+          39.18284604490484
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Kategori": "Mezarlıklar",
+        "Ad": "Gömeç Belediyesi Mezarlığı",
+        "name": "Akdeniz Mahallesi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.83761920792446,
+          39.39270314181338
+        ]
+      }
     }
 ]
 }
