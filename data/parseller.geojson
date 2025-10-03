@@ -61,6 +61,33 @@
         "type": "Polygon",
         "coordinates": [
           [
+            [27.09297,38.46125],
+            [27.09309,38.4614],
+            [27.09282,38.46154],
+            [27.0927,38.46139],
+            [27.09297,38.46125]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "Türkyılmaz Apartmanı",
+        "İl": "İzmir",
+        "İlçe": "Bornova",
+        "Mahalle": "Ergene",
+        "Ada": "0",
+        "ParselNo": "1960",
+        "Alan": "562,00",
+        "Pafta": "41",
+        "Nitelik": "5 Katlı Betonarme Apartman Ve Arsası",
+        "Mevkii": ""
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
             [27.18928,38.45477],
             [27.18908,38.45516],
             [27.18878,38.45506],
@@ -1016,6 +1043,7 @@
     }
   ]
 }
+
 
 
 
